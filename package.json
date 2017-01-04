@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "webpack",
+    "dev": "webpack --watch",
     "lint": "standard",
     "test": "standard && webpack --bail"
   },
