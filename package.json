@@ -1,7 +1,7 @@
 {
-  "name": "webpack-css-example",
+  "name": "react-portfolio",
   "version": "3.0.0",
-  "description": "Example repo showing a webpack CSS build",
+  "description": "Example repo showing a react webpack build",
   "main": "src/index.js",
   "engines": {
     "node": "4.1.2",
@@ -15,20 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bensmithett/webpack-css-example.git"
+    "url": "https://github.com/cehsu/zeport.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bensmithett/webpack-css-example/issues"
+    "url": "https://github.com/cehsu/zeport/issues"
   },
-  "homepage": "https://github.com/bensmithett/webpack-css-example",
+  "homepage": "https://github.com/cehsu/zeport",
   "dependencies": {
+    "packery": "eiriklv/packery",
+    "imagesloaded": "eiriklv/imagesloaded",
     "autoprefixer": "^6.3.6",
-    "babel-core": "^6.9.0",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.1.4",
     "css-loader": "^0.26.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^4.1.0",
@@ -40,6 +38,12 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
     "standard": "^8.2.0"
   }
 }
