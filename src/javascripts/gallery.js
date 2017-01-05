@@ -15,7 +15,9 @@ class Gallery extends Component{
     
     const childElements = Images.map(function(child, index){
       return (
-          <img key={index} src={child.url}/>
+          <div className={'grid-item-'+Math.floor(Math.random()*3+1)}>
+          <img key={index} className={'image'} src={child.url}/>
+          </div>
           )
     })
 
