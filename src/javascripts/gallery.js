@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import PackeryComponent from './packery'
+import ButtonBarComponent from './buttonBar'
 import Images from './images'
 
 const packeryOptions = {
@@ -11,27 +12,27 @@ import 'stylesheets/utilities/clearfix'
 
 class Gallery extends Component{
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       visibleImages: Images,
       filterIndex: 0,
-      filterOptions: ['All', 'Illustration', 'Animation', 'Photo', 'Video']
+      filterOptions: ['All', 'Illustration', 'Animation', 'Design', 'Photo', 'Video']
     };
-    this.updateFilter = this.updateFilter.bind(this);
+    this.setVisibleImages = this.setVisibleImages.bind(this);
+    this.setFilter = this.setFilter.bind(this);
   }
 
-  setVisibleImages = function(){
+  setVisibleImages() {
     const currentFilter = this.state.filterOptions[this.state.filterIndex];
     const currentImages = Images.filter(function(child, index){
       return !!(currentFilter === 'All' || child.type === currentFilter)
-    }.bind(this)).sort(function(a, b){
-      return a.year - b.year;
-    });
+    }.bind(this));
     this.setState({visibleImages: []}, function(){ this.setState({visibleImages: currentImages})});
   }
 
-  updateFilter = function(){ 
+  setFilter() { 
+    console.log('filtering', this);
     const newFilter = (this.state.filterIndex === 4 ? 0: this.state.filterIndex + 1);
     this.setState({filterIndex: newFilter}, this.setVisibleImages);
   }
@@ -39,12 +40,12 @@ class Gallery extends Component{
   render() {
  
     const tiles = this.state.visibleImages.map(function(child, index){
-      const generatedNumber = Math.floor(Math.random()*3+1);
+      const generatedNumber = Math.floor(Math.random()*10+1);
       console.log(generatedNumber);
-      const shape = (generatedNumber >= 2 ? 1 : Math.floor(Math.random()*2+2)); 
+      const shape = (generatedNumber <= 7 ? 1 : generatedNumber <= 9 ? 2 : 3); 
       console.log('shape', shape);
       return (
-          <div className={'grid-item-' + shape }>
+          <div className={index+' grid-item-' + shape }>
           <img key={index} className={'image'} src={child.url} />
           </div>
           )
@@ -54,9 +55,7 @@ class Gallery extends Component{
 
     return (
         <div className={'gallery-container'}>
-        <div onClick={this.updateFilter} className={'button touch'}>{currentFilter}</div>
-        <div className={'button intersect'}>About</div>
-        <div className={'button underline'}>Shop</div>
+        <ButtonBarComponent setFilter={this.setFilter} currentFilter={this.state.filterOptions[this.state.filterIndex]} />
         <PackeryComponent
         ref="PackeryComponent"
         className={'packery'}
@@ -69,5 +68,6 @@ class Gallery extends Component{
         </div>
         )
   }
+
 };
 export default Gallery

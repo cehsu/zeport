@@ -1,5 +1,12 @@
 @import 'stylesheets/config/colors'
 
+.gallery-container
+  padding-top: 175px
+  z-index: 1
+
+.button-bar
+  text-align: center
+
 .image 
   padding: 5px
   width: 100%
@@ -17,10 +24,6 @@
 .grid-item-3
   width: 400px
   height: 200px
-
-.gallery-container
-  padding-top: 300px
-  z-index: 1
 
 @media screen and (max-width: 1600px)
   .grid-item-1
@@ -76,6 +79,7 @@
 
 .button
   position: relative
+  width: 90px
   vertical-align: middle
   color: $green
   display: inline-block
@@ -83,12 +87,10 @@
   line-height: 60px
   text-align: center
   transition: 0.5s
-  padding: 0 20px
+  margin: 0 5%
   cursor: pointer
-  border: 2px solid $green
   -webkit-transition: 0.5s
   &:hover
-    border: 2px solid rgba(0, 160, 80, 0)
     color: $red
   &::before, &::after
     width: 100%
