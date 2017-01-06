@@ -1,7 +1,7 @@
 var Images = [
 {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -15,7 +15,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -29,7 +29,7 @@ var Images = [
   ]},  
 {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -42,7 +42,7 @@ var Images = [
   ]},  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -55,7 +55,7 @@ var Images = [
   ]},
   {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -69,7 +69,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -83,7 +83,7 @@ var Images = [
   ]},
   {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -97,7 +97,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -110,7 +110,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -124,7 +124,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -137,7 +137,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -151,7 +151,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -164,7 +164,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -178,7 +178,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -191,7 +191,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -205,7 +205,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -218,7 +218,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -232,7 +232,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -247,7 +247,7 @@ var Images = [
 },
  {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -261,7 +261,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -275,7 +275,7 @@ var Images = [
   ]},
 {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -289,7 +289,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -303,7 +303,7 @@ var Images = [
   ]}, 
 {   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -317,7 +317,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -330,7 +330,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -344,7 +344,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -357,7 +357,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -371,7 +371,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -384,7 +384,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -398,7 +398,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -411,7 +411,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -425,7 +425,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -438,7 +438,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -452,7 +452,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -465,7 +465,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -479,7 +479,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -492,7 +492,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -506,7 +506,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -519,7 +519,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -533,7 +533,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -546,7 +546,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -560,7 +560,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -573,7 +573,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -587,7 +587,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -600,7 +600,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -614,7 +614,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -627,7 +627,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -641,7 +641,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -654,7 +654,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -668,7 +668,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -681,7 +681,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -695,7 +695,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -708,7 +708,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -722,7 +722,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -735,7 +735,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -749,7 +749,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -762,7 +762,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -776,7 +776,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -789,7 +789,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -803,7 +803,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -816,7 +816,7 @@ var Images = [
 
   ]},{   
   "name": "keepfresh",
-  "type": "comic",
+  "type": "Comic",
   "year": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
   "slideshow": [
@@ -830,7 +830,7 @@ var Images = [
 },  
 {   
   "name": "workout",
-  "type": "illustration",
+  "type": "Illustration",
   "year": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
