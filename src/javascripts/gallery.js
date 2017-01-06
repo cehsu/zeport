@@ -11,15 +11,27 @@ import 'stylesheets/utilities/clearfix'
 
 class Gallery extends Component{
 
+  constructor(props){
+    super(props);
+    this.state = {
+      filter: false
+    };
+  }
+
   render() {
-    
-    const childElements = Images.map(function(child, index){
+ 
+    const tiles = Images.filter(function(child, index){
+      return !!(!this.state.filter||child.type === this.state.filter);
+    }.bind(this)).sort(function(a, b){
+      return a.year - b.year;
+    }).map(function(child, index){
       return (
           <div className={'grid-item-'+Math.floor(Math.random()*3+1)}>
           <img key={index} className={'image'} src={child.url}/>
           </div>
           )
     })
+ 
 
     return (
         <div className={'gallery-container'}>
@@ -33,7 +45,7 @@ class Gallery extends Component{
         options={packeryOptions}
         disableImagesLoaded={false}
         >
-        {childElements}
+        {tiles}
         </PackeryComponent>
         </div>
         )
