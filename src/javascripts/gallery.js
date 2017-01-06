@@ -39,8 +39,12 @@ class Gallery extends Component{
   render() {
  
     const tiles = this.state.visibleImages.map(function(child, index){
+      const generatedNumber = Math.floor(Math.random()*3+1);
+      console.log(generatedNumber);
+      const shape = (generatedNumber >= 2 ? 1 : Math.floor(Math.random()*2+2)); 
+      console.log('shape', shape);
       return (
-          <div className={'grid-item-'+Math.floor(Math.random()*3+1)}>
+          <div className={'grid-item-' + shape }>
           <img key={index} className={'image'} src={child.url} />
           </div>
           )
