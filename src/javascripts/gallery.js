@@ -28,7 +28,7 @@ class Gallery extends Component{
     }.bind(this)).sort(function(a, b){
       return a.year - b.year;
     });
-    this.setState({visibleImages: currentImages});
+    this.setState({visibleImages: []}, function(){ this.setState({visibleImages: currentImages})});
   }
 
   updateFilter = function(){ 
