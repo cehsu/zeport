@@ -1,7 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import PackeryComponent from './packery'
-import ButtonBarComponent from './buttonBar'
-import Images from './images'
+import ShowcaseComponent from './showcase'
 
 const packeryOptions = {
   transitionDuration: '1s'
@@ -10,52 +9,24 @@ const packeryOptions = {
 import 'stylesheets/modules/gallery'
 import 'stylesheets/utilities/clearfix'
 
-class Gallery extends Component{
-
+class Gallery extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      visibleImages: Images,
-      filterIndex: 0,
-      filterOptions: ['All', 'Illustration', 'Animation', 'Design', 'Photo', 'Video']
-    };
-    this.setVisibleImages = this.setVisibleImages.bind(this);
-    this.setFilter = this.setFilter.bind(this);
-  }
-
-  setVisibleImages() {
-    const currentFilter = this.state.filterOptions[this.state.filterIndex];
-    const currentImages = Images.filter(function(child, index){
-      return !!(currentFilter === 'All' || child.type === currentFilter)
-    }.bind(this));
-    this.setState({visibleImages: []}, function(){ this.setState({visibleImages: currentImages})});
-  }
-
-  setFilter() { 
-    console.log('filtering', this);
-    const newFilter = (this.state.filterIndex === 4 ? 0: this.state.filterIndex + 1);
-    this.setState({filterIndex: newFilter}, this.setVisibleImages);
   }
 
   render() {
- 
-    const tiles = this.state.visibleImages.map(function(child, index){
+    const tiles = this.props.images.map(function(image, index){
       const generatedNumber = Math.floor(Math.random()*10+1);
-      console.log(generatedNumber);
       const shape = (generatedNumber <= 7 ? 1 : generatedNumber <= 9 ? 2 : 3); 
-      console.log('shape', shape);
       return (
-          <div className={index+' grid-item-' + shape }>
-          <img key={index} className={'image'} src={child.url} />
+          <div key={index} className={index+' grid-item-' + shape }>
+          <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.url} />
           </div>
           )
-    });
-
-    const currentFilter = this.state.filterOptions[this.state.filterIndex];
+    }.bind(this));
 
     return (
         <div className={'gallery-container'}>
-        <ButtonBarComponent setFilter={this.setFilter} currentFilter={this.state.filterOptions[this.state.filterIndex]} />
         <PackeryComponent
         ref="PackeryComponent"
         className={'packery'}
@@ -69,5 +40,14 @@ class Gallery extends Component{
         )
   }
 
-};
+  shouldComponentUpdate(nextProps, nextState){
+    for(var prop in this.props){
+      if (this.props[prop] !== nextProps[prop]){
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
 export default Gallery
