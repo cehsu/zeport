@@ -1,31 +1,39 @@
 import React, {Component, PropTypes} from 'react'
-import 'stylesheets/modules/gallery'
+import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
 
 class Showcase extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dragX: null,
+      dragXStart: null,
+      dragXNext: null,
+      direction: null,
       wait: false,
       drag: false
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
-    this.throttle = this.throttle.bind(this);
-    this.patientIncrement = this.patientIncrement.bind(this);
     this.setDrag = this.setDrag.bind(this);
     this.start = this.start.bind(this);
   }
 
   render() {
    if(this.props.showcaseItem !== false){
-    const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
+     const showcaseItem = this.props.images[this.props.showcaseItem];
+     const showcaseIndex = this.props.showcaseIndex;
+     const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
           <img className={'showcase-image'} onTouchStart={this.start} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDragStart={this.start} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
+          <div>{showcaseItem.slideshow.map(function(item, index){
+             return (
+                 <img key={index} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+                 );
+          })}
           </div>
+        </div>
         )
     } else {
       return false;
@@ -43,46 +51,28 @@ class Showcase extends React.Component {
   }
 
   start() {
-    console.log('starting drag');
     this.setState({drag: true});
   } 
 
-  throttle(callback, event) {
-    console.log('throttling', 'context', this);
-    return function() {
-      console.log('inside wait', this.state.wait, callback, event);
-      if(!this.state.wait) {
-        console.log('dragging event');
-        callback(event);
-        this.setState({wait: true});
-        setTimeout(function(){if(!this.state.drag){console.log('unwaiting'); this.setState({wait: false})}}.bind(this), 500);
-      }
-    }.bind(this);
-  }
-  
   setDrag(){
-    console.log('ending drag');
-    this.setState({drag: false, dragX: null});
-  }
-
-  patientIncrement(event) {
-    const setIndex = function(indexEvent) {
-    (indexEvent.clientX < this.state.dragX) ? this.props.incrementIndex() : this.props.decrementIndex();
-    return this.setState({dragX: null});  
-    }
-    const func = this.throttle(setIndex.bind(this), event);
-    return func();
+    this.setState({direction: null, drag: false, dragXStart: null, dragXNext: null});
   }
 
   drag(event) {
-    console.log('draggin', 'context', this);
-    if(this.state.dragX === null){
-      this.setState({dragX: event.clientX});
-    } else {
-      console.log('incrementing/decrementing');
-      this.patientIncrement(event);
-      this.setDrag();
+    if(this.state.dragXStart === null){
+      console.log('setting startX', event.clientX);
+      this.setState({dragXStart: event.clientX});
+    } else if((this.state.dragXNext === null) && (event.clientX !== this.state.dragXStart)&&(this.state.dragXStart!==null)) {
+      console.log('setting nextX', event.clientX);
+      this.setState({dragXNext: event.clientX}, function(){
+        if(this.state.dragXStart < this.state.dragXNext){
+          this.setState({direction: 'right'}, this.props.decrementIndex);
+          } else if(this.state.dragXStart > this.state.dragXNext){
+          this.setState({direction: 'left'}, this.props.incrementIndex);
+        }
+      });
     }
+    console.log('dragging', event.clientX);
   }
 
   hideDrag(event) {
