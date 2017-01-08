@@ -19,21 +19,59 @@ class Showcase extends React.Component {
    if(this.props.showcaseItem !== false){
      const showcaseItem = this.props.images[this.props.showcaseItem];
      const showcaseIndex = this.props.showcaseIndex;
+     const slideShowLength = this.props.images[this.props.showcaseItem].slideshow.length;
      const setIndex = this.props.setIndex;
      const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
           <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
-          <div>{showcaseItem.slideshow.map(function(item, index){ 
+          <div className={'flex-container'} >{showcaseItem.slideshow.map(function(item, sliderIndex){
+           console.log(item, sliderIndex); 
              const setInnerIndex = function() {
-                  setIndex(index);
-                  console.log('setting index');
+               console.log('setting inner index');   
+               setIndex(sliderIndex);
                 };
-
+             const getClass = function() {
+            console.log('starting getclass', sliderIndex, showcaseIndex, slideShowLength);
+               if (((showcaseIndex - 2) >= 0) && (sliderIndex === (showcaseIndex - 2))){
+                 console.log(sliderIndex, showcaseIndex, 0);
+                 return 'first'; 
+               } else if ((showcaseIndex === 1) && (sliderIndex === (slideShowLength - 1))){
+                 console.log(sliderIndex, showcaseIndex, 0);
+                 return 'first';
+               } else if ((showcaseIndex === 0) && (sliderIndex === (slideShowLength - 2))){
+                 console.log(sliderIndex, showcaseIndex, 0);
+                 return 'first';
+               } else if ((((showcaseIndex - 1) >= 0) && (sliderIndex === (showcaseIndex - 1))) || ((showcaseIndex === 0) && (sliderIndex === (slideShowLength - 1)))){
+                 console.log(sliderIndex, showcaseIndex, 1);
+                 return 'second';
+               } else if (sliderIndex === showcaseIndex) {
+                 console.log(sliderIndex, showcaseIndex, 2);
+                 return 'third';
+               } else if (((showcaseIndex + 1) < slideShowLength) && (sliderIndex === (showcaseIndex + 1))){
+                 console.log(sliderIndex, showcaseIndex, 3);
+                 return 'fourth';
+               } else if ((showcaseIndex === (slideShowLength - 1))&& (sliderIndex === 0)){
+                 console.log(sliderIndex, showcaseIndex, 3);
+                 return 'fourth';
+                } else if (((showcaseIndex + 2) < slideShowLength) && (sliderIndex === (showcaseIndex + 2))){
+                  console.log(sliderIndex, showcaseIndex, 4);
+                  return 'fifth';
+               } else if ((showcaseIndex === (slideShowLength - 1)) && (sliderIndex === 1)){
+                 console.log(sliderIndex, showcaseIndex, 4);
+                 return 'fifth';
+               } else if ((showcaseIndex === (slideShowLength - 2)) && (sliderIndex === 0)) {
+                 console.log(sliderIndex, showcaseIndex, 4);
+                 return 'fifth';
+               }
+             };
+             if(getClass()){
              return (
-               <img key={index} onClick={setInnerIndex} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+               <img key={sliderIndex} onClick={setInnerIndex} className={(sliderIndex === showcaseIndex) ? 'focus '+getClass() : 'non-focus '+getClass()} src={item} />
               );
+             }
+             return false;
           })}
           </div>
         </div>
