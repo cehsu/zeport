@@ -19,15 +19,21 @@ class Showcase extends React.Component {
    if(this.props.showcaseItem !== false){
      const showcaseItem = this.props.images[this.props.showcaseItem];
      const showcaseIndex = this.props.showcaseIndex;
+     const setIndex = this.props.setIndex;
      const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
           <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
-          <div>{showcaseItem.slideshow.map(function(item, index){
+          <div>{showcaseItem.slideshow.map(function(item, index){ 
+             const setInnerIndex = function() {
+                  setIndex(index);
+                  console.log('setting index');
+                };
+
              return (
-                 <img key={index} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
-                 );
+               <img key={index} onClick={setInnerIndex} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+              );
           })}
           </div>
         </div>

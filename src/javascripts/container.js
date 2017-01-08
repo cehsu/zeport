@@ -21,6 +21,7 @@ class Container extends React.Component {
     } 
     this.setFilter = this.setFilter.bind(this);
     this.setShowcaseItem = this.setShowcaseItem.bind(this);
+    this.setShowcaseIndex = this.setShowcaseIndex.bind(this);
     this.incrementShowcaseIndex = this.incrementShowcaseIndex.bind(this);
     this.decrementShowcaseIndex = this.decrementShowcaseIndex.bind(this);
   }
@@ -31,7 +32,11 @@ class Container extends React.Component {
   }
 
   setShowcaseItem(index) {
-    this.setState({showcaseItem: index});
+    this.setState({showcaseItem: index, showcaseIndex: 0});
+  }
+
+  setShowcaseIndex(index) {
+    this.setState({showcaseIndex: index});
   }
 
   incrementShowcaseIndex() {
@@ -57,7 +62,7 @@ class Container extends React.Component {
     return (
       <div className='container'>
         <Header setFilter={this.setFilter} filter={currentFilter} />
-        <Showcase {...this.state} incrementIndex={this.incrementShowcaseIndex} decrementIndex={this.decrementShowcaseIndex} images={visibleImages} />
+        <Showcase {...this.state} setIndex={this.setShowcaseIndex} incrementIndex={this.incrementShowcaseIndex} decrementIndex={this.decrementShowcaseIndex} images={visibleImages} />
         <Gallery setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
       </div>
