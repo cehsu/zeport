@@ -13,8 +13,9 @@ class Showcase extends React.Component {
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
     this.throttle = this.throttle.bind(this);
-    this.patientDrag = this.patientDrag.bind(this);
+    this.patientIncrement = this.patientIncrement.bind(this);
     this.setDrag = this.setDrag.bind(this);
+    this.start = this.start.bind(this);
   }
 
   render() {
@@ -22,7 +23,7 @@ class Showcase extends React.Component {
     const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
-          <img className={'showcase-image'} onDrag={this.patientDrag} onDragEnd={this.setDrag} src={image} />
+          <img className={'showcase-image'} onDragStart={this.start} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
           </div>
         )
@@ -41,6 +42,11 @@ class Showcase extends React.Component {
     document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
   }
 
+  start() {
+    console.log('starting drag');
+    this.setState({drag: true});
+  } 
+
   throttle(callback, event) {
     console.log('throttling', 'context', this);
     return function() {
@@ -49,21 +55,22 @@ class Showcase extends React.Component {
         console.log('dragging event');
         callback(event);
         this.setState({wait: true});
-        setTimeout(function(){if(!this.state.drag){console.log('unwaiting'); this.setState({wait: false})}}.bind(this), 500);;
+        setTimeout(function(){if(!this.state.drag){console.log('unwaiting'); this.setState({wait: false})}}.bind(this), 500);
       }
     }.bind(this);
   }
   
   setDrag(){
-    this.setState({drag: false});
+    console.log('ending drag');
+    this.setState({drag: false, dragX: null});
   }
 
-  patientDrag(event) {
-    this.setState({drag: true});
-    console.log('patiently dragging', 'context', this);
-    const drag = this.drag;
-    const func = this.throttle(this.drag, event);
-    console.log(func);
+  patientIncrement(event) {
+    const setIndex = function(indexEvent) {
+    (indexEvent.clientX < this.state.dragX) ? this.props.incrementIndex() : this.props.decrementIndex();
+    return this.setState({dragX: null});  
+    }
+    const func = this.throttle(setIndex.bind(this), event);
     return func();
   }
 
@@ -72,8 +79,9 @@ class Showcase extends React.Component {
     if(this.state.dragX === null){
       this.setState({dragX: event.clientX});
     } else {
-      return (event.clientX < this.state.dragX) ? this.props.decrementIndex() : this.props.incrementIndex();
-      this.setState({dragX: null});
+      console.log('incrementing/decrementing');
+      this.patientIncrement(event);
+      this.setDrag();
     }
   }
 
