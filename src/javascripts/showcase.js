@@ -58,9 +58,17 @@ class Showcase extends React.Component {
   }
 
   drag(event) {
+    if(event.type === 'drag'){
+    } else if (event.type === 'touch'){
+    }
     if(this.state.dragXStart === null){
+      if(event.type === 'drag'){
       this.setState({dragXStart: event.clientX});
-    } else if((this.state.dragXNext === null) && (event.clientX !== this.state.dragXStart)&&(this.state.dragXStart!==null)) {
+      } else if (event.type === 'touchmove'){
+        this.setState({dragXStart: event.touches[0].pageX});
+      }
+    } else if((this.state.dragXNext === null) && (this.state.dragXStart!==null)) {
+      if (event.type === 'drag' && (this.state.dragXStart !== event.clientX)){
       this.setState({dragXNext: event.clientX}, function(){
         if(this.state.dragXStart < this.state.dragXNext){
           this.setState({direction: 'right'}, this.props.decrementIndex);
@@ -68,6 +76,15 @@ class Showcase extends React.Component {
           this.setState({direction: 'left'}, this.props.incrementIndex);
         }
       });
+      } else if (event.type === 'touchmove' && (this.state.dragXStart !== event.touches[0].clientX)){
+      this.setState({dragXNext: event.touches[0].clientX}, function(){
+        if(this.state.dragXStart < this.state.dragXNext){
+          this.setState({direction: 'right'}, this.props.decrementIndex);
+        } else if (this.state.dragXStart > this.state.dragXNext) {
+          this.setState({direction: 'left'}, this.props.incrementIndex);
+        }
+        });
+      }
     }
   }
 
