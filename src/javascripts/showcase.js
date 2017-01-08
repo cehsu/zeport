@@ -23,7 +23,7 @@ class Showcase extends React.Component {
     const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
-          <img className={'showcase-image'} onDragStart={this.start} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
+          <img className={'showcase-image'} onTouchStart={this.start} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDragStart={this.start} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
           </div>
         )
