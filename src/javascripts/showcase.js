@@ -5,7 +5,16 @@ import 'stylesheets/utilities/clearfix'
 class Showcase extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      dragX: null,
+      wait: false,
+      drag: false
+    };
     this.hideDrag = this.hideDrag.bind(this);
+    this.drag = this.drag.bind(this);
+    this.throttle = this.throttle.bind(this);
+    this.patientDrag = this.patientDrag.bind(this);
+    this.setDrag = this.setDrag.bind(this);
   }
 
   render() {
@@ -13,7 +22,7 @@ class Showcase extends React.Component {
     const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
-          <img onDrag={this.hideDrag} src={image} />
+          <img className={'showcase-image'} onDrag={this.patientDrag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
           </div>
         )
@@ -22,19 +31,60 @@ class Showcase extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    if(this.props.showcaseItem !== false){
+    document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
+    }
+   }
+
+  componentWillUnmount() {
+    document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
+  }
+
+  throttle(callback, event) {
+    console.log('throttling', 'context', this);
+    return function() {
+      console.log('inside wait', this.state.wait, callback, event);
+      if(!this.state.wait) {
+        console.log('dragging event');
+        callback(event);
+        this.setState({wait: true});
+        setTimeout(function(){if(!this.state.drag){console.log('unwaiting'); this.setState({wait: false})}}.bind(this), 500);;
+      }
+    }.bind(this);
+  }
+  
+  setDrag(){
+    this.setState({drag: false});
+  }
+
+  patientDrag(event) {
+    this.setState({drag: true});
+    console.log('patiently dragging', 'context', this);
+    const drag = this.drag;
+    const func = this.throttle(this.drag, event);
+    console.log(func);
+    return func();
+  }
+
+  drag(event) {
+    console.log('draggin', 'context', this);
+    if(this.state.dragX === null){
+      this.setState({dragX: event.clientX});
+    } else {
+      return (event.clientX < this.state.dragX) ? this.props.decrementIndex() : this.props.incrementIndex();
+      this.setState({dragX: null});
+    }
+  }
+
   hideDrag(event) {
     if(this.props.showcaseItem !== false){
-    const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
-     console.log("dragStart");
-     // Set the drag's format and data. Use the event target's id for the data 
-     event.dataTransfer.setData("text/plain", event.target.id);
-      // Create an image and use it for the drag image
-      // NOTE: change "example.gif" to an existing image or the image will not
-      // be created and the default drag image will be used.
+      event.dataTransfer.effectAllowed = 'none';
+      const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
+      event.dataTransfer.setData("text/plain", event.target.id);
       var img = new Image(); 
-       img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="; 
-        event.dataTransfer.setDragImage(img, 100, 100);
-      this.props.setIndex(event);
+      img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="; 
+      event.dataTransfer.setDragImage(img, 100, 100);
     }
   }
 

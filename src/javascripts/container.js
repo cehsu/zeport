@@ -17,11 +17,12 @@ class Container extends React.Component {
       filterIndex: 0,
       filterOptions: ['All', 'Illustration', 'Animation', 'Design', 'Film', 'Photo'],
       showcaseItem: false,
-      showcaseIndex: 0
+      showcaseIndex: 0,
     } 
     this.setFilter = this.setFilter.bind(this);
     this.setShowcaseItem = this.setShowcaseItem.bind(this);
-    this.setShowcaseIndex = this.setShowcaseIndex.bind(this);
+    this.incrementShowcaseIndex = this.incrementShowcaseIndex.bind(this);
+    this.decrementShowcaseIndex = this.decrementShowcaseIndex.bind(this);
   }
 
   setFilter() {
@@ -30,12 +31,21 @@ class Container extends React.Component {
   }
 
   setShowcaseItem(index) {
-    console.log('settingShowcaseItem', index);
     this.setState({showcaseItem: index});
   }
 
-  setShowcaseIndex(event) {
-    console.log(event);
+  incrementShowcaseIndex() {
+    const showcaseIndex = this.state.showcaseIndex;
+    const slideshowLength = Images[this.state.showcaseItem].slideshow.length;
+    const newShowcaseIndex = (showcaseIndex === (slideshowLength - 1)) ? 0 : showcaseIndex + 1;
+    this.setState({showcaseIndex: newShowcaseIndex});
+  }
+  
+  decrementShowcaseIndex() {
+    const showcaseIndex = this.state.showcaseIndex;
+    const slideshowLength = Images[this.state.showcaseItem].slideshow.length;
+    const newShowcaseIndex = (showcaseIndex === 0) ? slideshowLength - 1 : showcaseIndex - 1;
+    this.setState({showcaseIndex: newShowcaseIndex});
   }
 
   render () {
@@ -47,7 +57,7 @@ class Container extends React.Component {
     return (
       <div className='container'>
         <Header setFilter={this.setFilter} filter={currentFilter} />
-        <Showcase {...this.state} setIndex={this.setShowcaseIndex} images={visibleImages} />
+        <Showcase {...this.state} incrementIndex={this.incrementShowcaseIndex} decrementIndex={this.decrementShowcaseIndex} images={visibleImages} />
         <Gallery setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
       </div>

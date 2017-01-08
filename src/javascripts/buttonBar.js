@@ -9,7 +9,6 @@ class ButtonBar extends React.Component {
 
   render() {  
     const isHidden = !(this.props.isHeader && this.props.shrink || !this.props.isHeader && !this.props.shrink);
-    console.log(this.props.isHeader, isHidden);
     return (
         <div className={isHidden ? 'hidden button-bar': this.props.isHeader ? 'header-bar' : 'button-bar'}>
           <div onClick={this.props.setFilter} className={'button touch'}>{this.props.filter}</div>
