@@ -8,14 +8,11 @@ class Showcase extends React.Component {
     this.state = {
       dragXStart: null,
       dragXNext: null,
-      direction: null,
-      wait: false,
-      drag: false
+      direction: null
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
     this.setDrag = this.setDrag.bind(this);
-    this.start = this.start.bind(this);
   }
 
   render() {
@@ -25,7 +22,7 @@ class Showcase extends React.Component {
      const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex]
     return (
         <div>
-          <img className={'showcase-image'} onTouchStart={this.start} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDragStart={this.start} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
+          <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
           <div>{this.props.images[this.props.showcaseItem].name}</div>
           <div>{showcaseItem.slideshow.map(function(item, index){
              return (
@@ -50,20 +47,14 @@ class Showcase extends React.Component {
     document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
   }
 
-  start() {
-    this.setState({drag: true});
-  } 
-
   setDrag(){
-    this.setState({direction: null, drag: false, dragXStart: null, dragXNext: null});
+    this.setState({direction: null, dragXStart: null, dragXNext: null});
   }
 
   drag(event) {
     if(this.state.dragXStart === null){
-      console.log('setting startX', event.clientX);
       this.setState({dragXStart: event.clientX});
     } else if((this.state.dragXNext === null) && (event.clientX !== this.state.dragXStart)&&(this.state.dragXStart!==null)) {
-      console.log('setting nextX', event.clientX);
       this.setState({dragXNext: event.clientX}, function(){
         if(this.state.dragXStart < this.state.dragXNext){
           this.setState({direction: 'right'}, this.props.decrementIndex);
@@ -72,7 +63,6 @@ class Showcase extends React.Component {
         }
       });
     }
-    console.log('dragging', event.clientX);
   }
 
   hideDrag(event) {
