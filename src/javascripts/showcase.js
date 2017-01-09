@@ -29,8 +29,21 @@ class Showcase extends React.Component {
           <div className={'flex-container'} >{showcaseItem.slideshow.map(function(item, sliderIndex){
            console.log(item, sliderIndex); 
              const setInnerIndex = function() {
-               console.log('setting inner index');   
-               setIndex(sliderIndex);
+               console.log('setting inner index');
+               //remove first element
+               document.getElementsByClassName('first')[0].classList.add('outgoing');
+               //for two steps do the same at twice speed add visible class to 6th element, set timeout to 7th and 2nd (also need to make neg one and neg two elements for right spin)
+               
+               //transition everyone else  
+               const things = document.getElementsByClassName('slider-item');
+               for(var props in things){
+                 if(props >= 0){
+                   console.log('props num', props, things[props]);
+                 }
+               } 
+               //set new index
+               //document.getElementsByClassName('outgoing')[0].remove();
+               setTimeout(function(){setIndex(sliderIndex);}.bind(this),500);
                 };
              const getClass = function() {
             console.log('starting getclass', sliderIndex, showcaseIndex, slideShowLength);
@@ -68,7 +81,7 @@ class Showcase extends React.Component {
              };
              if(getClass()){
              return (
-               <img key={sliderIndex} onClick={setInnerIndex} className={(sliderIndex === showcaseIndex) ? 'focus '+getClass() : 'non-focus '+getClass()} src={item} />
+               <img key={sliderIndex} onClick={setInnerIndex} className={(sliderIndex === showcaseIndex) ? 'slider-item focus '+getClass() + ' slider-key-' + sliderIndex : 'slider-item non-focus '+getClass()+' slider-key-'+sliderIndex} src={item} />
               );
              }
              return false;
