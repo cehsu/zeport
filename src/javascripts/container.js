@@ -62,7 +62,7 @@ class Container extends React.Component {
     return (
       <div className='container'>
         <Header setFilter={this.setFilter} filter={currentFilter} />
-        <Showcase {...this.state} setIndex={this.setShowcaseIndex} incrementIndex={this.incrementShowcaseIndex} decrementIndex={this.decrementShowcaseIndex} images={visibleImages} />
+      {this.state.showcaseItem !== false &&   <Showcase {...this.state} setIndex={this.setShowcaseIndex} incrementIndex={this.incrementShowcaseIndex} decrementIndex={this.decrementShowcaseIndex} images={visibleImages} />}
         <Gallery setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
       </div>

@@ -1,11 +1,26 @@
 @import 'stylesheets/config/colors'
- 
+
+.track-container 
+  width: 600px
+  height: 100px
+  background: grey
+  overflow: auto
+  margin: 20px
+
+.flex-container 
+  display: flex
+  width: 2000px
+  flex-direction: row
+  flex-wrap: nowrap
+  transform: translate(-100px, 0)
+  transition: 0.5s
+
+.slider-item 
+  width: 100px
+  flex-shrink: 0
+
 .showcase-image 
   cursor: ew-resize
-
-.slider-item
-  width: 20%
-  transition: width 0.5s
 
 .outgoing
   visibility: hidden
