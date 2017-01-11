@@ -19,6 +19,7 @@ class Showcase extends React.Component {
     this.drag = this.drag.bind(this);
     this.setDrag = this.setDrag.bind(this);
     this.setIndex = this.setIndex.bind(this);
+    this.setFocus = this.setFocus.bind(this);
     this.incrementIndex = this.incrementIndex.bind(this);
     this.decrementIndex = this.decrementIndex.bind(this);
   }
@@ -29,10 +30,21 @@ class Showcase extends React.Component {
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
      const setIndex = this.setIndex;
+     const setFocus = this.setFocus;
        return (
         <div>
           <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />
           <div>{showcaseItem.name}</div>
+          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
+            <div>hello</div>
+            {slideshow.map(function(item, index){
+              return (
+                <img key={index} onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+              )
+            })
+            }
+
+            </div> }
           {slideShowLength > 4 && <div className={'track-container'}>
           <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'flex-container'} >
             <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 4]} />
@@ -66,6 +78,10 @@ class Showcase extends React.Component {
     document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
   }
 
+  setFocus(newIndex) {
+    this.setState({showcaseIndex: newIndex});
+  }
+  
   setIndex(newIndex, oldIndex) {
     const length = this.state.length;
     if (!this.state.sliding){
@@ -160,15 +176,7 @@ class Showcase extends React.Component {
       event.dataTransfer.setDragImage(img, 100, 100);
     }
   }
- 
-  shouldComponentUpdate(nextProps, nextState) {
-    for(var prop in nextState){
-      if(this.state[prop] !== nextState[prop]){
-        return true;
-      }
-    }
-    return false;
-  } 
+  
 }
 
 export default Showcase
