@@ -8,51 +8,47 @@ class Showcase extends React.Component {
     this.state = {
       dragXStart: null,
       dragXNext: null,
-      direction: null
+      direction: null,
+      xOffset: -200,
+      showcaseIndex: 0,
+      transition: '0.5s'
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
     this.setDrag = this.setDrag.bind(this);
+    this.setIndex = this.setIndex.bind(this);
+    this.incrementIndex = this.incrementIndex.bind(this);
+    this.decrementIndex = this.decrementIndex.bind(this);
   }
 
   render() {
     const showcaseItem = this.props.images[this.props.showcaseItem];
-     const showcaseIndex = this.props.showcaseIndex;
-     const slideshow = this.props.images[this.props.showcaseItem].slideshow;
+    console.log('showcaseItem var', showcaseItem);
+     const showcaseIndex = this.state.showcaseIndex;
+     const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
-     const setIndex = this.props.setIndex;
-     const image = this.props.images[this.props.showcaseItem].slideshow[this.props.showcaseIndex];
-             const setInnerIndex = function() {
-               //animate translate
-               
-               //set new index and offset
-               setTimeout(function(){setIndex(sliderIndex);}.bind(this),500);
-             };
-
-
-    
+     const setIndex = this.setIndex;
        return (
-    
         <div>
-          <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />
-          <div>{this.props.images[this.props.showcaseItem].name}</div>
+          <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />
+          <div>{showcaseItem.name}</div>
           {slideShowLength > 4 && <div className={'track-container'}>
-          <div className={'flex-container'}>
-            <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[slideShowLength - 4]} />
-            <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[slideShowLength - 3]} />
-            <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[slideShowLength - 2]} />
-            <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[slideShowLength - 1]} />
+          <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'flex-container'} >
+            <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 4]} />
+            <img onClick={() => this.setIndex((slideShowLength - 3), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 3]} />
+            <img onClick={() => this.setIndex((slideShowLength - 2), showcaseIndex, slideShowLength)} className={((slideShowLength - 2) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[slideShowLength - 2]} />
+            <img onClick={() => this.setIndex((slideShowLength - 1), showcaseIndex, slideShowLength)} className={((slideShowLength - 1) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[slideShowLength - 1]} />
 
-          {showcaseItem.slideshow.map(function(item, sliderIndex){
+          {slideshow.map(function(item, sliderIndex){
              return (
-               <img key={sliderIndex} onClick={setInnerIndex} className={(sliderIndex === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={item} />
+               <img key={sliderIndex} onClick={() => setIndex(sliderIndex, showcaseIndex, slideShowLength)} className={(sliderIndex === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={item} />
               );
              }
           )}
-           <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[0]} />
-           <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[1]} />
-           <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[2]} />
-           <img onClick={setInnerIndex} className={'slider-item non-focus'} src={slideshow[3]} />
+           <img onClick={() => this.setIndex(0, showcaseIndex, slideShowLength)} className={(0 === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[0]} />
+           <img onClick={() => this.setIndex(1, showcaseIndex, slideShowLength)} className={(1 === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[1]} />
+           <img onClick={() => this.setIndex(2, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[2]} />
+           <img onClick={() => this.setIndex(3, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[3]} />
           </div>
           </div>}
         </div>
@@ -67,6 +63,46 @@ class Showcase extends React.Component {
 
   componentWillUnmount() {
     document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
+  }
+
+  setIndex(newIndex, oldIndex, length) {
+     console.log('calling local function');
+    if((newIndex - oldIndex) > 3){
+    console.log('inside special cases');
+    const tx = this.state.xOffset - ((oldIndex - (length - newIndex))*100);
+    console.log('newIndex', newIndex);
+    console.log('oldIndex', oldIndex);
+    console.log('length', length);
+    console.log('tx', tx);
+    this.setState({xOffset: tx, showcaseIndex: newIndex});
+    } else if ((oldIndex - newIndex) > 3) {
+     console.log('big to small index');
+    const tx = this.state.xOffset - ((length - oldIndex)*100);
+    console.log('newIndex', newIndex);
+    console.log('oldIndex', oldIndex);
+    console.log('length', length);
+    console.log('tx', tx);
+    this.setState({xOffset: tx, showcaseIndex: newIndex, transition: '0s'}, function(){this.setState({xOffset: -(length*100), transition: '0.5s'})}.bind(this));
+    
+    } else {
+     console.log('normal cases');
+    const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
+    console.log('newIndex', newIndex);
+    console.log('oldIndex', oldIndex);
+    console.log('length', length);
+    console.log('tx', tx);
+    this.setState({xOffset: tx, showcaseIndex: newIndex});
+    }
+
+    
+  }
+ 
+  incrementIndex() {
+    this.setState({slideshowIndex: (this.state.slideshowIndex === this.state.length - 1) ? 0 : this.state.slideshowIndex + 1, xOffset: this.state.xOffset-100});
+  }
+  
+  decrementIndex() {
+    this.setState({slideshowIndex: (this.state.slideshowIndex === 0) ? this.length - 1 : this.state.slideshowIndex - 1, xOffset: this.state.xOffset + 100});
   }
 
   setDrag(){
@@ -87,17 +123,17 @@ class Showcase extends React.Component {
       if (event.type === 'drag' && (this.state.dragXStart !== event.clientX)){
       this.setState({dragXNext: event.clientX}, function(){
         if(this.state.dragXStart < this.state.dragXNext){
-          this.setState({direction: 'right'}, this.props.decrementIndex);
+          this.setState({direction: 'right'}, this.decrementIndex);
           } else if(this.state.dragXStart > this.state.dragXNext){
-          this.setState({direction: 'left'}, this.props.incrementIndex);
+          this.setState({direction: 'left'}, this.incrementIndex);
         }
       });
       } else if (event.type === 'touchmove' && (this.state.dragXStart !== event.touches[0].clientX)){
       this.setState({dragXNext: event.touches[0].clientX}, function(){
         if(this.state.dragXStart < this.state.dragXNext){
-          this.setState({direction: 'right'}, this.props.decrementIndex);
+          this.setState({direction: 'right'}, this.decrementIndex);
         } else if (this.state.dragXStart > this.state.dragXNext) {
-          this.setState({direction: 'left'}, this.props.incrementIndex);
+          this.setState({direction: 'left'}, this.incrementIndex);
         }
         });
       }
@@ -114,8 +150,15 @@ class Showcase extends React.Component {
       event.dataTransfer.setDragImage(img, 100, 100);
     }
   }
-
-
+ 
+  shouldComponentUpdate(nextProps, nextState) {
+    for(var prop in nextState){
+      if(this.state[prop] !== nextState[prop]){
+        return true;
+      }
+    }
+    return false;
+  } 
 }
 
 export default Showcase
