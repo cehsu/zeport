@@ -11,6 +11,7 @@ class Showcase extends React.Component {
       direction: null,
       xOffset: -200,
       showcaseIndex: 0,
+      sliding: false,
       transition: '0.5s',
       length: this.props.images[this.props.showcaseItem].slideshow.length
     };
@@ -65,7 +66,8 @@ class Showcase extends React.Component {
     document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
   }
 
-  setIndex(newIndex, oldIndex, length) {
+  setIndex(newIndex, oldIndex) {
+    const length = this.state.length;
      console.log('calling local function');
     if((newIndex - oldIndex) > 3){
     console.log('small to big');
@@ -123,17 +125,15 @@ class Showcase extends React.Component {
   }
  
   incrementIndex() {
-    this.setState({showcaseIndex: (this.state.showcaseIndex === this.state.length - 1) ? 0 : this.state.showcaseIndex + 1, xOffset: this.state.xOffset-100});
+    const newIndex = (this.state.showcaseIndex === this.state.length - 1) ? 0 : (this.state.showcaseIndex + 1)
+    const oldIndex = this.state.showcaseIndex;
+    this.setIndex(newIndex, oldIndex);
   }
   
   decrementIndex() {
-    console.log(this.state.showcaseIndex === 0)
-      console.log(this.state.length);
     const newIndex = (this.state.showcaseIndex === 0) ? (this.state.length - 1) : (this.state.showcaseIndex - 1);
-    const newOffset = this.state.xOffset + 100;
-    console.log('decrementing');
-    console.log('newIndex', newIndex, 'newOffset', newOffset);
-    this.setState({showcaseIndex: (this.state.showcaseIndex === 0) ? this.state.length - 1 : this.state.showcaseIndex - 1, xOffset: this.state.xOffset + 100});
+    const oldIndex = this.state.showcaseIndex;
+    this.setIndex(newIndex, oldIndex);
   }
 
   setDrag(){
