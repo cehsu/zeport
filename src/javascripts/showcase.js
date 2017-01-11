@@ -75,6 +75,20 @@ class Showcase extends React.Component {
     console.log('length', length);
     console.log('tx', tx);
     this.setState({xOffset: tx, showcaseIndex: newIndex});
+    if (this.state.xOffset > -300){
+      console.log('zipping to right');
+      setTimeout(
+        function(){
+          console.log('zooming');
+          this.setState({transition: '0s', xOffset: this.state.xOffset - (length * 100)});
+        }.bind(this), 550);
+    setTimeout(
+        function(){
+          this.setState({transition: '0.5s'});
+        }.bind(this), 590);
+
+    }
+
     } else if ((oldIndex - newIndex) > 3) {
      console.log('big to small index');
     const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
