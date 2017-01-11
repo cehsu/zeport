@@ -43,7 +43,7 @@ class Gallery extends React.Component {
   shouldComponentUpdate(nextProps, nextState){
     for(var prop in this.props){
       if (this.props[prop] !== nextProps[prop]){
-        return true;
+        return false;
       }
     }
     return false;

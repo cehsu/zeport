@@ -11,7 +11,8 @@ class Showcase extends React.Component {
       direction: null,
       xOffset: -200,
       showcaseIndex: 0,
-      transition: '0.5s'
+      transition: '0.5s',
+      length: this.props.images[this.props.showcaseItem].slideshow.length
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
@@ -23,7 +24,6 @@ class Showcase extends React.Component {
 
   render() {
     const showcaseItem = this.props.images[this.props.showcaseItem];
-    console.log('showcaseItem var', showcaseItem);
      const showcaseIndex = this.state.showcaseIndex;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
@@ -68,8 +68,8 @@ class Showcase extends React.Component {
   setIndex(newIndex, oldIndex, length) {
      console.log('calling local function');
     if((newIndex - oldIndex) > 3){
-    console.log('inside special cases');
-    const tx = this.state.xOffset - ((oldIndex - (length - newIndex))*100);
+    console.log('small to big');
+    const tx = this.state.xOffset + ((oldIndex + (length - newIndex))*100);
     console.log('newIndex', newIndex);
     console.log('oldIndex', oldIndex);
     console.log('length', length);
@@ -77,13 +77,24 @@ class Showcase extends React.Component {
     this.setState({xOffset: tx, showcaseIndex: newIndex});
     } else if ((oldIndex - newIndex) > 3) {
      console.log('big to small index');
-    const tx = this.state.xOffset - ((length - oldIndex)*100);
+    const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
     console.log('newIndex', newIndex);
     console.log('oldIndex', oldIndex);
     console.log('length', length);
     console.log('tx', tx);
-    this.setState({xOffset: tx, showcaseIndex: newIndex, transition: '0s'}, function(){this.setState({xOffset: -(length*100), transition: '0.5s'})}.bind(this));
-    
+    this.setState({xOffset: tx, showcaseIndex: newIndex});
+    if (this.state.xOffset < -200){
+      setTimeout(
+        function(){
+          console.log('zooming');
+          this.setState({transition: '0s', xOffset: this.state.xOffset + (length * 100)});
+        }.bind(this), 550);
+    setTimeout(
+        function(){
+          this.setState({transition: '0.5s'});
+        }.bind(this), 590);
+
+    }
     } else {
      console.log('normal cases');
     const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
@@ -98,11 +109,17 @@ class Showcase extends React.Component {
   }
  
   incrementIndex() {
-    this.setState({slideshowIndex: (this.state.slideshowIndex === this.state.length - 1) ? 0 : this.state.slideshowIndex + 1, xOffset: this.state.xOffset-100});
+    this.setState({showcaseIndex: (this.state.showcaseIndex === this.state.length - 1) ? 0 : this.state.showcaseIndex + 1, xOffset: this.state.xOffset-100});
   }
   
   decrementIndex() {
-    this.setState({slideshowIndex: (this.state.slideshowIndex === 0) ? this.length - 1 : this.state.slideshowIndex - 1, xOffset: this.state.xOffset + 100});
+    console.log(this.state.showcaseIndex === 0)
+      console.log(this.state.length);
+    const newIndex = (this.state.showcaseIndex === 0) ? (this.state.length - 1) : (this.state.showcaseIndex - 1);
+    const newOffset = this.state.xOffset + 100;
+    console.log('decrementing');
+    console.log('newIndex', newIndex, 'newOffset', newOffset);
+    this.setState({showcaseIndex: (this.state.showcaseIndex === 0) ? this.state.length - 1 : this.state.showcaseIndex - 1, xOffset: this.state.xOffset + 100});
   }
 
   setDrag(){
