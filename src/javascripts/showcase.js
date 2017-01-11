@@ -68,60 +68,39 @@ class Showcase extends React.Component {
 
   setIndex(newIndex, oldIndex) {
     const length = this.state.length;
-     console.log('calling local function');
-    if((newIndex - oldIndex) > 3){
-    console.log('small to big');
-    const tx = this.state.xOffset + ((oldIndex + (length - newIndex))*100);
-    console.log('newIndex', newIndex);
-    console.log('oldIndex', oldIndex);
-    console.log('length', length);
-    console.log('tx', tx);
-    this.setState({xOffset: tx, showcaseIndex: newIndex});
-    if (this.state.xOffset > -300){
-      console.log('zipping to right');
-      setTimeout(
-        function(){
-          console.log('zooming');
-          this.setState({transition: '0s', xOffset: this.state.xOffset - (length * 100)});
-        }.bind(this), 550);
-    setTimeout(
-        function(){
-          this.setState({transition: '0.5s'});
-        }.bind(this), 590);
-
+    if (!this.state.sliding){
+      this.setState({sliding: true});
+      if((newIndex - oldIndex) > 3){
+        const tx = this.state.xOffset + ((oldIndex + (length - newIndex))*100);
+        this.setState({xOffset: tx, showcaseIndex: newIndex});
+        if (this.state.xOffset > -300){
+          setTimeout(
+            function(){
+              this.setState({transition: '0s', xOffset: this.state.xOffset - (length * 100)});
+            }.bind(this), 550);
+          setTimeout(
+            function(){
+              this.setState({transition: '0.5s', sliding: false});
+            }.bind(this), 590);
+       }
+      } else if ((oldIndex - newIndex) > 3) {
+         const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
+         this.setState({xOffset: tx, showcaseIndex: newIndex});
+         if (this.state.xOffset < -200){
+           setTimeout(
+             function(){
+               this.setState({transition: '0s', xOffset: this.state.xOffset + (length * 100)});
+             }.bind(this), 550);
+           setTimeout(
+             function(){
+               this.setState({transition: '0.5s', sliding: false});
+             }.bind(this), 590);
+         }
+      } else {
+        const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
+        this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
+      }
     }
-
-    } else if ((oldIndex - newIndex) > 3) {
-     console.log('big to small index');
-    const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
-    console.log('newIndex', newIndex);
-    console.log('oldIndex', oldIndex);
-    console.log('length', length);
-    console.log('tx', tx);
-    this.setState({xOffset: tx, showcaseIndex: newIndex});
-    if (this.state.xOffset < -200){
-      setTimeout(
-        function(){
-          console.log('zooming');
-          this.setState({transition: '0s', xOffset: this.state.xOffset + (length * 100)});
-        }.bind(this), 550);
-    setTimeout(
-        function(){
-          this.setState({transition: '0.5s'});
-        }.bind(this), 590);
-
-    }
-    } else {
-     console.log('normal cases');
-    const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
-    console.log('newIndex', newIndex);
-    console.log('oldIndex', oldIndex);
-    console.log('length', length);
-    console.log('tx', tx);
-    this.setState({xOffset: tx, showcaseIndex: newIndex});
-    }
-
-    
   }
  
   incrementIndex() {
