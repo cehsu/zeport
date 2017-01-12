@@ -14,7 +14,7 @@ class Showcase extends React.Component {
       showcaseIndex: (this.props.params.number - 1),
       sliding: false,
       transition: '0.5s',
-      length: this.props.images[this.props.params.piece].slideshow.length
+      length: this.props.params.piece ? this.props.images[this.props.params.piece].slideshow.length : this.props.images[30].slideshow.length
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
@@ -26,7 +26,7 @@ class Showcase extends React.Component {
   }
 
   render() {
-    const showcaseItem = this.props.images[this.props.params.piece];
+    const showcaseItem = this.props.params.piece ? this.props.images[this.props.params.piece]: this.props.images[30];
      const showcaseIndex = this.state.showcaseIndex;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;

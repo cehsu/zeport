@@ -39,13 +39,13 @@ class Container extends React.Component {
   render () {
     const currentFilter = this.state.filter;
     const visibleImages = Images.filter(function(image, index){
-      return !!(currentFilter === 'All' || image.type === currentFilter)
+      return !!((currentFilter === 'All' && image.type !== "About") || image.type === currentFilter)
     });
 
     return (
       <div className='container'>
         <Header params={this.props.params} setFilter={this.setFilter} filter={currentFilter} />
-      {this.props.params.piece &&   <Showcase params={this.props.params} {...this.state} setIndex={this.setShowcaseIndex} images={visibleImages} />}
+      {(this.props.params.piece||(this.props.params.route === "about")) &&   <Showcase params={this.props.params} {...this.state} setIndex={this.setShowcaseIndex} images={visibleImages} />}
         <Gallery params={this.props.params} setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
       </div>
