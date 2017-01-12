@@ -45,7 +45,7 @@ class Container extends React.Component {
 
     return (
       <div className='container'>
-        <Header setFilter={this.setFilter} filter={currentFilter} />
+        <Header route={this.props.routeParams.route} setFilter={this.setFilter} filter={currentFilter} />
       {this.state.showcaseItem !== false &&   <Showcase {...this.state} setIndex={this.setShowcaseIndex} images={visibleImages} />}
         <Gallery setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
