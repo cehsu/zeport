@@ -20,7 +20,7 @@ class Gallery extends React.Component {
       const generatedNumber = Math.floor(Math.random()*10+1);
       const shape = (generatedNumber <= 7 ? 1 : generatedNumber <= 9 ? 2 : 3); 
       return (
-          <Link to={ {pathname: '/work', query: {piece: image.name+'&&'+(index+1)}} } key={index} className={index+' grid-item-' + shape }>
+          <Link to={ {pathname: '/work/'+index} } key={index} className={index+' grid-item-' + shape }>
           <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.url} />
           </Link>
           )

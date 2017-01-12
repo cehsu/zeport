@@ -14,7 +14,7 @@ class ButtonBar extends React.Component {
     return (
         <div className={isHidden ? 'hidden button-bar': this.props.isHeader ? 'header-bar' : 'button-bar'}>
           <Link to='/work' className={'button touch'}>Work</Link>
-          {this.props.route === 'work' && <div onClick={this.props.setFilter} className={'button touch'}>{this.props.filter}</div>}
+          {this.props.params.route === 'work' && <div onClick={this.props.setFilter} className={'button touch'}>{this.props.filter}</div>}
           <Link to='/about' className={'button intersect'}>About</Link>
           <div className={'button underline'}>Shop</div>
         </div>

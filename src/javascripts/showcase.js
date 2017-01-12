@@ -1,4 +1,6 @@
 import React, {Component, PropTypes} from 'react'
+import { Link } from 'react-router'
+import Images from 'javascripts/images'
 import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
 
@@ -25,7 +27,7 @@ class Showcase extends React.Component {
   }
 
   render() {
-    const showcaseItem = this.props.images[this.props.showcaseItem];
+    const showcaseItem = Images[this.props.params.piece];
      const showcaseIndex = this.state.showcaseIndex;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
@@ -39,7 +41,9 @@ class Showcase extends React.Component {
             <div>hello</div>
             {slideshow.map(function(item, index){
               return (
-                <img key={index} onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+                <Link to={ {pathname: '/work', query: {piece: item.name+'_'+(index+1)}} }>
+                  <img key={index} onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+                </Link>
               )
             })
             }
