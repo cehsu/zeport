@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react'
 import { Link } from 'react-router'
-import Images from 'javascripts/images'
 import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
 
@@ -15,7 +14,7 @@ class Showcase extends React.Component {
       showcaseIndex: 0,
       sliding: false,
       transition: '0.5s',
-      length: this.props.images[this.props.showcaseItem].slideshow.length
+      length: this.props.images[this.props.params.piece].slideshow.length
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
@@ -27,7 +26,7 @@ class Showcase extends React.Component {
   }
 
   render() {
-    const showcaseItem = Images[this.props.params.piece];
+    const showcaseItem = this.props.images[this.props.params.piece];
      const showcaseIndex = this.state.showcaseIndex;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
