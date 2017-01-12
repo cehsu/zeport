@@ -14,7 +14,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: 'all',
+      filter: 'All',
       showcaseItem: false,
       showcaseIndex: 0,
     } 
