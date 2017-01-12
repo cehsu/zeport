@@ -15,7 +15,6 @@ class Header extends React.Component {
  }
   
  render() {
-  console.log('headerprops', this.props);
    return (
       <div>
       <div className={this.state.shrink ? 'shrink header u-clearfix' : 'header u-clearfix'}>

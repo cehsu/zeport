@@ -20,7 +20,7 @@ class Gallery extends React.Component {
       const generatedNumber = Math.floor(Math.random()*10+1);
       const shape = (generatedNumber <= 7 ? 1 : generatedNumber <= 9 ? 2 : 3); 
       return (
-          <Link to={ {pathname: '/work/'+index} } key={index} className={index+' grid-item-' + shape }>
+          <Link to={ {pathname: '/work/'+index+'/1'} } key={index} className={index+' grid-item-' + shape }>
           <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.url} />
           </Link>
           )
@@ -41,14 +41,24 @@ class Gallery extends React.Component {
         )
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-    for(var prop in this.props){
-      if (this.props[prop] !== nextProps[prop]){
-        return false;
+  shouldComponentUpdate(nextProps, nextState) {
+    const thisImages = Object.getOwnPropertyNames(this.props.images);
+    const nextImages = Object.getOwnPropertyNames(nextProps.images);
+    if (thisImages.length !== nextImages.length) {
+      console.log('images changed');
+      return true;
+    }
+    for (var i = 0; i < thisImages.length; i++) {
+      const imageName = thisImages[i];
+      if (this.props.images[imageName] !== nextProps.images[imageName]) {
+        console.log('images changed');
+        return true;
       }
     }
+    console.log('images unchanged');
     return false;
   }
+
 }
 
 export default Gallery

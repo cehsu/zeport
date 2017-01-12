@@ -14,8 +14,7 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterIndex: 0,
-      filterOptions: ['All', 'Illustration', 'Animation', 'Design', 'Film', 'Photo'],
+      filter: 'all',
       showcaseItem: false,
       showcaseIndex: 0,
     } 
@@ -24,9 +23,9 @@ class Container extends React.Component {
     this.setShowcaseIndex = this.setShowcaseIndex.bind(this);
   }
 
-  setFilter() {
-    const newFilter = (this.state.filterIndex === 4 ? 0 : this.state.filterIndex + 1);
-    this.setState({filterIndex: newFilter});
+  setFilter(newFilter) {
+    console.log('setting filter');
+    this.setState({filter: newFilter});
   }
 
   setShowcaseItem(index) {
@@ -38,7 +37,7 @@ class Container extends React.Component {
   }
 
   render () {
-    const currentFilter = this.state.filterOptions[this.state.filterIndex];
+    const currentFilter = this.state.filter;
     const visibleImages = Images.filter(function(image, index){
       return !!(currentFilter === 'All' || image.type === currentFilter)
     });

@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
         <Router history={ hashHistory }>
-          <Route path='/(:route(/:piece))' component={Container}></Route>
+          <Route path='/(:route(/:piece(/:number)))' component={Container}></Route>
           </Router>
         );
   }

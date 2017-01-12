@@ -10,8 +10,8 @@ class Showcase extends React.Component {
       dragXStart: null,
       dragXNext: null,
       direction: null,
-      xOffset: -200,
-      showcaseIndex: 0,
+      xOffset: -200 - (100*(this.props.params.number - 1)),
+      showcaseIndex: (this.props.params.number - 1),
       sliding: false,
       transition: '0.5s',
       length: this.props.images[this.props.params.piece].slideshow.length
