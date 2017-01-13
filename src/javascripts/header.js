@@ -19,7 +19,7 @@ class Header extends React.Component {
       <div>
       <div className={this.state.shrink ? 'shrink header u-clearfix' : 'header u-clearfix'}>
         <div className={'header-content u-clearfix'}>
-          <Link to='/' className={'title'} >Zejian Shen</Link>
+          <Link to='/'><div className={'title'} >Zejian Shen</div></Link>
           <ButtonBarComponent route={this.props.route} className={this.state.shrink ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={this.state.shrink} isHeader={true} />
           </div>
       <div className={'socialButtons'}>

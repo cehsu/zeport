@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react'
 import { Router, Route, Link, hashHistory } from 'react-router';
 import 'stylesheets/modules/buttonbar'
 import 'stylesheets/utilities/clearfix'
-
 class ButtonBar extends React.Component {
   constructor(props) {
     super(props);
