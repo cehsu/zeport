@@ -17,13 +17,17 @@ class Header extends React.Component {
  render() {
    return (
       <div>
-      <div className={this.state.shrink ? 'shrink header u-clearfix' : 'header u-clearfix'}>
+      <div className={(this.props.params.route === 'work' && this.state.shrink) ? 'work shrink header u-clearfix' : (this.state.shrink) ? 'shrink header u-clearfix' : 'header u-clearfix'}>
         <div className={'header-content u-clearfix'}>
-          <Link to='/'><div className={'title'} >Zejian Shen</div></Link>
+          <div className={'title'}>
+            <Link className={'title-content'} to='/'>Zejian Shen</Link>
+          </div>
           <ButtonBarComponent route={this.props.route} className={this.state.shrink ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={this.state.shrink} isHeader={true} />
           </div>
       <div className={'socialButtons'}>
-      <i className="fa fa-instagram" aria-hidden="true"></i>
+          <a href='www.facebook.com/zesansan' className="social facebook">Facebook</a>
+          <a href='www.instagram.com/zesansan' className="social instagram">Instagram</a>
+          <a href='www.tumblr.com/kingsansan' className="social tumblr">Tumblr</a>
       </div>
           </div>
       <ButtonBarComponent route={this.props.route} {...this.props} shrink={this.state.shrink} isHeader={false} />
@@ -40,7 +44,7 @@ class Header extends React.Component {
  }
 
  toggleShrink() {
-   const shouldShrink = window.document.body.scrollTop > 130;
+   const shouldShrink = window.document.body.scrollTop > 170;
    if(shouldShrink) {
      this.setState({shrink: true});
    } else {
