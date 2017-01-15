@@ -16,7 +16,7 @@ class Header extends React.Component {
   
  render() {
    return (
-      <div>
+      <div className={'header-content'}>
       <div className={(this.props.params.route === 'work' && this.state.shrink) ? 'work shrink header u-clearfix' : (this.state.shrink) ? 'shrink header u-clearfix' : 'header u-clearfix'}>
         <div className={'header-content u-clearfix'}>
           <div className={'title'}>
@@ -27,7 +27,7 @@ class Header extends React.Component {
       <div className={'socialButtons'}>
         <div className={'social'} > 
         <svg
-          viewBox="0 0 125 108.3375"
+          viewBox="0 0 125 120"
           height="100%"
           id="svg_vimeo">
           <g

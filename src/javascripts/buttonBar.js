@@ -15,19 +15,19 @@ class ButtonBar extends React.Component {
     return (
         <div className={isHidden ? 'hidden button-bar': this.props.isHeader ? 'header-bar' : 'button-bar'}>
           <div className={'button-container'}>
-          <Link to='/work' className={'button touch'}>Work</Link>
-          <Link to='/about' className={'button intersect'}>About</Link>
+          <Link to='/work' className={'button underline'}>Work</Link>
+          <Link to='/about' className={'button underline'}>About</Link>
           <div className={'button underline'}>Shop</div>
           </div>
           <div key={0} className={this.props.params.route === 'work' ? 'work button-subbar' : 'button-subbar'}>
-          <ReactCSSTransitionGroup transitionName='example' transitionEnterTimeout={700} transitionLeaveTimeout={100}>
-          {this.props.params.route === 'work' && <div key={1} onClick={()=>this.props.setFilter('All')} className={'button touch filter'}>All</div>}
-           {this.props.params.route === 'work' && <div key={2} onClick={()=>this.props.setFilter('Illustration')} className={'button touch filter'}>Illustration</div>}
-           {this.props.params.route === 'work' && <div key={3} onClick={()=>this.props.setFilter('Comic')} className={'button touch filter'}>Comic</div>}
-           {this.props.params.route === 'work' && <div key={4} onClick={()=>this.props.setFilter('Animation')} className={'button touch filter'}>Animation</div>}
-           {this.props.params.route === 'work' && <div key={5} onClick={()=>this.props.setFilter('Design')} className={'button touch filter'}>Design</div>}
-           {this.props.params.route === 'work' && <div key={6} onClick={()=>this.props.setFilter('Film')} className={'button touch filter'}>Film</div>}
-           {this.props.params.route === 'work' && <div key={7} onClick={()=>this.props.setFilter('Photo')} className={'button touch filter'}>Photo</div>}
+          <ReactCSSTransitionGroup style={{width: '100%'}} transitionName='example' transitionEnterTimeout={100} transitionLeaveTimeout={100}>
+          {this.props.params.route === 'work' && <div key={1} onClick={()=>this.props.setFilter('All')} className={'button underline filter'}>All</div>}
+           {this.props.params.route === 'work' && <div key={2} onClick={()=>this.props.setFilter('Illustration')} className={'button underline filter'}>Illustration</div>}
+           {this.props.params.route === 'work' && <div key={3} onClick={()=>this.props.setFilter('Comic')} className={'button underline filter'}>Comic</div>}
+           {this.props.params.route === 'work' && <div key={4} onClick={()=>this.props.setFilter('Animation')} className={'button underline filter'}>Animation</div>}
+           {this.props.params.route === 'work' && <div key={5} onClick={()=>this.props.setFilter('Design')} className={'button underline filter'}>Design</div>}
+           {this.props.params.route === 'work' && <div key={6} onClick={()=>this.props.setFilter('Film')} className={'button underline filter'}>Film</div>}
+           {this.props.params.route === 'work' && <div key={7} onClick={()=>this.props.setFilter('Photo')} className={'button underline filter'}>Photo</div>}
           </ReactCSSTransitionGroup>
         </div>
           </div>

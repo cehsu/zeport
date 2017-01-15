@@ -5,14 +5,14 @@
 
 .example-enter .example-enter-active 
   opacity: 1
-  transition: opacity 500ms ease-in
+  transition: opacity 100ms ease-in
 
 .example-leave 
   opacity: 1
 
 .example-leave .example-leave-active 
   opacity: 0.01
-  transition: opacity 300ms ease-in
+  transition: opacity 100ms ease-in
 
 .button-bar
   margin: 200px 0 0
@@ -31,17 +31,20 @@
   text-align: center
 
 .button-subbar
+  display: inline-block
   font-size: 20px
   width: 100%
   text-align: center
   margin: auto
-  transition: all 0.2s ease-in-out
-  -webkit-transition: color 0.2s ease-in-out
+  transition: all 0s ease-in-out
+  -webkit-transition: color 0s ease-in-out
 
 .button-subbar .button
   color: rgba(255,255,255,0)
-  transition: all 0.2s ease-in-out
-  -webkit-transition: color 0.2s ease-in-out
+  transition: all 0s ease-in-out
+  -webkit-transition: color 0s ease-in-out
+  line-height: 45px
+  height: 45px
 
 .work .button
   color: rgba(0,0,0,1)
@@ -72,7 +75,6 @@
 
 .button
   position: relative
-  width: 90px
   vertical-align: middle
   color: black
   display: inline-block
@@ -81,6 +83,7 @@
   text-align: center
   transition: 0s
   margin: 0 5%
+  padding: 0 1%
   cursor: pointer
   -webkit-transition: 0s
   &:hover
@@ -98,47 +101,7 @@
     -webkit-transform: scale(0)
     transition: 0.5s
   &.filter
-    margin: 0 2%
-
-.touch
-  &::before
-    border-bottom: 3px solid black
-    border-left: 3px solid black
-    -webkit-transform-origin: 0 100%
-  &::after
-    border-top: 3px solid black
-    border-right: 3px solid black
-    -webkit-transform-origin: 100% 0%
-
-.touch:active
-  &::before, &::after
-    animation: shake .2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
-    transformation: translate3d(0,0,0) 1s step-end
-
-
-@keyframes shake
-  10%, 90%
-    transform: translate3d(-1px, 0, 0)
-
-  20%, 80%
-    transform: translate3d(2px, 0, 0)
-
-  30%, 50%, 70%
-    transform: translate3d(-4px, 0, 0)
-
-  40%, 60%
-    transform: translate3d(4px, 0, 0)
-
-
-.intersect
-  &::before
-    border-bottom: 3px solid black
-    border-left: 3px solid black
-    -webkit-transform-origin: 100% 0%
-  &::after
-    border-top: 3px solid black
-    border-right: 3px solid black
-    -webkit-transform-origin: 0% 100%
+    margin: 0 3%
 
 .underline
   &::before
