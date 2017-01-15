@@ -33,7 +33,7 @@ class Showcase extends React.Component {
      const setIndex = this.setIndex;
      const setFocus = this.setFocus;
        return (
-        <div>
+        <div className={'showcase-container'} >
           <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />
           <div>{showcaseItem.name}</div>
           {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
