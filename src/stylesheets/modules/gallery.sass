@@ -3,6 +3,13 @@
 .gallery-container
   z-index: 1
 
+.brick:hover .details
+  opacity: 1
+  visibility: visible
+.brick:hover .image
+  opacity: 0.5
+  color: black
+
 .image 
   padding: 5px
   width: 100%
@@ -13,6 +20,38 @@
   -moz-user-drag: none
   -o-user-drag: none
   user-drag: none
+
+.details
+  position: absolute
+  padding: 5px
+  color: white
+  opacity: 0
+  visibility: hidden
+  display: inline-block
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  text-align: center
+  background-color: black
+  background-clip: content-box
+  font-size: 1.6em
+  line-height: 1.1em
+
+.title-detail
+  text-transform: uppercase
+  font-weight: 400
+  display: block
+  top: 40%
+  position: relative
+  z-index: 5
+
+.type-detail
+  font-size: .8em
+  display: block
+  position: relative
+  top: 40%
+  z-index: 5
 
 @media screen and (max-width: 1000px)
   .grid-item-1
