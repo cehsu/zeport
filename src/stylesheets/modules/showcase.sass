@@ -4,6 +4,11 @@
   text-align: center
   margin: 0
 
+.slider-container
+  position: relative
+  margin: auto
+  width: 600px
+
 .track-container 
   text-align: center
   margin: auto
@@ -28,9 +33,6 @@
 .outgoing
   visibility: hidden
   width: 0
-
-.left
-  transform: translate(-100px)
 
 .focus 
   opacity: 1
@@ -82,3 +84,27 @@
   -moz-user-drag: none
   -o-user-drag: none
   user-drag: none
+
+.arrow
+  position: absolute
+  top: 50%
+  display: inline-block
+  width: 2rem
+  height: 2rem
+  border-top: .4rem solid black
+  border-right: .4rem solid black
+  transition: all 200ms ease
+  &.left
+    left: 0
+    transform: translate3d(0,-50%,0) rotate(-135deg)
+  &.right
+    right: 0
+    transform: translate3d(0,-50%,0) rotate(45deg)
+  &:hover
+    border-top: .4rem solid gold
+    border-right: .4rem solid gold
+    box-shadow: .2rem -.2rem 0 black
+    &.left
+      left: -.2rem
+    &.right
+      right: -.2rem

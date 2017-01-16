@@ -69,12 +69,19 @@
   background-repeat: no-repeat
   background-size: contain
   background-position: center center
+  &:hover 
+    fill: blue
+
+.social a
+  &:hover
+    fill: blue
 
 .mail
   width: 35px
 
 .button
   position: relative
+  text-transform: uppercase
   vertical-align: middle
   color: black
   display: inline-block
@@ -87,6 +94,9 @@
   cursor: pointer
   -webkit-transition: 0s
   &:hover
+    color: black
+    background: rgba(255,255,0,0.5)
+  &.active-route
     color: black
     background: rgba(255,255,0,0.5)
   &::before, &::after
@@ -113,6 +123,6 @@
     border-right: 0
     -webkit-transform-origin: 50% 50%
 
-.button:hover
+.button:hover, .button.active-route
   &::after, &::before
     -webkit-transform: scale(1)

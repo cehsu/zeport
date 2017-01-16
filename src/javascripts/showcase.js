@@ -49,8 +49,10 @@ class Showcase extends React.Component {
             }
 
             </div> }
-          {slideShowLength > 4 && <div className={'track-container'}>
-          <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'flex-container'} >
+          {slideShowLength > 4 && <div className={'slider-container'}>
+          <div onClick={this.decrementIndex}  className={'arrow left'}></div>
+            <div className={'track-container'}>
+            <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'flex-container'} >
             <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 4]} />
             <img onClick={() => this.setIndex((slideShowLength - 3), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 3]} />
             <img onClick={() => this.setIndex((slideShowLength - 2), showcaseIndex, slideShowLength)} className={((slideShowLength - 2) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[slideShowLength - 2]} />
@@ -67,6 +69,8 @@ class Showcase extends React.Component {
            <img onClick={() => this.setIndex(2, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[2]} />
            <img onClick={() => this.setIndex(3, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[3]} />
           </div>
+          </div>
+          <div onClick={this.incrementIndex} className={'arrow right'}></div>
           </div>}
         </div>
         )
