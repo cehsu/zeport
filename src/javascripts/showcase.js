@@ -34,7 +34,8 @@ class Showcase extends React.Component {
      const setFocus = this.setFocus;
        return (
         <div className={'showcase-container'} >
-          <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />
+        {showcaseItem.type !== "Animation" && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
+        {showcaseItem.type === "Animation" && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowfullscreen></iframe>}
           <div>{showcaseItem.name}</div>
           {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             <div>hello</div>
