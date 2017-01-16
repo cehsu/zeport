@@ -8,7 +8,7 @@ import Container from 'javascripts/container'
 class App extends React.Component {
   render() {
     return (
-        <Router history={ hashHistory }>
+        <Router onUpdate={() => window.scroll(0, 0)} history={ hashHistory }>
           <Route path='/(:route(/:piece(/:number)))' component={Container}></Route>
           </Router>
         );
