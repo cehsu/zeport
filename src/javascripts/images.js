@@ -2,6 +2,8 @@ var Images = [
 {   
   "name": "keepfresh",
   "type": "Comic",
+  "description": "A 24-hour take-out clerk recieves a mysterious, while a murderous motorcyclist is at large... ",
+  "publisher": "Published by Retrofit Comic and Big Planet Comic.",
   "year": 2013,
   "shape": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/50keepfresh_thumbs.jpg",
@@ -27,8 +29,9 @@ var Images = [
 
   ]},  
 {   
-  "name": "Jianbing",
+  "name": "Jian Bing (Tianjin Crepes)",
   "type": "Comic",
+  "publisher": "For Vice China, AD Zeizei.",
   "year": 2013,
   "shape": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/47jianbing_thumbs.jpg",
@@ -39,6 +42,8 @@ var Images = [
   "name": "Rugby Hugs",
   "type": "Illustration",
   "year": 2013,
+  "description": "Pen & Ink, Screen Tones",
+  "publisher": "For the 'Four Squares' show at Double Punch Gallery, San Francisco.",
   "shape": 2,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/36foursquares_thumbs.jpg",
   "slideshow": [
@@ -48,6 +53,7 @@ var Images = [
   "name": "To Edgar from an Admirer",
   "type": "Comic",
   "year": 1,
+  "publisher": "For the Antiques Roadshow anthology, edited by Alison Dubois.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/46antiques_thumbs.jpg",
   "slideshow": [
@@ -61,6 +67,8 @@ var Images = [
   "name": "A Beijing Afterschool Special",
   "type": "Illustration",
   "year": 2013,
+  "description": "Pen & Ink, Digital",
+  "publisher": "Personal piece prompted by an interview with Arteasta.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/34beijing_thumbs.jpg",
   "slideshow": [
@@ -71,6 +79,8 @@ var Images = [
   "type": "Comic",
   "year": 2012,
   "shape": 1,
+  "description": "A sexy poem for a sexy text.",
+  "publisher": "For Happiness #1, edited by super cutie miss Leah Wishnia.",
   "url": "http://zesansan.com/images/work/comics/thumbs/23happiness_thumb.jpg",
   "slideshow": [
     "http://zesansan.com/images/work/comics/ZS_1_web.jpg",
@@ -83,6 +93,8 @@ var Images = [
   "name": "Summer Garden",
   "type": "Illustration",
   "year": 2013,
+  "description": "Pen & Ink, Digital",
+  "publisher": "A motif or my cousin's wedding, I collaborated with graphic designer George Chang for this project, even the wedding cake was covered with this pattern.",
   "shape": 2,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/33wedding_thumbs.jpg",
   "slideshow": [
@@ -93,6 +105,8 @@ var Images = [
   "name": "Night People",
   "type": "Comic",
   "year": 2012,
+  "description": "Evil cults, revenge, and signature moves.",
+  "publisher": "For Chameleon 2, edited by Jesse Balmer and Jonny Negron. 2011",
   "shape": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/21cham2_thumb.jpg",
   "slideshow": [
@@ -113,6 +127,8 @@ var Images = [
   "name": "Exercise Often",
   "type": "Illustration",
   "year": 2,
+  "description": "Pen & Ink, Digital",
+  "publisher": "Personal piece.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/31workout_thumbs.jpg",
   "slideshow": [
@@ -123,6 +139,7 @@ var Images = [
   "type": "Comic",
   "year": 2012,
   "shape": 3,
+  "publisher": "A piece for Vice's comic section. Thanks to Nick Gazin.",
   "url": "http://zesansan.com/images/work/comics/thumbs/18swerve_thumb.jpg",
   "slideshow": [
     "http://zesansan.com/images/work/comics/DUI1_web.jpg",
@@ -135,6 +152,8 @@ var Images = [
   "name": "Last Chance for Gas",
   "type": "Illustration",
   "year": 2013,
+  "description": "Ink, Digital",
+  "publisher": "Piece for Dirt Rag Magazine's Last Chance for Gas column. Thanks to AD Matt Kasprsyk.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/29LastChance_thumbs.jpg",
   "slideshow": [
@@ -144,6 +163,7 @@ var Images = [
   "name": "A Cyclops Breakup",
   "type": "Comic",
   "year": 1,
+  "publisher": "A personal piece, part of the Love Pile series.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/12cyclopsbreakup_thumb.jpg",
   "slideshow": [
@@ -158,6 +178,8 @@ var Images = [
   "name": "Reproductive Technology",
   "type": "Illustration",
   "year": 2013,
+  "description": "Ink, Digital",
+  "publisher": "Piece for Bitch Magazine on recent movies that touches on new reproductive technology still enforce traditional gender role ideals. Thanks to AD Kristen Rogers Brown.",
   "shape": 3,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/28Reproduction_thumbs.jpg",
   "slideshow": [
@@ -165,7 +187,8 @@ var Images = [
   ]},{   
   "name": "Tiger Loves Buffalo",
   "type": "Comic",
-  "year": 1,
+  "year": 2012,
+  "publisher": "A personal piece, part of the Love Pile series.",
   "shape": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/11tigerbuffalo_thumb.jpg",
   "slideshow": [
@@ -178,6 +201,8 @@ var Images = [
   "name": "Nordic Noir",
   "type": "Illustration",
   "year": 2013,
+  "description": "Ink, Digital",
+  "publisher": "Piece for Bitch Magazine on Swedish crime thrillers featuring strong leading female characters. Thanks to AD Kristen Rogers Brown.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/27Nordic_thumbs.jpg",
   "slideshow": [
@@ -185,7 +210,8 @@ var Images = [
   ]},{   
   "name": "Yeti and Yak",
   "type": "Comic",
-  "year": 1,
+  "year": 2012,
+  "publisher": "A personal piece, part of the Love Pile series.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/10yak_thumb.jpg",
   "slideshow": [
@@ -198,6 +224,8 @@ var Images = [
   "name": "Lido Pimiento",
   "type": "Illustration",
   "year": 2013,
+  "description": "Ink, Digital",
+  "publisher": "Piece for Bitch Magazine on an interview with musician Lido Pimiento. Thanks to AD Kristen Rogers Brown.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/26Lido_thumbs.jpg",
   "slideshow": [
@@ -207,7 +235,8 @@ var Images = [
  {   
   "name": "Pearl Divers",
   "type": "Comic",
-  "year": 1,
+  "year": 2012,
+  "publisher": "A personal piece, part of the Love Pile series.",
   "shape": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/8pearldivers_thumb.jpg",
   "slideshow": [
@@ -221,15 +250,18 @@ var Images = [
   "name": "Post Sandy",
   "type": "Illustration",
   "year": 2012,
+  "description": "Ink, Digital",
+  "publisher": "Piece for Bicycle Times about biking in New York after Hurricaine Sandy. Thanks to AD Stephen Haynes.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/illustrations/thumbs/25Sandy_thumbs.jpg",
   "slideshow": [
     "http://zesansan.com/images/work/illustrations/21sandybiking_web.jpg"
   ]},
 {   
-  "name": "True Tale",
+  "name": "Scrambled Eggs with Tomatoes",
   "type": "Comic",
-  "year": 1,
+  "year": 2012,
+  "publisher": "A personal piece, based on a true tale.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/6truetale_thumb.jpg",
   "slideshow": [
@@ -241,8 +273,10 @@ var Images = [
 {   
   "name": "It Came from the Portal",
   "type": "Illustration",
-  "year": 2,
+  "year": 2012,
   "shape": 1,
+  "description": "Ink, Gouache",
+  "publisher": "Personal piece that was featured in the Duck Duck Group Show at Mission Comics & Art.",
   "url": "http://zesansan.com/images/work/illustrations/thumbs/24Portal_thumbs.jpg",
   "slideshow": [
     "http://zesansan.com/images/work/illustrations/20itcamefromtheportal_web.jpg"
@@ -250,7 +284,8 @@ var Images = [
 {   
   "name": "Curse of the Wereowl",
   "type": "Comic",
-  "year": 1,
+  "year": 2012,
+  "publisher": "For the Providence Comics Consortium's Classic Characters #1.",
   "shape": 2,
   "url": "http://zesansan.com/images/work/comics/thumbs/45pcc_thumbs.jpg",
   "slideshow": [
@@ -276,7 +311,8 @@ var Images = [
   ]},{   
   "name": "Cereal Milk #1",
   "type": "Comic",
-  "year": 1,
+  "year": 2012,
+  "publication": "A semi-autobiographical comic for Luxury Milk Magazine.",
   "shape": 3,
   "url": "http://zesansan.com/images/work/comics/thumbs/40cm1_thumbs.jpg",
   "slideshow": [
@@ -286,7 +322,8 @@ var Images = [
 {   
   "name": "Gut Feelings",
   "type": "Animation",
-  "year": 2,
+  "year": 2010,
+  "description": "An animation short consisting of three stories about affection that intermingle.",
   "shape": 1,
   "url": "http://zesansan.com/images/work/comics/thumbs/7planets_thumb.jpg",
   "slideshow": [

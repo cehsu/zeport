@@ -36,8 +36,7 @@ class Showcase extends React.Component {
         <div className={'showcase-container'} >
         {showcaseItem.type !== "Animation" && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
         {showcaseItem.type === "Animation" && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowfullscreen></iframe>}
-          <div>{showcaseItem.name}</div>
-          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
+         {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             <div>hello</div>
             {slideshow.map(function(item, index){
               return (
@@ -72,6 +71,13 @@ class Showcase extends React.Component {
           </div>
           <div onClick={this.incrementIndex} className={'arrow right'}></div>
           </div>}
+          <div className={'item-details'}>
+          <div className={'item-title'}>{showcaseItem.name}</div>
+          <div>{showcaseItem.year}</div>
+          {showcaseItem.description && <div>{showcaseItem.description}</div>}
+          {showcaseItem.publisher && <div>{showcaseItem.publisher}</div>}
+          </div>
+
         </div>
         )
   }
