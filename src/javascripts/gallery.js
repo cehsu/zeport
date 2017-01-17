@@ -49,17 +49,14 @@ class Gallery extends React.Component {
     const thisImages = Object.getOwnPropertyNames(this.props.images);
     const nextImages = Object.getOwnPropertyNames(nextProps.images);
     if (thisImages.length !== nextImages.length) {
-      console.log('images changed');
       return true;
     }
     for (var i = 0; i < thisImages.length; i++) {
       const imageName = thisImages[i];
       if (this.props.images[imageName] !== nextProps.images[imageName]) {
-        console.log('images changed');
         return true;
       }
     }
-    console.log('images unchanged');
     return false;
   }
 

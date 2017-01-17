@@ -40,8 +40,8 @@ class Showcase extends React.Component {
             <div>hello</div>
             {slideshow.map(function(item, index){
               return (
-                <Link to={ {pathname: '/work', query: {piece: item.name+'_'+(index+1)}} }>
-                  <img key={index} onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+                <Link key={index} to={ {pathname: '/work', query: {piece: item.name+'_'+(index+1)}} }>
+                  <img onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
                 </Link>
               )
             })
