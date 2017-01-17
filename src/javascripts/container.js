@@ -24,7 +24,6 @@ class Container extends React.Component {
   }
 
   setFilter(newFilter) {
-    console.log('setting filter');
     this.setState({filter: newFilter});
   }
 
