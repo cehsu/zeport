@@ -37,7 +37,6 @@ class Showcase extends React.Component {
         {showcaseItem.type !== "Animation" && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
         {showcaseItem.type === "Animation" && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowfullscreen></iframe>}
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
-            <div>hello</div>
             {slideshow.map(function(item, index){
               return (
                 <Link key={index} to={ {pathname: '/work', query: {piece: item.name+'_'+(index+1)}} }>
@@ -51,7 +50,7 @@ class Showcase extends React.Component {
           {slideShowLength > 4 && <div className={'slider-container'}>
           <div onClick={this.decrementIndex}  className={'arrow left'}></div>
             <div className={'track-container'}>
-            <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'flex-container'} >
+            <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'track'} >
             <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 4]} />
             <img onClick={() => this.setIndex((slideShowLength - 3), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 3]} />
             <img onClick={() => this.setIndex((slideShowLength - 2), showcaseIndex, slideShowLength)} className={((slideShowLength - 2) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[slideShowLength - 2]} />

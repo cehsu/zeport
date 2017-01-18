@@ -31,7 +31,7 @@
   background: grey
   overflow: auto
 
-.flex-container 
+.track 
   display: flex
   width: 2000px
   flex-direction: row
@@ -53,25 +53,27 @@
 
 .focus 
   opacity: 1
+  width: 100px
 
 .non-focus
   opacity: 0.5
+  width: 100px
   &:hover 
     opacity: 1
 
 .flex-container
-   padding: 0
-   margin: 0
-   list-style: none      
-   -ms-box-orient: horizontal
-   display: -webkit-box
-   display: -moz-box
-   display: -ms-flexbox
-   display: -moz-flex
-   display: -webkit-flex
-   display: flex
-   -webkit-flex-flow: row wrap
-   flex-flow: row wrap
+  padding: 0
+  width: 100%
+  justify-content: center
+  margin: auto
+  list-style: none      
+  -ms-box-orient: horizontal
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
+  display: -moz-flex
+  display: -webkit-flex
+  display: flex
 
 .first
   order: 0
@@ -125,3 +127,12 @@
       left: -.2rem
     &.right
       right: -.2rem
+
+@media (max-width: 770px)
+  .showcase-image
+    width: 100%
+    max-height: initial
+  .slider-container, .flex-container
+    width: 85%
+  .track-container
+    width: 75%
