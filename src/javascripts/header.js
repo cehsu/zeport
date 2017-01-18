@@ -9,7 +9,8 @@ class Header extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
-     shrink: false
+     small: (document.documentElement.clientWidth < 780) ? true : false,
+     shrink: (document.documentElement.clientWidth < 780) ? true : false
    }
    this.toggleShrink = this.toggleShrink.bind(this);
  }
@@ -99,11 +100,13 @@ class Header extends React.Component {
  }
 
  toggleShrink() {
-   const shouldShrink = window.document.body.scrollTop > 170;
-   if(shouldShrink) {
-     this.setState({shrink: true});
-   } else {
-     this.setState({shrink: false});
+   if (!this.state.small){
+     const shouldShrink = window.document.body.scrollTop > 170;
+     if(shouldShrink) {
+       this.setState({shrink: true});
+     } else {
+       this.setState({shrink: false});
+     }
    }
  }
 }
