@@ -11,8 +11,11 @@ class App extends React.Component {
         <Router  history={ hashHistory }>
           <Route 
           onChange={(prevState, nextState) => {
-            if (nextState.params.piece){
+            if(nextState.params.piece) {
               window.scroll(0, 330);
+            }
+            if(nextState.params.route === "about") {
+              window.scroll(0,250);
             }
           }}
           path='/(:route(/:piece(/:number)))' 

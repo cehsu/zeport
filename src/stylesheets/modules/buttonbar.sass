@@ -50,9 +50,6 @@
   display: inline-block
   height: initial
 
-.work .button-subbar .button
-  text-transform: lowercase
-
 .work .button
   color: rgba(0,0,0,1)
 
@@ -60,7 +57,9 @@
   position: fixed
   top: 45px
   right: 0
-  margin: 5px
+  margin: 0 0 2px
+  padding: 0 0 2%
+  width: 15vw
   line-height: 60px
   vertical-align: middle
   transition: all 0.2s ease-in-out
@@ -71,8 +70,8 @@
 
 .social
   display: inline-block
-  width: 30px
-  margin: 5px
+  width: 2vw
+  margin: 0 5% 2px
   background-repeat: no-repeat
   background-size: contain
   background-position: center center
@@ -84,7 +83,7 @@
     fill: blue
 
 .mail
-  width: 35px
+  width: 2.3vw
 
 .button
   position: relative
@@ -95,6 +94,7 @@
   height: 60px
   line-height: 60px
   text-align: center
+  font-size: 3vw
   transition: 0s
   margin: 0 5% 2%
   padding: 0 1%
@@ -118,7 +118,10 @@
     -webkit-transform: scale(0)
     transition: transform 0.5s
   &.filter
-    margin: 0 3%
+    margin: 0 1%
+    font-size: 2.5vw
+    width: initial
+    text-transform: lowercase
 
 .underline
   &::before
