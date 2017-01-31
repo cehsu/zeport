@@ -131,21 +131,27 @@ class Showcase extends React.Component {
         this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
       }
     }
-    browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+    setTimeout(function(){
+      browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+    }.bind(this),500);
   }
  
   incrementIndex() {
     const newIndex = (this.state.showcaseIndex === this.state.length - 1) ? 0 : (this.state.showcaseIndex + 1)
     const oldIndex = this.state.showcaseIndex;
     this.setIndex(newIndex, oldIndex);
-    browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+    setTimeout(function(){
+      browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+    }.bind(this),500);
   }
   
   decrementIndex() {
     const newIndex = (this.state.showcaseIndex === 0) ? (this.state.length - 1) : (this.state.showcaseIndex - 1);
     const oldIndex = this.state.showcaseIndex;
     this.setIndex(newIndex, oldIndex);
-    browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+    setTimeout(function(){
+      browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+    }.bind(this),500);
   }
 
   setDrag(){
