@@ -133,7 +133,7 @@ class Showcase extends React.Component {
     }
     setTimeout(function(){
       browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
-    }.bind(this),500);
+    }.bind(this),600);
   }
  
   incrementIndex() {
@@ -142,7 +142,7 @@ class Showcase extends React.Component {
     this.setIndex(newIndex, oldIndex);
     setTimeout(function(){
       browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
-    }.bind(this),500);
+    }.bind(this),600);
   }
   
   decrementIndex() {
@@ -151,7 +151,7 @@ class Showcase extends React.Component {
     this.setIndex(newIndex, oldIndex);
     setTimeout(function(){
       browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
-    }.bind(this),500);
+    }.bind(this),600);
   }
 
   setDrag(){

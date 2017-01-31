@@ -11,11 +11,23 @@ class App extends React.Component {
         <Router  history={ hashHistory }>
           <Route 
           onChange={(prevState, nextState) => {
-            if(nextState.params.piece) {
-              window.scroll(0, 330);
-            }
-            if(nextState.params.route === "about") {
-              window.scroll(0,250);
+            var w = window.innerWidth
+              || document.documentElement.clientWidth
+              || document.body.clientWidth;
+            if(w < 700){
+              if(nextState.params.piece) {
+                window.scroll(0, 60);
+              }
+              if(nextState.params.route === "about") {
+                window.scroll(0,5);
+              }
+            } else {
+              if(nextState.params.piece) {
+                window.scroll(0, 330);
+              }
+              if(nextState.params.route === "about") {
+                window.scroll(0,250);
+              }
             }
           }}
           path='/(:route(/:piece(/:number)))' 
