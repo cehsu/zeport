@@ -18,7 +18,7 @@ class Header extends React.Component {
  render() {
    return (
       <div className={'header-content'}>
-      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && this.state.shrink) ? 'work shrink header u-clearfix' : (this.state.shrink) ? 'shrink header u-clearfix' : 'header u-clearfix'}>
+      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && this.state.shrink) ? 'work shrink header u-clearfix' : (this.state.shrink) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
         <div className={'header-content u-clearfix'}>
           <div className={'title'}>
             <Link className={'title-content'} to='/'>Zejian Shen</Link>
@@ -99,16 +99,22 @@ class Header extends React.Component {
    window.removeEventListener('scroll', this.toggleShrink);
  }
 
- toggleShrink() {
-   if (!this.state.small){
-     const shouldShrink = window.document.body.scrollTop > 170;
-     if(shouldShrink) {
-       this.setState({shrink: true});
-     } else {
-       this.setState({shrink: false});
-     }
-   }
+ getStyle() {
+   return {
+     padding: ((window.document.body.scrollTop < 200) && (window.document.body.scrollTop > 150)) ? 200 - window.document.body.scrollTop + 'px 0 10px':(this.state.shrink) ? '0' : '50px 0 10px' 
+   };
  }
+  
+ toggleShrink() {
+    if (!this.state.small){
+      const shouldShrink = window.document.body.scrollTop > 200;
+      if(shouldShrink) {
+        this.setState({shrink: true});
+      } else {
+        this.setState({shrink: false});
+      }
+    }
+  }
 }
 
 export default Header
