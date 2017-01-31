@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
 
@@ -26,8 +26,9 @@ class Showcase extends React.Component {
   }
 
   render() {
+    const showcaseNumber = this.props.params.piece;
     const showcaseItem = this.props.params.piece ? this.props.images[this.props.params.piece]: this.props.images[30];
-     const showcaseIndex = this.state.showcaseIndex;
+    const showcaseIndex = this.state.showcaseIndex;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
      const setIndex = this.setIndex;
@@ -39,7 +40,7 @@ class Showcase extends React.Component {
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             {slideshow.map(function(item, index){
               return (
-                <Link key={index} to={ {pathname: '/work', query: {piece: item.name+'_'+(index+1)}} }>
+                <Link key={index} to={ {pathname: '/work/'+showcaseNumber+'/'+(index+1)} }>
                   <img onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
                 </Link>
               )
@@ -130,18 +131,21 @@ class Showcase extends React.Component {
         this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
       }
     }
+    browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
   }
  
   incrementIndex() {
     const newIndex = (this.state.showcaseIndex === this.state.length - 1) ? 0 : (this.state.showcaseIndex + 1)
     const oldIndex = this.state.showcaseIndex;
     this.setIndex(newIndex, oldIndex);
+    browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
   }
   
   decrementIndex() {
     const newIndex = (this.state.showcaseIndex === 0) ? (this.state.length - 1) : (this.state.showcaseIndex - 1);
     const oldIndex = this.state.showcaseIndex;
     this.setIndex(newIndex, oldIndex);
+    browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
   }
 
   setDrag(){
