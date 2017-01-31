@@ -132,7 +132,7 @@ class Showcase extends React.Component {
       }
     }
     setTimeout(function(){
-      browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+      browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
     }.bind(this),500);
   }
  
@@ -141,7 +141,7 @@ class Showcase extends React.Component {
     const oldIndex = this.state.showcaseIndex;
     this.setIndex(newIndex, oldIndex);
     setTimeout(function(){
-      browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+      browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
     }.bind(this),500);
   }
   
@@ -150,7 +150,7 @@ class Showcase extends React.Component {
     const oldIndex = this.state.showcaseIndex;
     this.setIndex(newIndex, oldIndex);
     setTimeout(function(){
-      browserHistory.push('/work/'+this.props.params.piece+'/'+(newIndex+1));
+      browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
     }.bind(this),500);
   }
 
