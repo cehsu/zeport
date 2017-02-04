@@ -5,12 +5,11 @@
 
 .brick:hover .details
   opacity: 1
+  background-color: rgba(0, 0, 0, 0.4)
   visibility: visible
-.brick:hover .image
-  opacity: 0.5
-  color: black
 
 .image 
+  z-index: 5
   padding: 5px
   width: 100%
   height: 100%
@@ -22,6 +21,7 @@
   user-drag: none
 
 .details
+  z-index: 10
   position: absolute
   padding: 5px
   color: white
@@ -36,10 +36,11 @@
   background-color: black
   background-clip: content-box
   font-family: Helvetica, sans-serif
-  font-size: 1.6em
+  font-size: 1.3em
   line-height: 1.1em
 
-.details
+
+.details-container
   position: absolute
   top: 50%
   transform: translateY(-50%)
