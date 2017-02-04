@@ -17,8 +17,6 @@ class Gallery extends React.Component {
 
   render() {
     const tiles = this.props.images.map(function(image, index){
-      //const generatedNumber = Math.floor(Math.random()*10+1);
-      //const shape = (generatedNumber <= 7 ? 1 : generatedNumber <= 9 ? 2 : 3); 
       return (
           <Link to={ {pathname: '/work/'+index+'/1'} } key={index} className={`${index} grid-item-${image.shape} brick`}>
          <div className={'details'}>

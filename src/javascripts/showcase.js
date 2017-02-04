@@ -86,6 +86,7 @@ class Showcase extends React.Component {
     if(this.props.showcaseItem !== false){
     document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
     }
+    return true;
    }
 
   componentWillUnmount() {
