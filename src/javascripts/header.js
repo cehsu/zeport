@@ -18,7 +18,7 @@ class Header extends React.Component {
  render() {
    return (
       <div className={'header-content'}>
-      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && this.state.shrink) ? 'work shrink header u-clearfix' : (this.state.shrink||this.state.small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
+      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && (this.state.shrink||this.state.small)) ? 'work shrink header u-clearfix' : (this.state.shrink||this.state.small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
         <div className={'header-content u-clearfix'}>
           <div className={'title'}>
             <Link className={'title-content'} to='/'>Zejian Shen</Link>
@@ -107,7 +107,7 @@ class Header extends React.Component {
   
  toggleShrink() {
     if (!this.state.small){
-      const shouldShrink = window.document.body.scrollTop > 200;
+      const shouldShrink = window.document.body.scrollTop >= 200;
       if(shouldShrink) {
         this.setState({shrink: true});
       } else {

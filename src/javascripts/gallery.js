@@ -22,8 +22,10 @@ class Gallery extends React.Component {
       return (
           <Link to={ {pathname: '/work/'+index+'/1'} } key={index} className={`${index} grid-item-${image.shape} brick`}>
          <div className={'details'}>
+          <div className={'details-container'}>
           <div className={'title-detail'}>{image.name}</div>
           <div className={'type-detail'}>{image.type}</div>
+          </div>
           </div>
           <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.url} />  
           </Link>
