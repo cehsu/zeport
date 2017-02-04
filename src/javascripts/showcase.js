@@ -75,7 +75,7 @@ class Showcase extends React.Component {
           <div className={'item-title'}>{showcaseItem.name}</div>
           <div>{showcaseItem.year}</div>
           {showcaseItem.description && <div>{showcaseItem.description}</div>}
-          {showcaseItem.publisher && <div>{showcaseItem.publisher}</div>}
+          {showcaseItem.client && <div>{showcaseItem.client}</div>}
           </div>
 
         </div>

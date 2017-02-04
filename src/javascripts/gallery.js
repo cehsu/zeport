@@ -25,7 +25,7 @@ class Gallery extends React.Component {
           <div className={'type-detail'}>{image.type}</div>
           </div>
           </div>
-          <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.url} />  
+          <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.brick} />  
           </Link>
           )
     }.bind(this));
