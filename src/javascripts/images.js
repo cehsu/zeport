@@ -18,7 +18,7 @@ var Images = [
   "year": 2014,
   "materials": "Digital",
   "description": "Here’s a cat who doesn’t care for you.",
-  "shape": 1,
+  "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/Brick/catgif_br.gif",
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/catgif_ex1.gif"
