@@ -9,7 +9,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/01+kokitanaka_br.jpg", 
   "slideshow": [
-    "https://youtu.be/poR-U4s5RVM"
+    "https://www.youtube.com/embed/poR-U4s5RVM"
   ]
 },  
 {   
@@ -34,7 +34,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/14+Set+You+Free_br.jpg",
   "slideshow": [
-    "https://vimeo.com/132578501"
+    "https://player.vimeo.com/video/132578501"
   ]
 },  
 {   
@@ -47,7 +47,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/13+ZihuaAd_br.jpg",
   "slideshow": [
-    "https://vimeo.com/200939071"
+    "https://player.vimeo.com/video/200939071"
   ]},  
 {   
   "name": "Emperors’ Treasures Pop Up Madness", 
@@ -59,7 +59,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/08+ETPop_br.jpg",
   "slideshow": [
-    "https://www.youtube.com/watch?v=D921Tfm2JeM"
+    "https://www.youtube.com/embed/D921Tfm2JeM"
   ]},
 {   
   "name": "How to make Dongpo Rou",
@@ -71,7 +71,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/07+dpr_br.jpg",
   "slideshow": [
-    "https://youtu.be/hQvnLGHvOZw "
+    "https://www.youtube.com/embed/hQvnLGHvOZw"
   ]
 },  
 {   
@@ -84,7 +84,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/12+LJH_br.jpg",
   "slideshow": [
-    "https://youtu.be/NXUbGyoukjI",  
+    "https://www.youtube.com/embed/NXUbGyoukjI",  
   ]},
 {   
   "name": "天圓地方 Patterns of Heaven & Earth",
@@ -96,7 +96,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/11+NickDong_br.jpg",
   "slideshow": [
-    "https://www.youtube.com/watch?v=kyRI0P1eBOA"
+    "https://www.youtube.com/embed/kyRI0P1eBOA"
   ]
 },  
 {   
@@ -109,7 +109,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/09+happydragon_br.jpg",
   "slideshow": [
-    "https://www.youtube.com/watch?v=8dZ4vNedP7M"
+    "https://www.youtube.com/embed/8dZ4vNedP7M"
   ]},{   
     "name": "How to make a donut knot",
     "team": "Director/DP/Editor",
@@ -120,7 +120,7 @@ var Images = [
     "shape": 2,
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/10+knots_br.jpg",
     "slideshow": [
-      "https://www.youtube.com/watch?v=UtbbTLFLtak"
+      "https://www.youtube.com/embed/UtbbTLFLtak"
     ]
   },  
 {   
@@ -133,7 +133,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/06+drawingrama_br.jpg", 
   "slideshow": [
-    "https://youtu.be/lCWzvrg4teM"
+    "https://www.youtube.com/embed/lCWzvrg4teM"
 
   ]},{   
     "name": "The Rama Epic: Hero, Heroine, Ally, Foe Trailer",
@@ -145,7 +145,7 @@ var Images = [
     "description": "Teaser trailer for the fall 2016 exhibition at the Asian Art Museum.",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/05+ramateaser_br.jpg",
     "slideshow": [
-      "https://www.youtube.com/watch?v=k4dyl9M1gek"
+      "https://www.youtube.com/embed/k4dyl9M1gek"
     ]
   },  
 {   
@@ -158,7 +158,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/04+ramatop5_br.jpg",
   "slideshow": [
-    "https://www.youtube.com/watch?v=5MavY78gBmY"
+    "https://www.youtube.com/embed/5MavY78gBmY"
   ]},{   
     "name": "Bell-ringing Ceremony",
     "team": "Director/DP/Editor",
@@ -169,7 +169,7 @@ var Images = [
     "shape": 2,
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/03+bellringing_br.jpg",
     "slideshow": [
-      "https://www.youtube.com/watch?v=FMTl9ffpwOY"
+      "https://www.youtube.com/embed/FMTl9ffpwOY"
     ]
   },  
 {   
@@ -182,7 +182,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/02+mochi_br.jpg",
   "slideshow": [
-    "https://www.youtube.com/watch?v=zUxOUQgQG8Q",
+    "https://www.youtube.com/embed/zUxOUQgQG8Q",
   ]},{   
     "name": "Fresh Toast: David Zboray",
     "type": "Photography",
@@ -237,7 +237,7 @@ var Images = [
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Unbox+Yourself/Brick/01+Unbox_br.jpg",
   "slideshow": [
-    "https://vimeo.com/109559530"
+    "https:/player.vimeo.com/video/109559530"
   ]
 },
 {   

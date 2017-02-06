@@ -35,8 +35,8 @@ class Showcase extends React.Component {
      const setFocus = this.setFocus;
        return (
         <div className={'showcase-container'} >
-        {showcaseItem.type !== "Animation" && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
-        {showcaseItem.type === "Animation" && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowfullscreen></iframe>}
+        {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
+        {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowfullscreen></iframe>}
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             {slideshow.map(function(item, index){
               return (
@@ -71,7 +71,7 @@ class Showcase extends React.Component {
           </div>
           <div onClick={this.incrementIndex} className={'arrow right'}></div>
           </div>}
-          <div className={'item-details'}>
+          <div className={(((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1)) ? 'item-details landscape' : 'item-details'}>
           <div className={'item-title'}>{showcaseItem.name}</div>
           <div>{showcaseItem.year}</div>
           {showcaseItem.description && <div>{showcaseItem.description}</div>}
