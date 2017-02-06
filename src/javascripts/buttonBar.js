@@ -27,7 +27,7 @@ class ButtonBar extends React.Component {
            {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={4} onClick={()=>this.props.setFilter('Animation')} className={(this.props.filter === "Animation") ? 'active-route button underline filter' : 'button underline filter'}>Animation</div>}
            {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={5} onClick={()=>this.props.setFilter('Design')} className={(this.props.filter === "Design") ? 'active-route button underline filter' : 'button underline filter'}>Design</div>}
            {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={6} onClick={()=>this.props.setFilter('Film')} className={(this.props.filter === "Film") ? 'active-route button underline filter' : 'button underline filter'}>Film</div>}
-           {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={7} onClick={()=>this.props.setFilter('Photo')} className={(this.props.filter === "Photo") ? 'active-route button underline filter' : 'button underline filter'}>Photo</div>}
+           {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={7} onClick={()=>this.props.setFilter('Photography')} className={(this.props.filter === "Photography") ? 'active-route button underline filter' : 'button underline filter'}>Photo</div>}
           </ReactCSSTransitionGroup>
         </div>
           </div>
