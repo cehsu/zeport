@@ -14,7 +14,6 @@ class Showcase extends React.Component {
       showcaseIndex: ((this.props.params.number - 1) || 0),
       sliding: false,
       transition: '0.5s',
-      length: this.props.params.piece ? this.props.images[this.props.params.piece].slideshow.length : this.props.images[30].slideshow.length
     };
     this.hideDrag = this.hideDrag.bind(this);
     this.drag = this.drag.bind(this);
@@ -24,11 +23,10 @@ class Showcase extends React.Component {
     this.incrementIndex = this.incrementIndex.bind(this);
     this.decrementIndex = this.decrementIndex.bind(this);
   }
-
+ 
   render() {
-    const showcaseNumber = this.props.params.piece;
     const showcaseItem = this.props.params.piece ? this.props.images[this.props.params.piece]: this.props.images[30];
-    const showcaseIndex = this.state.showcaseIndex;
+    const showcaseIndex = this.props.params.number-1;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
      const setIndex = this.setIndex;
@@ -36,7 +34,7 @@ class Showcase extends React.Component {
        return (
         <div className={'showcase-container'} >
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
-        {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowfullscreen></iframe>}
+        {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             {slideshow.map(function(item, index){
               return (
@@ -49,7 +47,7 @@ class Showcase extends React.Component {
 
             </div> }
           {slideShowLength > 4 && <div className={'slider-container'}>
-          <div onClick={this.decrementIndex}  className={'arrow left'}></div>
+          <div onClick={()=>{this.decrementIndex(showcaseIndex, slideShowLength)}}  className={'arrow left'}></div>
             <div className={'track-container'}>
             <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'track'} >
             <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[slideShowLength - 4]} />
@@ -69,7 +67,7 @@ class Showcase extends React.Component {
            <img onClick={() => this.setIndex(3, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={slideshow[3]} />
           </div>
           </div>
-          <div onClick={this.incrementIndex} className={'arrow right'}></div>
+          <div onClick={()=>{this.incrementIndex(showcaseIndex, slideShowLength)}} className={'arrow right'}></div>
           </div>}
           <div className={(((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1)) ? 'item-details landscape' : 'item-details'}>
           <div className={'item-title'}>{showcaseItem.name}</div>
@@ -97,8 +95,8 @@ class Showcase extends React.Component {
     this.setState({showcaseIndex: newIndex});
   }
   
-  setIndex(newIndex, oldIndex) {
-    const length = this.state.length;
+  setIndex(newIndex, oldIndex, length) {
+    console.log('settingindex', newIndex, oldIndex, length);
     if (!this.state.sliding){
       this.setState({sliding: true});
       if((newIndex - oldIndex) > 3){
@@ -132,27 +130,23 @@ class Showcase extends React.Component {
         this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
       }
     }
+    console.log('routing');
     setTimeout(function(){
-      browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
+      this.setState({showcaseIndex: newIndex});
+      this.props.router.push('work/'+this.props.params.piece+'/'+(newIndex+1));
     }.bind(this),600);
   }
  
-  incrementIndex() {
-    const newIndex = (this.state.showcaseIndex === this.state.length - 1) ? 0 : (this.state.showcaseIndex + 1)
-    const oldIndex = this.state.showcaseIndex;
-    this.setIndex(newIndex, oldIndex);
-    setTimeout(function(){
-      browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
-    }.bind(this),600);
+  incrementIndex(currentIndex, length) {
+    const newIndex = (currentIndex === length - 1) ? 0 : (currentIndex + 1)
+    const oldIndex = currentIndex;
+    this.setIndex(newIndex, oldIndex, length);
   }
   
-  decrementIndex() {
-    const newIndex = (this.state.showcaseIndex === 0) ? (this.state.length - 1) : (this.state.showcaseIndex - 1);
-    const oldIndex = this.state.showcaseIndex;
-    this.setIndex(newIndex, oldIndex);
-    setTimeout(function(){
-      browserHistory.push('#/work/'+this.props.params.piece+'/'+(newIndex+1));
-    }.bind(this),600);
+  decrementIndex(currentIndex, length) {
+    const newIndex = (currentIndex  === 0) ? (length - 1) : (currentIndex - 1);
+    const oldIndex = currentIndex;
+    this.setIndex(newIndex, oldIndex, length);
   }
 
   setDrag(){
