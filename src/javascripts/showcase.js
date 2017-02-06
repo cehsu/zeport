@@ -36,7 +36,7 @@ class Showcase extends React.Component {
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
         {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
-            {slideshow.map(function(item, index){
+            {showcaseItem.thumbs.map(function(item, index){
               return (
                 <Link key={index} to={ {pathname: '/work/'+showcaseNumber+'/'+(index+1)} }>
                   <img onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
@@ -55,7 +55,7 @@ class Showcase extends React.Component {
             <img onClick={() => this.setIndex((slideShowLength - 2), showcaseIndex, slideShowLength)} className={((slideShowLength - 2) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[slideShowLength - 2]} />
             <img onClick={() => this.setIndex((slideShowLength - 1), showcaseIndex, slideShowLength)} className={((slideShowLength - 1) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={slideshow[slideShowLength - 1]} />
 
-          {slideshow.map(function(item, sliderIndex){
+          {showcaseItem.thumbs.map(function(item, sliderIndex){
              return (
                <img key={sliderIndex} onClick={() => setIndex(sliderIndex, showcaseIndex, slideShowLength)} className={(sliderIndex === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={item} />
               );
@@ -96,7 +96,6 @@ class Showcase extends React.Component {
   }
   
   setIndex(newIndex, oldIndex, length) {
-    console.log('settingindex', newIndex, oldIndex, length);
     if (!this.state.sliding){
       this.setState({sliding: true});
       if((newIndex - oldIndex) > 3){
@@ -130,7 +129,6 @@ class Showcase extends React.Component {
         this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
       }
     }
-    console.log('routing');
     setTimeout(function(){
       this.setState({showcaseIndex: newIndex});
       this.props.router.push('work/'+this.props.params.piece+'/'+(newIndex+1));
