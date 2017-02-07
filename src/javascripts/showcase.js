@@ -79,8 +79,14 @@ class Showcase extends React.Component {
           {showcaseItem.team && <div>{showcaseItem.team}</div>}
           {showcaseItem.description && <div>{showcaseItem.description}</div>}
           {showcaseItem.client && <div>{showcaseItem.client}</div>}
-          {showcaseItem.clients && <div>Select Clients:{showcaseItem.clients}</div>}
-          {showcaseItem.press && <div>Press: {showcaseItem.press.map(function(item,index){return <span><a href={item[1]}>{item[0]}</a>,</span>})}</div>}
+          {showcaseItem.clients && <div>Select Clients: {showcaseItem.clients}</div>}
+          {showcaseItem.press && <div>Press: {showcaseItem.press.map(function(item, index, collection){
+                                         if(index < (collection.length - 1)){
+                                           return <span><a href={item[1]}>{item[0]}</a>, </span>
+                                         } else {
+                                           return <span><a href={item[1]}>{item[0]}</a></span>
+                                         }
+                                                                                                      })}</div>}
           </div>
 
         </div>
