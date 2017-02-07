@@ -51,7 +51,7 @@ class Showcase extends React.Component {
               <ReactCSSTransitionGroup
                 transitionName="example"
                 transitionAppear={true}
-                transitionAppearTimeout={1000}
+                transitionAppearTimeout={500}
                 transitionEnter={false}
                 transitionLeave={false}>
           <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
