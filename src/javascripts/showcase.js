@@ -79,6 +79,7 @@ class Showcase extends React.Component {
           {showcaseItem.team && <div>{showcaseItem.team}</div>}
           {showcaseItem.description && <div>{showcaseItem.description}</div>}
           {showcaseItem.client && <div>{showcaseItem.client}</div>}
+          {showcaseItem.clients && <div>{showcaseItem.clients}</div>}
           </div>
 
         </div>
