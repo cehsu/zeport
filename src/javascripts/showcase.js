@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import ProgressiveImage from 'react-progressive-image'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 import { Link } from 'react-router'
 import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
@@ -47,9 +48,16 @@ class Showcase extends React.Component {
        return (
         <div className={'showcase-container'} >
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && 
+              <ReactCSSTransitionGroup
+                transitionName="example"
+                transitionAppear={true}
+                transitionAppearTimeout={1000}
+                transitionEnter={false}
+                transitionLeave={false}>
           <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
           {(image) => <img style={{width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
-          </ProgressiveImage>}
+          </ProgressiveImage>
+        </ReactCSSTransitionGroup>}
           
         {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
