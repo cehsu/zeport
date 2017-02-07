@@ -41,7 +41,7 @@ class Showcase extends React.Component {
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             {thumbs.map(function(item, index){
               return (
-                <Link key={index} to={ {pathname: '/work/'+showcaseNumber+'/'+(index+1)} }>
+                <Link key={index} to={ {pathname: '/work/'+(showcaseNumber-1)+'/'+(index+1)} }>
                   <img onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
                 </Link>
               )
