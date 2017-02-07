@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import ProgressiveImage from 'react-progressive-image'
 import { Link } from 'react-router'
 import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
@@ -32,11 +33,24 @@ class Showcase extends React.Component {
     const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
+     const w = window,
+           d = document,
+           documentElement = d.documentElement,
+           body = d.getElementsByTagName('body')[0],
+           width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+     console.log(width);
+     console.log(showcaseItem.dimensions);
+     const itemWidth = (width > 700) ? showcaseItem.dimensions[showcaseIndex][1] : "100%"; 
+     console.log(itemWidth);
      const setIndex = this.setIndex;
      const setFocus = this.setFocus;
        return (
         <div className={'showcase-container'} >
-        {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && <img className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={slideshow[showcaseIndex]} />}
+        {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && 
+          <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
+          {(image) => <img style={{width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
+          </ProgressiveImage>}
+          
         {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
          {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
             {thumbs.map(function(item, index){

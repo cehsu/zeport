@@ -1,5 +1,6 @@
 var Images = [
 {
+  "title": "About",
   "type": "About",
   "description": "Zejian Shen is a human who creates things in San Francisco, CA. Her work includes illustrations, comics, animation, design, film and photography. These days she is the creative media producer at the Asian Art Museum, and sometimes she pets cute animals on the street.",
   "clients": "Oculus Story, Lisa Nourse, Goodstein, Art Bazaar, Vice, Bitch, Efímero, The Fresh Toast, PLANSPONSOR, PLANADVISER",
@@ -10,9 +11,11 @@ var Images = [
     ["Cityweekend Beijing", "http://www.cityweekend.com.cn/beijing/article/san-san-comic-creature"]
   ],
   "thumbs": ["All About Ze"],
+  "sthumbs": ["data:image/gif;base64,R0lGODlhAwADAPMIAEZDT19MS2hXTnlmUYh0Y4+KbaCJZaqZb6CYcgAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAADAAMAAAQHEJFjQhkCRAA7"],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/aboutze/image1+(1).JPG"
-  ]
+  ],
+  "dimensions": [["600px", "600px"]]
 },
 {   
   "name": "Koki Tanaka: Potters and Poets",
