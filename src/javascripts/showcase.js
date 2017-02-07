@@ -25,9 +25,8 @@ class Showcase extends React.Component {
   }
  
   render() {
-    const showcaseNumber = (this.props.params.piece) ? this.props.params.piece : 0;
-    const showcaseItem = (this.props.params.piece) ? this.props.images[this.props.params.piece] : this.props.images[0];
-    console.log('showcaseItem', showcaseItem);
+    const showcaseNumber = (this.props.params.piece) ? this.props.params.piece + 1 : 0;
+    const showcaseItem = this.props.images[showcaseNumber];
     const thumbs = showcaseItem.thumbs;
     const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
      const slideshow = showcaseItem.slideshow;

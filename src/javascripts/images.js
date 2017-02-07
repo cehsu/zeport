@@ -9,6 +9,7 @@ var Images = [
     ["The Comics Beat", "http://www.comicsbeat.com/cab-preview-keep-fresh-by-zejian-shen/"],
     ["Cityweekend Beijing", "http://www.cityweekend.com.cn/beijing/article/san-san-comic-creature"]
   ],
+  "thumbs": ["All About Ze"],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/aboutze/image1+(1).JPG"
   ]
