@@ -25,10 +25,10 @@ class Showcase extends React.Component {
   }
  
   render() {
-    const showcaseNumber = (this.props.params.piece || 30);
-    const showcaseItem = this.props.params.piece ? this.props.images[this.props.params.piece]: this.props.images[30];
+    const showcaseNumber = (this.props.params) ? this.props.piece : 0;
+    const showcaseItem = (this.props.params) ? this.props.images[this.props.params.piece] : this.props.images[0];
     const thumbs = showcaseItem.thumbs;
-    const showcaseIndex = this.props.params.number-1;
+    const showcaseIndex = (this.props.params) ? this.props.params.number - 1 : 0;
      const slideshow = showcaseItem.slideshow;
      const slideShowLength = slideshow.length;
      const setIndex = this.setIndex;
@@ -72,8 +72,10 @@ class Showcase extends React.Component {
           <div onClick={()=>{this.incrementIndex(showcaseIndex, slideShowLength)}} className={'arrow right'}></div>
           </div>}
           <div className={(((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1)) ? 'item-details landscape' : 'item-details'}>
-          <div className={'item-title'}>{showcaseItem.name}</div>
-          <div>{showcaseItem.year}</div>
+          {showcaseItem.name && <div className={'item-title'}>{showcaseItem.name}</div>}
+          {showcaseItem.year && <div>{showcaseItem.year}</div>}
+          {showcaseItem.materials && <div>{showcaseItem.materials}</div>}
+          {showcaseItem.team && <div>{showcaseItem.team}</div>}
           {showcaseItem.description && <div>{showcaseItem.description}</div>}
           {showcaseItem.client && <div>{showcaseItem.client}</div>}
           </div>
