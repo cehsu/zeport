@@ -29,10 +29,10 @@ class Showcase extends React.Component {
   render() {
     const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
     const showcaseItem = this.props.images[showcaseNumber];
-    console.log(showcaseNumber, showcaseItem);
     const thumbs = showcaseItem.thumbs;
     const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
      const slideshow = showcaseItem.slideshow;
+    console.log(showcaseNumber, showcaseItem, showcaseIndex, "piece, item, index");
      const slideShowLength = slideshow.length;
      const w = window,
            d = document,
@@ -42,7 +42,20 @@ class Showcase extends React.Component {
      console.log(width);
      console.log(showcaseItem);
      console.log(showcaseItem.dimensions);
-     const itemHeight = (width > 700) ? showcaseItem.dimensions[showcaseIndex][0] : "100%";
+     let itemHeight = (width > 700) ? showcaseItem.dimensions[showcaseIndex][1] : "100%";
+     let itemWidth = (width > 700) ? showcaseItem.dimensions[showcaseIndex][0] : "100%";
+     const numWidth = itemWidth.replace(/[px]/gi, '');
+     const numHeight = itemHeight.replace(/[px]/gi, '');
+     if ((numWidth > width) && ((numWidth - width ) > (numHeight - 600))){
+       itemWidth = (width * 0.9) + "px";
+       itemHeight = "auto";
+       console.log("wide", itemWidth, itemHeight);
+     } else if (numHeight > 660) {
+        itemHeight = "660px";
+        itemWidth = "auto";
+        console.log("tall", itemWidth, itemHeight);
+     }
+     console.log(itemWidth, itemHeight);
      const setIndex = this.setIndex;
      const setFocus = this.setFocus;
        return (
@@ -55,7 +68,7 @@ class Showcase extends React.Component {
                 transitionEnter={false}
                 transitionLeave={false}>
           <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
-          {(image) => <img style={{height: itemHeight, width: "auto", maxHeight: "660px", maxWidth: "90%"}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
+          {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
           </ProgressiveImage>
         </ReactCSSTransitionGroup>}
           
