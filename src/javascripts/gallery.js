@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react'
+import ProgressiveImage from 'react-progressive-image'
 import { Link } from 'react-router'
 import PackeryComponent from './packery'
 import ShowcaseComponent from './showcase'
@@ -25,7 +26,9 @@ class Gallery extends React.Component {
           <div className={'type-detail'}>{image.type}</div>
           </div>
           </div>
-          <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image.brick} />  
+          <ProgressiveImage src={image.brick} placeholder={image.bthumb}>
+          {(image) => <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image} />}
+        </ProgressiveImage>  
           </Link>
           )
     }.bind(this));

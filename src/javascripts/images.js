@@ -25,6 +25,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEM2IwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/01+kokitanaka_br.jpg", 
   "slideshow": [
     "https://www.youtube.com/embed/poR-U4s5RVM"
@@ -37,6 +38,7 @@ var Images = [
   "materials": "Digital",
   "description": "Here’s a cat who doesn’t care for you.",
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJqlrwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/Brick/catgif_br.gif",
   "sthumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/Brick/catgif_br.gif"
@@ -56,6 +58,7 @@ var Images = [
   "client": "Zihua Creative",
   "year": 2015,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABABQaHQAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/14+Set+You+Free_br.jpg",
   "slideshow": [
     "https://player.vimeo.com/video/132578501"
@@ -69,7 +72,8 @@ var Images = [
   "client": "Zihua Creative",
   "year": 2015,
   "shape": 2,
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/13+ZihuaAd_br.jpg",
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABACRleQAAACwAAAAAAQABAAACAkQBAA==",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/13+ZihuaAd_br.jpg",
   "slideshow": [
     "https://player.vimeo.com/video/200939071"
   ]},  
@@ -81,6 +85,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJZlQAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/08+ETPop_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/D921Tfm2JeM"
@@ -93,6 +98,7 @@ var Images = [
   "client": "For the Antiques Roadshow anthology, edited by Alison Dubois.",
   "year": 2016,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEckIwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/07+dpr_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/hQvnLGHvOZw"
@@ -106,6 +112,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEc4MwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/12+LJH_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/NXUbGyoukjI",  
@@ -118,6 +125,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAMBHVQAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/11+NickDong_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/kyRI0P1eBOA"
@@ -131,6 +139,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAHRWSQAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/09+happydragon_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/8dZ4vNedP7M"
@@ -142,6 +151,7 @@ var Images = [
     "description": "Windy Chien demonstrates how to make a donut knot.",
     "client": "Asian Art Museum of SF",
     "shape": 2,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAD0qKAAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/10+knots_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/UtbbTLFLtak"
@@ -155,6 +165,7 @@ var Images = [
   "description": "Teaser video for Drawing Rama - a campaign to promote The Rama Epic: Hero, Heroine, Ally, Foe exhibition at the Asian Art Museum.",
   "client": "Asian Art Museum of SF",
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEA4JAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/06+drawingrama_br.jpg", 
   "slideshow": [
     "https://www.youtube.com/embed/lCWzvrg4teM"
@@ -167,6 +178,7 @@ var Images = [
     "shape": 2,
     "client": "Asian Art Museum of SF",
     "description": "Teaser trailer for the fall 2016 exhibition at the Asian Art Museum.",
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABADYsIQAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/05+ramateaser_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/k4dyl9M1gek"
@@ -180,6 +192,7 @@ var Images = [
   "description": "Curator’s top 5 objects from the Rama exhibit.",
   "client": "Asian Art Museum of SF",
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAIxpXAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/04+ramatop5_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/5MavY78gBmY"
@@ -191,6 +204,7 @@ var Images = [
     "description": "Ring in the new year with a 400 year old Japanese bell.",
     "client": "Asian Art Museum of SF",
     "shape": 2,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAI87NgAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/03+bellringing_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/FMTl9ffpwOY"
@@ -204,6 +218,7 @@ var Images = [
   "description": "Little promo for the mocha-pounding ceremony at the Asian Art Museum.",
   "client": "Asian Art Museum of SF",
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJUsIwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/02+mochi_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/zUxOUQgQG8Q",
@@ -214,6 +229,7 @@ var Images = [
     "client": "The Fresh Toast Magazine",
     "description": "What I Ate Today: Old Bus Tavern David Zboray",
     "shape": 1,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAODaygAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Brick/01+Popsons2_br.jpg",
     "thumbs": 
       ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/01+Portrait+2_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/02+Popsons2_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/03+Popsons1_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/04+Mourad2_thumb.jpg",
@@ -241,6 +257,7 @@ var Images = [
   "description": "Photoshoot for Old Bus Tavern’s brunch spread. AD Lisa Nourse.",
   "client": "Lisa Nourse PR",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAD0uCwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Brick/03+ZejianShen_Benedict_HiRes_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Thumbs/01+ZejianShen_Benedict_HiRes_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Thumbs/02+ZejianShen_Pancakes_HiRes_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Thumbs/03+ZejianShen_OBTBrunch_HiRes_thumb.jpg"],
   "sthumbs": [
@@ -261,6 +278,7 @@ var Images = [
     "description": "Photoshoot for Rambler.",
     "client": "Lisa Nourse PR",
     "shape": 1,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAMCyqwAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Brick/02+3H7A4596_web_br.jpg",
     "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Thumbs/01+3H7A4596_web_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Thumbs/02+3H7A4529_web_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Thumbs/03+3H7A4657_web_thumb.jpg"],
    "sthumbs": [
@@ -285,6 +303,7 @@ var Images = [
   "description": "Collaboration with Goodstein. This fully 3D printed animation commercial for Zihua Creative, illustrates how creatives must break out of their boxes to innovate as well as how technology is driving change in the creative industries. This piece fuses 3D printing and stop-motion animation, and utilized over 600 3D printed figurines for the minute-long animation.",
   "client": "Zihua Creative",
   "shape": 2,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAOvh0wAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Unbox+Yourself/Brick/01+Unbox_br.jpg",
   "slideshow": [
     "https:/player.vimeo.com/video/109559530"
@@ -298,6 +317,7 @@ var Images = [
   "client": "Mojo Condoms",
   "description": "Ad campaign for a condom brand. AD Moxie Peng.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABABGYdAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/02+Mojo+Love/Brick/02+mojolove_web3_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/02+Mojo+Love/Brick/02+mojolove_web3_br.jpg"
@@ -320,6 +340,7 @@ var Images = [
   "description": "Series of paintings that were part of the Set You Free music video by Jeno Liu. I drew the forest, and made ten paintings that were around 200 cm x 180cm. Everyone worked so hard! We then had a mini reception in the at Between Art Lab, who kindly let us use their space for the duration of the painting.",
   "client": "Jeno Liu + Zihua",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAFlgbAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/03+PROWL/Brick/03+2015-1-1forest_color_web1_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/03+PROWL/Thumbs/01+2015-1-1forest_color_web1_thumb.jpg",
@@ -413,6 +434,7 @@ var Images = [
   "materials": "Gouache on paper",
   "description": "For the Best in Show group exhibition at Double Punch Gallery in SF.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABADpgUwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/04+Winston/Brick/04+Winston_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/04+Winston/Brick/04+Winston_web_br.jpg"],
   "sthumbs": [
@@ -432,6 +454,7 @@ var Images = [
   "materials": "Digital",
   "shape": 1,
   "client": "Dirt Rag Mag. Thanks AD Matt Kaprsyk.",
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAPa9RgAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/09+Last+Chance/Brick/09+ZS_lastchance_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/09+Last+Chance/Brick/09+ZS_lastchance_web_br.jpg"],
   "sthumbs": [
@@ -450,6 +473,7 @@ var Images = [
   "year": 2014,
   "client": "For Art Bazaar China. AD Gigi Peng.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAO7dnAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/01+Apres+Soiree+Gum/Brick/01+Apres+Soiree+Gum_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/01+Apres+Soiree+Gum/Brick/01+Apres+Soiree+Gum_web_br.jpg"],
   "sthumbs": [
@@ -470,6 +494,7 @@ var Images = [
   "client": "Vice China",
   "description": "Piece about a popular Chinese street food - jianbing.", 
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAIdiVgAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/05+Jianbing/Brick/05+jianbing_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/05+Jianbing/Brick/05+jianbing_web_br.jpg"],
   "sthumbs": [
@@ -488,6 +513,7 @@ var Images = [
     "materials": "Pen & Ink, Digital",
     "description": "A personal piece", 
     "shape": 1,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAMWWcgAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/06+Beijing+/Brick/06+zs_beijing_web_br.jpg",
     "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/06+Beijing+/Brick/06+zs_beijing_web_br.jpg"],
     "sthumbs": [
@@ -508,6 +534,7 @@ var Images = [
   "client": "Telegraph Gallery",
   "description": "Commissioned piece for the Monstrous Show at Telegraph Gallery by David Murray. Edition of 95.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAE5WkAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/07+Monstrous/Brick/07+zs_monstrous_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/07+Monstrous/Brick/07+zs_monstrous_web_br.jpg"],
   "sthumbs": [
@@ -527,6 +554,7 @@ var Images = [
   "shape": 1,
   "client": "For Him Magazine",
   "description": "Piece for a killed project.",
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAN/Z3AAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/08+Workout/Brick/08+ZS_workout_web_br.jpg",
   "sthumbs": [
     "data:image/gif;base64,R0lGODlhAgADAPIFALmrssCRucOltcmruMWzsdK8uQAAAAAAACH5BAAAAAAALAAAAAACAAMAAAMEGDVCkAA7"
@@ -546,6 +574,7 @@ var Images = [
   "shape": 1,
   "materials": "Pen & Ink, Digital",
   "client": "Bitch Magazine",
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABABeXfQAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/10+Nordic+Noir/Brick/10+2012_14_zs_NordicNoir_Final_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/10+Nordic+Noir/Brick/10+2012_14_zs_NordicNoir_Final_web_br.jpg"],
   "sthumbs": [
@@ -566,6 +595,7 @@ var Images = [
   "client": "Efimero",
   "description": "Piece for a Barcelona-based t-shirt line",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAGpqagAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/11+Efimero/Brick/11+ZejianShen_Efimero_Final_web_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/11+Efimero/Brick/11+ZejianShen_Efimero_Final_web_br.jpg"],
   "sthumbs": [
@@ -585,6 +615,7 @@ var Images = [
   "materials": "Pen & Ink, Digital",
   "description": "Piece for Dimensions IV, an anthology about portals, edited by yours truly.", 
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABALp1dgAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/12+Sandwich/Brick/12+sandwich1_web_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Illustration/12+Sandwich/Thumbs/12+sandwich1_web_thumb.jpg",
@@ -611,6 +642,7 @@ var Images = [
   "client": "The Lifted Brow",
   "description": "Piece for The Lifted Brow’s issue on Sex. AD Ronnie Scott.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABALp1dgAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/01+The+Lifted+Brow/Brick/01+TheLiftedBrow_DearNeighbor_web_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/01+The+Lifted+Brow/Brick/01+TheLiftedBrow_DearNeighbor_web_br.jpg"
@@ -633,6 +665,7 @@ var Images = [
   "client": "Retrofit Comics & Big Planet Comics",
   "description": "A 24-hour take out clerk receives a mysterious package that triggers a series of nightmares. Meanwhile a murderous motorcyclist is at large…40 pages, black and white.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJpSRwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/02+Keep+Fresh/Brick/02+kf_cover_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/02+Keep+Fresh/Thumbs/02+kf_cover_thumb.jpg",
@@ -681,6 +714,7 @@ var Images = [
   "materials": "Pen & Ink, Digital",
   "description": "Victor Volcano is planning a party for his main squeeze - Betty Boulder. But will the party ever happen when Victor discovers scandalous secrets about his girlfriend? 40 pages, black and white.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAMzMzAAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/Brick/03+pp1_cover_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/Thumbs/01+pp1_cover_thumb.jpg",
   "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/Thumbs/02+pp4_web_thumb.jpg",
@@ -733,6 +767,7 @@ var Images = [
   "materials": "Pen & Ink, Digital",
   "Description": "Victor Volcan’s party plans continues as even more sinister plots and stakeholders come into light. Also, who the hell is Malcom Mousers anyway? 40 pages, black and white.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAOeTmQAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/Brick/04+pp2_cover_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/Thumbs/01+pp2_cover_thumb.jpg",
@@ -786,6 +821,7 @@ var Images = [
     "client": "Vice",
     "description": "Based on a true story. AD Nick Gazin.",
     "shape": 1,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEqsegAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/Brick/05+vacation2_web_br.jpg",
     "thumbs": [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/Thumbs/01+vacation1_web_thumb.jpg",
@@ -828,6 +864,7 @@ var Images = [
   "client": "Vice",
   "description": "Based on a true story. AD Nick Gazin.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAAUFNQAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/Brick/06+DUI4_web_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/Thumbs/01+DUI1_web_thumb.jpg",
@@ -861,6 +898,7 @@ var Images = [
     "client": "Zihua Creative",
     "description": "During my role as the creative director at Zihua, I got to do some hands on design work for various adverts. Here’s a selection of some of them.",
     "shape": 1,
+    "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAFXdowAAACwAAAAAAQABAAACAkQBAA==",
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/Brick/01+drink%26draw_webmedia_br.jpg",
     "thumbs": [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/Brick/01+drink%26draw_webmedia_br.jpg",
@@ -899,6 +937,7 @@ var Images = [
   "client": "Zihua Creative",
   "description": "I got to design some gift boxes that were part of the Unbox Yourself campaign, I did a comic that was the origin of the boxman, and we included some of the 3D printed figures that were used in the animation as gifts to share with the media.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABANvKtwAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/Brick/02+unbox+yourself_br.jpg",
   "thumbs": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/Thumbs/01+boxman1_web_thumb.jpg",
@@ -953,6 +992,7 @@ var Images = [
   "client": "Ma Sai",
   "description": "Business card designs for a filmmaker friend.",
   "shape": 1,
+  "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABACMdIgAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/03+Masai/Brick/03+masai_br.jpg",
   "sthumbs": [
     "data:image/gif;base64,R0lGODlhAgACAPEDAMXExNjX19rZ2efm5iH5BAAAAAAALAAAAAACAAIAAAID1CAFADs="
