@@ -56,7 +56,7 @@ class Showcase extends React.Component {
                 transitionEnter={false}
                 transitionLeave={false}>
           <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
-          {(image) => <img style={{maxWidth: "660px", maxHeight: "90%", width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
+          {(image) => <img style={{maxHeight: "660px", maxWidth: "90%", width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
           </ProgressiveImage>
         </ReactCSSTransitionGroup>}
           
