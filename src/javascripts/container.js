@@ -37,8 +37,11 @@ class Container extends React.Component {
 
   render () {
     const currentFilter = this.state.filter;
-    const visibleImages = Images.filter(function(image, index){
-      return !!((currentFilter === 'All' && image.type !== "About") || image.type === currentFilter)
+    const visibleImages = [];
+    Images.forEach(function(image, index){
+      if ((currentFilter === 'All' && image.type !== "About") || image.type === currentFilter) {
+        visibleImages[index-1] = image;
+      }
     });
 
     return (
