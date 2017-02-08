@@ -48,11 +48,11 @@ class Showcase extends React.Component {
      const numHeight = itemHeight.replace(/[px]/gi, '');
      if ((numWidth > width) && ((numWidth - width ) > (numHeight - 600))){
        itemWidth = (width * 0.9) + "px";
-       itemHeight = "auto";
+       itemHeight = ((width * 0.9) / showcaseItem.dimensions[showcaseIndex][0] )*showcaseItem.dimensions[showcaseIndex][1] +"px";
        console.log("wide", itemWidth, itemHeight);
      } else if (numHeight > 660) {
         itemHeight = "660px";
-        itemWidth = "auto";
+        itemWidth = (660 / showcaseItem.dimensions[showcaseIndex][1] ) * showcaseItem.dimensions[showcaseIndex][0] + "px";
         console.log("tall", itemWidth, itemHeight);
      }
      console.log(itemWidth, itemHeight);
