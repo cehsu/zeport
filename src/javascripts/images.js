@@ -38,8 +38,14 @@ var Images = [
   "description": "Here’s a cat who doesn’t care for you.",
   "shape": 2,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/Brick/catgif_br.gif",
+  "sthumbs": [
+    "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/Brick/catgif_br.gif"
+  ],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Cat+1+/catgif_ex1.gif"
+  ],
+  "dimensions": [
+    ["500px", "386px"]
   ]
 },  
 {   
@@ -686,6 +692,17 @@ var Images = [
   "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/Thumbs/08+snakebomb2_pg3-4_web_thumb.jpg",
   "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/Thumbs/09+2012_7_partyplansone_thumb.jpg"
   ],
+   "sthumbs": [
+    "data:image/gif;base64,R0lGODlhBQAGAPQdAH5ZaXRrbX5+fy5zq0NxnF6TvHyeu4h9fY6ZsJ+nraWsrba1trq5uYanwImowKS4x629yrG/yb7Dx826vcvGxM7Q0M3T19HNztbU0tTV1dbV1dXX2NjY2Nvb2wAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUY4GMgDlQQwOBYkhJtGJNQ3BIcQpddU5WFADs=",
+    "data:image/gif;base64,R0lGODlhBAAFAPQSABQUFBUVFRYWFkpKSnd3d4GBgYWFhZmZmaWlpaenp6ysrK2trbCwsLS0tLi4uL6+vsLCwt7d3eXk5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAUQIKQgTkIUR8Qo0tA8RiAHIQA7",
+    "data:image/gif;base64,R0lGODlhBAAFAPQQAJaWlpqamp+fn6ioqKmpqaqqqqysrK+vr7CwsLGxsba2tri4uLu7u729veDg4OLi4ubm5gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAUQ4PNADxEQRLMIKYIAioIEIQA7",
+    "data:image/gif;base64,R0lGODlhBQAGAPQXAHNzc5OTk6ysrLa2tsDAwMLCwsnJyc/Pz9XV1dbW1tfX19zc3OHh4ePj4+Xl5ebm5ufn5+jo6Onp6evr6+/v7/T09PX19fr6+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUX4OSIE5Mky3QQFFUBw5Q4gZAYxCUnVQgAOw==",
+    "data:image/gif;base64,R0lGODlhBQAGAPQcAF9fX21tbXV1dY6OjpCQkJycnJ+fn6enp6ioqKmpqbW1tMDAwMLBwcLCwcLCwsTExMbFxcrJys7Nzc/Pz9bW1tra2t3d3d7d3d/f3+Hh4eLh4eXl5e7u7gAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUYYJZZDGUAz2NFiZRtyRAQxTEpDFMJDGeFADs=",
+    "data:image/gif;base64,R0lGODlhBQAGAPQbAAAAAAoKCisrK0RERFJSUlRUVG1tbXd3d3l5eYODg5ycnJ6enqysrLS0tLm5ub28vMrJycvKyszLy8zMzNLR0uHg4OHh4eXk5evq6vr6+vv7+/7+/gAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUYYOUcE/MsSYNA0ERhWbVMl0EIiwYEQ6GFADs=",
+    "data:image/gif;base64,R0lGODlhBAAGAPQSAE9PT2RjY2pqanJycnh3d4KCgoqKiouLi46NjZeXlrW1tb29vcLCwdLS0tvb2+np6fX19fr6+v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAYAAAUToCRKz+I00EEcUlIMEqMYAiAEIQA7",
+    "data:image/gif;base64,R0lGODlhAgACAPEDAMfHx9PT09ra2tzc3CH5BAAAAAAALAAAAAACAAIAAAIDFBYFADs=",
+    "data:image/gif;base64,R0lGODlhAwADAPMIAHNiUYJvWYt6b6yZfLuvg7WvmcKsgsy7kNrUpwAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAADAAMAAAQHMBRBkAFnRAA7"
+  ],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/01+pp1_cover.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/02+pp4_web.jpg",
@@ -696,6 +713,17 @@ var Images = [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/07+snakebomb2_pg2_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/08+snakebomb2_pg3-4_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+1/09+2012_7_partyplansone.jpg" 
+  ],
+  "dimensions": [
+    ["527px", "640px"],
+    ["420px", "595px"],
+    ["504px", "612px"],
+    ["504px", "612px"],
+    ["504px", "612px"],
+    ["504px", "612px"],
+    ["792px", "1224px"],
+    ["1206px", "936px"],
+    ["612px", "612px"]
   ]
 },  
 {   
@@ -717,7 +745,18 @@ var Images = [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/Thumbs/08+pp32_web_thumb.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/Thumbs/09+2012_8_1photo_thumb.jpg"
   ],
-  "slideshow": [
+  "sthumbs": [
+    "data:image/gif;base64,R0lGODlhAQABAPABAGRDRQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
+    "data:image/gif;base64,R0lGODlhBQAGAPMPANLS0uDg4OHh4eLi4+Pj4+Tk5OXl5ebm5ufn5+np6erq6uvr6+zs7O3t7e7u7u/v7yH5BAAAAAAALAAAAAAFAAYAAAQPUKk2zTAYAzzBbeAEUk8EADs=",
+    "data:image/gif;base64,R0lGODlhBQAGAPQaAEdHR2VlZXR0dIWFhZGRkZycnJ+fn6Ojo6mpqaqqqq6urrW1tba2tri4uLm5ubq6uru7ur6+vsnJyc3Nzc7OztDQ0NLS0tbW1tjY2O/v7/Dw8AAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUYILREyAFJUKFUEwIxg7BMwWFoGnBV1UWEADs=",
+    "data:image/gif;base64,R0lGODlhBQADAPMOAH9/f4SEhYWFhZWVlZ2dnZ6enqmpqaysrK2trbKysre3t7y8vL+/v9bW1tra2gAAACH5BAAAAAAALAAAAAAFAAMAAAQLEBEFmhMCLWLSYBEAOw==",
+    "data:image/gif;base64,R0lGODlhBQAGAPQbAFtbW21sbXFxcXFxcnd3d3t7e319fY6OjpOTk5WVlZqamp6enqCgoKGhoaenp62trbGxsbKysru7vMXFxcbGxsjIyMrKys3NzdPT09XV1dbW1tfX2AAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUYYJVUS5QcEfFMjCJp2jVpkeAABSMYRKCFADs=",
+    "data:image/gif;base64,R0lGODlhBQADAPMOADs6OkVFRWpqam5ubn9+fn9/f42MjJaVlZuamqWkpKmpqaysrLCwsNjX1/Ly8gAAACH5BAAAAAAALAAAAAAFAAMAAAQLMIgCBknKHMfQahEAOw==",
+    "data:image/gif;base64,R0lGODlhAgADAPIFAJ+fn6qqqrGxscTExNLS0tTU1AAAAAAAACH5BAAAAAAALAAAAAACAAMAAAMEGFI0kAA7",
+    "data:image/gif;base64,R0lGODlhBQAGAPQdAEdHSElJSV5eXmFhYWdnZ2doaG1tbXNzc3l6en19fYiIiaKioqWlpaWlpqmpqaurrKusrK6urrKys7W1tbW1t7a2tri3uLi4ubm5ubi4usbGx8vLy83NzdXV1QAAAAAAACH5BAAAAAAALAAAAAAFAAYAAAUYoMMMxyIQQVEpAMJAkJFJWcJVnAZ1WZWFADs=",
+    "data:image/gif;base64,R0lGODlhBQAFAPQYAB0RLR0WNDccMDwgMVE7TlU7SnU5Q2FFTGxGSHJNU2JfZmRka3pgZXd6fYA/RplWVI9tZZJhZJViaaNlX6KDf6KMhbq/rsScjcOomAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAUAAAUVICAxixIQldUU0YVRyPQ4xpBAhxACADs="
+  ],
+ "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/01+pp2_cover.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/02+DDD5_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/03+DDD6_web.jpg",
@@ -727,7 +766,19 @@ var Images = [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/07+pp28_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/08+pp32_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/03+Party+Plans/PP+2/09+2012_8_1photo.JPG"
-  ]},{   
+  ],
+  "dimensions": [
+    ["502px", "612px"],
+    ["1008px", "1224px"],
+    ["1008px", "1224px"],
+    ["1008px", "612px"],
+    ["504px", "612px"],
+    ["1008px", "612px"],
+    ["504px", "612px"],
+    ["504px", "612px"],
+    ["1221px", "1221px"]
+  ]
+},{   
     "name": "Vacation",
     "type": "Comic",
     "year": 2012,
@@ -744,6 +795,14 @@ var Images = [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/Thumbs/05+vacation5_web_thumb.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/Thumbs/06+vacation6_web_thumb.jpg"
     ],
+    "sthumbs": [
+      "data:image/gif;base64,R0lGODlhAQABAPABALdecgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABAJfEhL7TiyH5BAAAAAAALAAAAAABAAIAAAICDAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABAK/EhrjEhyH5BAAAAAAALAAAAAABAAIAAAICRAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABANXWjdnYjiH5BAAAAAAALAAAAAABAAIAAAICRAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABANPVjdvYjiH5BAAAAAAALAAAAAABAAIAAAICDAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABAMPPisrSiyH5BAAAAAAALAAAAAABAAIAAAICDAoAOw=="
+    ],
     "slideshow": [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/01+vacation1_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/02+vacation2_web.jpg",
@@ -751,8 +810,16 @@ var Images = [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/04+vacation4_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/05+vacation5_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/04+Vacation/06+vacation6_web.jpg"
-    ]
-  },  
+    ],
+    "dimensions": [
+      ["700px", "1109px"],
+      ["700px", "1108px"],
+      ["700px", "1106px"],
+      ["700px", "1099px"],
+      ["700px", "1106px"],
+      ["700px", "1097px"]
+    ]  
+},  
 {   
   "name": "Swerve",
   "type": "Comic",
@@ -768,12 +835,25 @@ var Images = [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/Thumbs/03+DUI3_web_thumb.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/Thumbs/04+DUI4_web_thumb.jpg"
   ],
+     "sthumbs": [
+      "data:image/gif;base64,R0lGODlhAQACAPABABkZSC0tXCH5BAAAAAAALAAAAAABAAIAAAICRAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABAEZEcIqHoCH5BAAAAAAALAAAAAABAAIAAAICDAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABAH9/mIWEmyH5BAAAAAAALAAAAAABAAIAAAICRAoAOw==",
+      "data:image/gif;base64,R0lGODlhAQACAPABAIR6kpuFnCH5BAAAAAAALAAAAAABAAIAAAICDAoAOw=="
+    ],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/01+DUI1_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/02+DUI2_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/03+DUI3_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Comic/05+DUI/04+DUI4_web.jpg"
-  ]},{   
+  ],  
+  "dimensions": [
+      ["750px", "1125px"],
+      ["750px", "1125px"],
+      ["750px", "1125px"],
+      ["750px", "1125px"]
+    ]
+},{   
     "name": "Designs for Zihua",
     "type": "Design",
     "year": "2014-2015",
@@ -789,14 +869,28 @@ var Images = [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/Thumbs/04+ZihuaGraphicDesignClass_thumb.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/Thumbs/05+Homepage_thumb.jpg"
     ],
-    "slideshow": [
+   "sthumbs": [
+    "data:image/gif;base64,R0lGODlhAQABAPABAMbhzAAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
+    "data:image/gif;base64,R0lGODlhAwAEAPMLAFNSVlRUV1xcX11gYmBiZWBjZ2NmaWRoamxqa2xxdW13eG91eAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAADAAQAAAQJMBgFSBrlLCQiADs=",
+    "data:image/gif;base64,R0lGODlhAgADAPIEAPDl5PDm5vXn5/Xs7Pbs7AAAAAAAAAAAACH5BAAAAAAALAAAAAACAAMAAAMECCAykwA7",
+    "data:image/gif;base64,R0lGODlhAwAEAPMLAFZdXGdbXK6akq2kpb/Jv8W5uNjPydvPy9nUzNXR09zW1eHi5wAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAADAAQAAAQJMC2kjhGjBEAiADs=",
+    "data:image/gif;base64,R0lGODlhAwACAPIFAGpcT4BlV4NpWJuHfZWJhaSSjAAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMEWEMhkAA7"
+  ],
+  "slideshow": [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/01+drink%26draw_web_final.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/02+PosterA1_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/03+ZihuaBoxmanX_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/04+ZihuaGraphicDeisgnClass_FINAL.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/01+Zihua/05+Homepage.jpg"
-    ]
-  },  
+    ],
+  "dimensions": [
+    ["900px", "1249px"],
+    ["1684px", "2381px"],
+    ["1146px", "1600px"],
+    ["1191px", "1684px"],
+    ["1500px", "780px"]
+  ]  
+},  
 {   
   "name": "Unbox Yourself Campaign",
   "type": "Design",
@@ -817,6 +911,17 @@ var Images = [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/Thumbs/08+boxman3_thumb.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/Thumbs/09+unbox+yourself_thumb.jpg"
   ],
+  "sthumbs": [
+    "data:image/gif;base64,R0lGODlhAQABAPABAL+0qQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==",
+    "data:image/gif;base64,R0lGODlhAwACAPIFAL6nkqytr7GsqM+pg8e5rMzLywAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMECEMVkgA7",
+    "data:image/gif;base64,R0lGODlhAwACAPIFAG5ta4aBepyal6Kioqinpru6ugAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMECBRTkgA7",
+    "data:image/gif;base64,R0lGODlhBwAFAPUiAC4cEjMhFTUnGDotHTErIz8wI0U8L0g9LUw9LlVHN1hKM15MPV5TSGFQQGdaSHZdRXtqWn1tXH1wYH9xYYFlR4NwX4N5b4h7cY+Bco+DdY2FfZOEepyRjKKalayil6ihnrStp760sNrNxwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAHAAUAAAYhwIjg0GBcOIoBwjHBdBKAAGGS+VgWlcJGFNIYIA+KBxQEADs=",
+    "data:image/gif;base64,R0lGODlhAwACAPIFABgVFSEdHEM0LkU9OmNaVH9+egAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMEWAMkkQA7",
+    "data:image/gif;base64,R0lGODlhAgABAPABAPzo1vzp1yH5BAAAAAAALAAAAAACAAEAAAICDAoAOw==",
+    "data:image/gif;base64,R0lGODlhAwACAPIFAAkDAiEZFldLOnBRO2VRQ4JrVgAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMEKBQwlQA7",
+    "data:image/gif;base64,R0lGODlhAwACAPIFACkmHZh0ZrWLX9qadOa9qPzPvQAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMEWAE0kgA7",
+    "data:image/gif;base64,R0lGODlhAwACAPIFAIxsVqaLbsu1m9Ovlde5oua4iwAAAAAAACH5BAAAAAAALAAAAAADAAIAAAMESANSkQA7"
+  ],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/01+boxman1_web.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/02+boxman2_web.jpg",
@@ -827,7 +932,19 @@ var Images = [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/07+BTS3.JPG",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/08+boxman3.JPG",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/02+Unbox+Yourself/09+boxman4.JPG"
-  ]},
+  ],
+  "dimensions": [
+    ["1632px", "1089px"],
+    ["1636px", "1107px"],
+    ["900px", "500px"],
+    ["1602px", "1080px"],
+    ["1920px", "1080px"],
+    ["3001px", "1433px"],
+    ["5616px", "3632px"],
+    ["5760px", "3840px"],
+    ["5760px", "3840px"]
+  ]
+},
 {   
   "name": "Ma Sai, Director/Filmmaker",
   "type": "Design",
@@ -837,8 +954,14 @@ var Images = [
   "description": "Business card designs for a filmmaker friend.",
   "shape": 1,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/03+Masai/Brick/03+masai_br.jpg",
+  "sthumbs": [
+    "data:image/gif;base64,R0lGODlhAgACAPEDAMXExNjX19rZ2efm5iH5BAAAAAAALAAAAAACAAIAAAID1CAFADs="
+    ],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Design/03+Masai/03+%E9%A9%AC%E8%B5%9B.jpg"
+  ],
+  "dimensions": [
+    ["1800px", "2400px"]
   ]
 }
 ];
