@@ -212,12 +212,21 @@ var Images = [
     "thumbs": 
       ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/01+Portrait+2_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/02+Popsons2_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/03+Popsons1_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/04+Mourad2_thumb.jpg",
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/Thumbs/05+ODB1_thumb.jpg"],
+    "sthumbs": [
+    "data:image/gif;base64,R0lGODlhBAAFAPQTAAgKDwoLEEZCQl1BQXtTT3tnaJJ8eoCGkoeLnI2FlJ+Sl7ehmbqlpLOyr76+yczQ2tjc4+7k4fLr6vj49QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAURoFAMQbMQwAQ5R5Qgj6QwRggAOw==",
+    "data:image/gif;base64,R0lGODlhBAAFAPQTAB8WGj5IQ1M3PXAxEWg3KU1AMURJSmtbUY8ZEZ0fHYo8Nqk2LYtwTo1xX5B1WbZYQbZ3V8aHWcOdaNykVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAURIBAYQuE0BzFMksJECwI9SQgAOw==",
+    "data:image/gif;base64,R0lGODlhBQAEAPQTABgTDyQpLSw3PzlAS10zNH5kPEBFTVFHRHlZTIUoI5hVK4RkQZN0TsB7UtxxVK6IWLqDUK6OecSXadSidgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAFAAQAAAUR4GAcQBAhSiEwyyMRDTQ5SQgAOw==",
+    "data:image/gif;base64,R0lGODlhBAAGAPQXABsLCS8ZEzojFjsiGkMqHVAoFlExHVA3G0Y4IE8yJVI0Jlg6KGo0EFhHKmRCL2pILG9dOnJCI5I5EYRgMYRuSphhQJlzVbF1TQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAYAAAUUYGEgDRA4kJJY1HNVE0MMixQdQggAOw==",
+    "data:image/gif;base64,R0lGODlhBgAEAPQXABMNCCwuMzU5P0I+OkxGQ01HQk1QWExSXWRhXGhgYXNlYZGGeoeChIeJkZCLhpCSjp2YnKCen7KSibCVjbyonO/b2ODj4/Px6QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAGAAQAAAUUIFBIiBAM0PQcRtQQ1OIwiVJdVggAOw=="
+    ],
     "slideshow": [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/01+Portrait+2.jpg", 
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/02+Popsons2.jpg", 
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/03+Popsons1.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/04+Mourad2.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/01+Fresh+Toast/05+ODB1.jpg"
-    ]
+    ],
+    "dimensions": 
+      [["384px","496px"], ["353px", "470px"],["4868px", "3496px"],["384px","576px"],["5760px","3840px"]]
   },  
 {   
   "name": "Old Bus Tavern",
@@ -228,9 +237,18 @@ var Images = [
   "shape": 1,
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Brick/03+ZejianShen_Benedict_HiRes_br.jpg",
   "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Thumbs/01+ZejianShen_Benedict_HiRes_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Thumbs/02+ZejianShen_Pancakes_HiRes_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/Thumbs/03+ZejianShen_OBTBrunch_HiRes_thumb.jpg"],
+  "sthumbs": [
+    "data:image/gif;base64,R0lGODlhBgAEAPQXAHp5c9W8dPPKVunOf6qhhayhnqyonLGwsrW0s763tby7tse+ldjGpdvLq9DNvdvRpMjJwN7WxtLT1ODe2erl2uHh5OXj4eDh6QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAGAAQAAAUUoCJdkHNU07MwBUIEQqQARjNQVggAOw==",
+    "data:image/gif;base64,R0lGODlhBgAEAPQXAH1bP4tfOpZtQslmTM9vZp2Nf6uRdcKMdtSeaOKUYKmro62xu7nPzsWdn+C/i+S5qMvMvMDFyMvLzNrZyNfW1NTa49nh7OXr7wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAGAAQAAAUU4CJNlFVFkHM0F1MEyEAoBiAkTwgAOw==",
+    "data:image/gif;base64,R0lGODlhBgAEAPQXAH1bP4tfOpZtQslmTM9vZp2Nf6uRdcKMdtSeaOKUYKmro62xu7nPzsWdn+C/i+S5qMvMvMDFyMvLzNrZyNfW1NTa49nh7OXr7wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAGAAQAAAUU4CJNlFVFkHM0F1MEyEAoBiAkTwgAOw=="
+    ],
   "slideshow": [
     "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/01+ZejianShen_Benedict_HiRes.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/02+ZejianShen_Pancakes_HiRes.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/03+ZejianShen_OBTBrunch_HiRes.jpg"
-  ]},{   
+  ],   
+  "dimensions": [
+      ["5760px", "3840px"],["5624px", "3678px"],["5760px", "3840px"]
+    ]
+},{   
     "name": "Rambler",
     "type": "Photography",
     "year": 2016,
@@ -239,12 +257,20 @@ var Images = [
     "shape": 1,
     "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Brick/02+3H7A4596_web_br.jpg",
     "thumbs": ["https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Thumbs/01+3H7A4596_web_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Thumbs/02+3H7A4529_web_thumb.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/Thumbs/03+3H7A4657_web_thumb.jpg"],
+   "sthumbs": [
+     "data:image/gif;base64,R0lGODlhDgAIAPZvACEcCTsmFTwuGT8yD0IqEkcwGE00G1M8DFA6IlM5IVw+IVdIEFpHHlZGKGFFFmNVBmJYFmhQHHVXC2NEJGdIKGtJJmtKJm5KJW9MJ2tLLG5MKG9MKXBMJnFOK3BOLXNWKndSK3lXNH5mS4FXLIpdLYpfM4phHZd9FptwH5l8E4d/I4t7JYhmQpBpQI96Y7KWE9OkXcSnc8uxbs+yeMOrjde7lNO9oNLAkNvCltrAm93Eod3Fod/Fo+HFlOHLmeDIp+XKouLMreTOqOXMrOXOr+LRrOnSrerQr+bQsObRsubTtunRsOrStOnVt+vUtOrUt+vVt+vWtuvVuuvXvO3Wu+7XvuvZvOzZuuzZu+zau+7bve7av+3cv/Dau+7cwO/cwu7dxO7exO/exO/fxvHdwPLix/HgyPHhyvHiyvHiy/LhyfLjy/Ljz/PkzvTlzPfozgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAOAAgAAAdxgBsbGR42bmRrbGxnYVlSJAkBLm9haWNGPUJdWU8KFCU/jGcwKCkvMVRMGyMtSlxrOyYRDA8vPVIVHCxSWWdFEB8NAgczWRMVIUFXWV0qDwkABDVMGCAXNFpJXTcrCw0xRzwFBgQiTERJVUw9PkQ8NYEAOw==",
+     "data:image/gif;base64,R0lGODlhDAAIAPZeAAAAAAAAAQEAAAIDBwQBAggEBQkHBgoGBw0JCAwNDg4MDA8OEBIOCRcOChQTDB4QARIREBgTEhgYGyEWDSUZDywcDCMeFjYwJDs1J0csDEwoAEUyHl86F048KXNOLW5aQ3VgRnRjTHJmWo1xFZ5wNrB0F7F3H7d2Gq1pK6lyILNyL7V5L7NyMrZ3OrR/Nbd9ObZ8Or14M4lqSY1+YaBwQLd7RM59DNF6Jb2CO6OGYKGPaaCPe6+Ua7OLZryWdrqaebCgesOQOc+eONCFJ9qAINiJKuGmNcOHQcaHT8iOTcCIUsCMVcSVX86XYMybZsmfdNGcZ9mlYtuyevmzQeXCetm6l865oei/jdrEq9vGrerWr+PRsPLTq/Phvfjm0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAMAAgAAAdhgBYXGAkAAA0OBQUHCAMJEA0REgkUEwSGHB40MUlOS0dBJB8iSigtUEg4KSovUVxXWD89PyojKTc4TC8rWF5aUiUlRERFTE9VHTtbVEFDQkZGXlYyFQ8bHzk6QDw5IBkagQA7",
+     "data:image/gif;base64,R0lGODlhDAAIAPZeAAYEAQgCAAkFAQgFAwsIAwsJBAsJBQ0IAA8KBA4LBwwJCBYPABUOBhAOCxIOCxEPEBMQCxMQDhUQCRYTDRwUAxwWCR0XCRYTEyMbECIbEyAaFiEcFCYgGSciGygjFCkiGy0mGiwlHjIrGSYjJTIrIzMrIjQrIDQtIzUuITktITwvIz01Jjo0KD81Kjw1Lj03Ljs1MEA5KEE7LEE6LkQ6K0s8IEk6LUE7M08/MktCN01AME1EOVtAKV5PJFhKL1tNL1hGOWBFLmdJMWFNP25TPnFUPWxhPVlORF5UR2dTRmlSQWxVQ2teT3duWH5mVndtZIZuMIxjQ41lRZJnRZRrSpxyUYV7aIhyZ4l9ZZmCc62aWqOVeKubd6+akLOrnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAMAAgAAAdigE83TFhNOjtIVl5cRi8wRzlaPjQxMiYrIhUfGwc9UDUUCxUZAS0mIB4dWz8lJiwzDBkdJB8SLxcMARATBgYBCQwDDgoPIxcTDSkqNjhAR0lXXVlOSkFCRUE8S0VSU1VUUYEAOw=="
+   ],
     "slideshow": [
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/01+3H7A4596_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/02+3H7A4529_web.jpg",
       "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/02+Rambler+/03+3H7A4657_web.jpg"
+    ],
+    "dimensions": [
+    ["1382px", "818px"],["1212px", "784px"],["1342px", "879px"]
     ]
-  },  
+   },  
 {   
   "name": "Unbox Yourself",
   "type": "Animation",

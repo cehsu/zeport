@@ -40,6 +40,7 @@ class Showcase extends React.Component {
            body = d.getElementsByTagName('body')[0],
            width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
      console.log(width);
+     console.log(showcaseItem);
      console.log(showcaseItem.dimensions);
      const itemWidth = (width > 700) ? showcaseItem.dimensions[showcaseIndex][1] : "100%"; 
      console.log(itemWidth);
@@ -55,7 +56,7 @@ class Showcase extends React.Component {
                 transitionEnter={false}
                 transitionLeave={false}>
           <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
-          {(image) => <img style={{width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
+          {(image) => <img style={{maxWidth: "660px", maxHeight: "90%", width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
           </ProgressiveImage>
         </ReactCSSTransitionGroup>}
           
