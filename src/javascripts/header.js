@@ -20,8 +20,8 @@ class Header extends React.Component {
       <div className={'header-content'}>
       <div className={((this.props.params.route === 'work' && !this.props.params.piece) && (this.state.shrink||this.state.small)) ? 'work shrink header u-clearfix' : (this.state.shrink||this.state.small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
         <div className={'header-content u-clearfix'}>
-          <div className={'title'}>
-            <Link className={'title-content'} to='/'>Zejian Shen</Link>
+          <div className={'button-container title-container'}>
+            <Link className={'button'} to='/'>Zejian Shen</Link>
           </div>
           <ButtonBarComponent route={this.props.route} className={(this.state.small || this.state.shrink) ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={this.state.shrink} isHeader={true} />
           </div>
