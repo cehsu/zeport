@@ -25,115 +25,115 @@ class Showcase extends React.Component {
     this.incrementIndex = this.incrementIndex.bind(this);
     this.decrementIndex = this.decrementIndex.bind(this);
   }
- 
+
   render() {
     const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
     const showcaseItem = this.props.images[showcaseNumber];
     const thumbs = showcaseItem.thumbs;
     const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
-     const slideshow = showcaseItem.slideshow;
+    const slideshow = showcaseItem.slideshow;
     console.log(showcaseNumber, showcaseItem, showcaseIndex, "piece, item, index");
-     const slideShowLength = slideshow.length;
-     const w = window,
-           d = document,
-           documentElement = d.documentElement,
-           body = d.getElementsByTagName('body')[0],
-           width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
-     console.log(width);
-     console.log(showcaseItem);
-     console.log(showcaseItem.dimensions);
-     let itemHeight = (width > 700) ? showcaseItem.dimensions[showcaseIndex][1] : "100%";
-     let itemWidth = (width > 700) ? showcaseItem.dimensions[showcaseIndex][0] : "100%";
-     const numWidth = itemWidth.replace(/[px]/gi, '');
-     const numHeight = itemHeight.replace(/[px]/gi, '');
-     if ((numWidth > width) && ((numWidth - width ) > (numHeight - 600))){
-       itemWidth = (width * 0.9) + "px";
-       itemHeight = ((width * 0.9) / showcaseItem.dimensions[showcaseIndex][0] )*showcaseItem.dimensions[showcaseIndex][1] +"px";
-       console.log("wide", itemWidth, itemHeight);
-     } else if (numHeight > 660) {
+    const slideShowLength = slideshow.length;
+    const w = window,
+    d = document,
+    documentElement = d.documentElement,
+    body = d.getElementsByTagName('body')[0],
+    width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    let iframeWidth = (width < 640) ? "100%" : "640px";
+    let iframeHeight = (width < 650) ? (width/640)* 340+"px" : "340px";
+    let itemHeight, itemWidth, numWidth, numHeight;
+    if(showcaseItem.dimensions){
+      itemHeight = (width > 700) ? showcaseItem.dimensions[showcaseIndex][1] : "100%";
+      itemWidth = (width > 700) ? showcaseItem.dimensions[showcaseIndex][0] : "100%";
+      numWidth = itemWidth.replace(/[px]/gi, '');
+      numHeight = itemHeight.replace(/[px]/gi, '');
+      if ((numWidth > width) && ((numWidth - width ) > (numHeight - 600))){
+        itemWidth = (width * 0.9) + "px";
+        itemHeight = ((width * 0.9) / showcaseItem.dimensions[showcaseIndex][0] )*showcaseItem.dimensions[showcaseIndex][1] +"px";
+      } else if (numHeight > 660) {
         itemHeight = "660px";
         itemWidth = (660 / showcaseItem.dimensions[showcaseIndex][1] ) * showcaseItem.dimensions[showcaseIndex][0] + "px";
         console.log("tall", itemWidth, itemHeight);
-     }
-     console.log(itemWidth, itemHeight);
-     const setIndex = this.setIndex;
-     const setFocus = this.setFocus;
-       return (
+      }
+    }
+    const setIndex = this.setIndex;
+    const setFocus = this.setFocus;
+    return (
         <div className={'showcase-container'} >
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && 
-              <ReactCSSTransitionGroup
-                transitionName="example"
-                transitionAppear={true}
-                transitionAppearTimeout={500}
-                transitionEnter={false}
-                transitionLeave={false}>
-          <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
-          {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
+          <ReactCSSTransitionGroup
+            transitionName="example"
+            transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnter={false}
+          transitionLeave={false}>
+            <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
+            {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
           </ProgressiveImage>
-        </ReactCSSTransitionGroup>}
-          
-        {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height='360' width='640' frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
-         {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
-            {thumbs.map(function(item, index){
-              return (
-                <Link key={index} to={ {pathname: '/work/'+(showcaseNumber-1)+'/'+(index+1)} }>
-                  <img onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
-                </Link>
+            </ReactCSSTransitionGroup>}
+
+            {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height={iframeHeight} width={iframeWidth} frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
+            {slideShowLength < 5 && slideShowLength > 1 && <div className={'flex-container'}>
+              {thumbs.map(function(item, index){
+                                                 return (
+                                                     <Link key={index} to={ {pathname: '/work/'+(showcaseNumber-1)+'/'+(index+1)} }>
+                                                     <img onClick={() => setFocus(index)} className={(index === showcaseIndex) ? 'focus' : 'non-focus'} src={item} />
+                                                     </Link>
+                                                     )
+                                               })
+              }
+
+              </div> }
+            {slideShowLength > 4 && <div className={'slider-container'}>
+              <div onClick={()=>{this.decrementIndex(showcaseIndex, slideShowLength)}}  className={'arrow left'}></div>
+                <div className={'track-container'}>
+                <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'track'} >
+                <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[slideShowLength - 4]} />
+                <img onClick={() => this.setIndex((slideShowLength - 3), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[slideShowLength - 3]} />
+                <img onClick={() => this.setIndex((slideShowLength - 2), showcaseIndex, slideShowLength)} className={((slideShowLength - 2) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[slideShowLength - 2]} />
+                <img onClick={() => this.setIndex((slideShowLength - 1), showcaseIndex, slideShowLength)} className={((slideShowLength - 1) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[slideShowLength - 1]} />
+
+                {thumbs.map(function(item, sliderIndex){
+                                                         return (
+                                                             <img key={sliderIndex} onClick={() => setIndex(sliderIndex, showcaseIndex, slideShowLength)} className={(sliderIndex === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={item} />
+                                                             );
+                                                       }
+                    )}
+              <img onClick={() => this.setIndex(0, showcaseIndex, slideShowLength)} className={(0 === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[0]} />
+                <img onClick={() => this.setIndex(1, showcaseIndex, slideShowLength)} className={(1 === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[1]} />
+                <img onClick={() => this.setIndex(2, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[2]} />
+                <img onClick={() => this.setIndex(3, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[3]} />
+                </div>
+                </div>
+                <div onClick={()=>{this.incrementIndex(showcaseIndex, slideShowLength)}} className={'arrow right'}></div>
+                </div>}
+            <div className={(((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1)) ? 'item-details landscape' : 'item-details'}>
+            {showcaseItem.name && <div className={'item-title'}>{showcaseItem.name}</div>}
+            {showcaseItem.year && <div>{showcaseItem.year}</div>}
+            {showcaseItem.materials && <div>{showcaseItem.materials}</div>}
+            {showcaseItem.team && <div>{showcaseItem.team}</div>}
+            {showcaseItem.description && <div>{showcaseItem.description}</div>}
+            {showcaseItem.client && <div>{showcaseItem.client}</div>}
+            {showcaseItem.clients && <div>Select Clients: {showcaseItem.clients}</div>}
+            {showcaseItem.press && <div>Press: {showcaseItem.press.map(function(item, index, collection){
+                                                                                                          if(index < (collection.length - 1)){
+                                                                                                            return <span><a href={item[1]}>{item[0]}</a>, </span>
+                                                                                                          } else {
+                                                                                                            return <span><a href={item[1]}>{item[0]}</a></span>
+                                                                                                          }
+                                                                                                        })}</div>}
+            </div>
+
+              </div>
               )
-            })
-            }
-
-            </div> }
-          {slideShowLength > 4 && <div className={'slider-container'}>
-          <div onClick={()=>{this.decrementIndex(showcaseIndex, slideShowLength)}}  className={'arrow left'}></div>
-            <div className={'track-container'}>
-            <div style={{transform: 'translate('+ this.state.xOffset+ 'px)', transition: this.state.transition}} className={'track'} >
-            <img onClick={() => this.setIndex((slideShowLength - 4), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[slideShowLength - 4]} />
-            <img onClick={() => this.setIndex((slideShowLength - 3), showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[slideShowLength - 3]} />
-            <img onClick={() => this.setIndex((slideShowLength - 2), showcaseIndex, slideShowLength)} className={((slideShowLength - 2) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[slideShowLength - 2]} />
-            <img onClick={() => this.setIndex((slideShowLength - 1), showcaseIndex, slideShowLength)} className={((slideShowLength - 1) === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[slideShowLength - 1]} />
-
-          {thumbs.map(function(item, sliderIndex){
-             return (
-               <img key={sliderIndex} onClick={() => setIndex(sliderIndex, showcaseIndex, slideShowLength)} className={(sliderIndex === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={item} />
-              );
-             }
-          )}
-           <img onClick={() => this.setIndex(0, showcaseIndex, slideShowLength)} className={(0 === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[0]} />
-           <img onClick={() => this.setIndex(1, showcaseIndex, slideShowLength)} className={(1 === showcaseIndex) ? 'slider-item focus' : 'slider-item non-focus'} src={thumbs[1]} />
-           <img onClick={() => this.setIndex(2, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[2]} />
-           <img onClick={() => this.setIndex(3, showcaseIndex, slideShowLength)} className={'slider-item non-focus'} src={thumbs[3]} />
-          </div>
-          </div>
-          <div onClick={()=>{this.incrementIndex(showcaseIndex, slideShowLength)}} className={'arrow right'}></div>
-          </div>}
-          <div className={(((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1)) ? 'item-details landscape' : 'item-details'}>
-          {showcaseItem.name && <div className={'item-title'}>{showcaseItem.name}</div>}
-          {showcaseItem.year && <div>{showcaseItem.year}</div>}
-          {showcaseItem.materials && <div>{showcaseItem.materials}</div>}
-          {showcaseItem.team && <div>{showcaseItem.team}</div>}
-          {showcaseItem.description && <div>{showcaseItem.description}</div>}
-          {showcaseItem.client && <div>{showcaseItem.client}</div>}
-          {showcaseItem.clients && <div>Select Clients: {showcaseItem.clients}</div>}
-          {showcaseItem.press && <div>Press: {showcaseItem.press.map(function(item, index, collection){
-                                         if(index < (collection.length - 1)){
-                                           return <span><a href={item[1]}>{item[0]}</a>, </span>
-                                         } else {
-                                           return <span><a href={item[1]}>{item[0]}</a></span>
-                                         }
-                                                                                                      })}</div>}
-          </div>
-
-        </div>
-        )
   }
 
   componentDidUpdate() {
     if(this.props.showcaseItem !== false){
-    document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
+      document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
     }
     return true;
-   }
+  }
 
   componentWillUnmount() {
     document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
@@ -142,7 +142,7 @@ class Showcase extends React.Component {
   setFocus(newIndex) {
     this.setState({showcaseIndex: newIndex});
   }
-  
+
   setIndex(newIndex, oldIndex, length) {
     if (!this.state.sliding){
       this.setState({sliding: true});
@@ -151,27 +151,27 @@ class Showcase extends React.Component {
         this.setState({xOffset: tx, showcaseIndex: newIndex});
         if (this.state.xOffset > -300){
           setTimeout(
-            function(){
-              this.setState({transition: '0s', xOffset: this.state.xOffset - (length * 100)});
-            }.bind(this), 550);
+              function(){
+                this.setState({transition: '0s', xOffset: this.state.xOffset - (length * 100)});
+              }.bind(this), 550);
           setTimeout(
-            function(){
-              this.setState({transition: '0.5s', sliding: false});
-            }.bind(this), 590);
-       }
+              function(){
+                this.setState({transition: '0.5s', sliding: false});
+              }.bind(this), 590);
+        }
       } else if ((oldIndex - newIndex) > 3) {
-         const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
-         this.setState({xOffset: tx, showcaseIndex: newIndex});
-         if (this.state.xOffset < -200){
-           setTimeout(
-             function(){
-               this.setState({transition: '0s', xOffset: this.state.xOffset + (length * 100)});
-             }.bind(this), 550);
-           setTimeout(
-             function(){
-               this.setState({transition: '0.5s', sliding: false});
-             }.bind(this), 590);
-         }
+        const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
+        this.setState({xOffset: tx, showcaseIndex: newIndex});
+        if (this.state.xOffset < -200){
+          setTimeout(
+              function(){
+                this.setState({transition: '0s', xOffset: this.state.xOffset + (length * 100)});
+              }.bind(this), 550);
+          setTimeout(
+              function(){
+                this.setState({transition: '0.5s', sliding: false});
+              }.bind(this), 590);
+        }
       } else {
         const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
         this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
@@ -182,13 +182,13 @@ class Showcase extends React.Component {
       this.props.router.push('work/'+this.props.params.piece+'/'+(newIndex+1));
     }.bind(this),600);
   }
- 
+
   incrementIndex(currentIndex, length) {
     const newIndex = (currentIndex === length - 1) ? 0 : (currentIndex + 1)
-    const oldIndex = currentIndex;
+      const oldIndex = currentIndex;
     this.setIndex(newIndex, oldIndex, length);
   }
-  
+
   decrementIndex(currentIndex, length) {
     const newIndex = (currentIndex  === 0) ? (length - 1) : (currentIndex - 1);
     const oldIndex = currentIndex;
@@ -207,26 +207,26 @@ class Showcase extends React.Component {
     }
     if(this.state.dragXStart === null){
       if(event.type === 'drag'){
-      this.setState({dragXStart: event.clientX});
+        this.setState({dragXStart: event.clientX});
       } else if (event.type === 'touchmove'){
         this.setState({dragXStart: event.touches[0].pageX});
       }
     } else if((this.state.dragXNext === null) && (this.state.dragXStart!==null)) {
       if (event.type === 'drag' && (this.state.dragXStart !== event.clientX)){
-      this.setState({dragXNext: event.clientX}, function(){
-        if(this.state.dragXStart < this.state.dragXNext){
-          this.setState({direction: 'right'}, this.decrementIndex(currentIndex, length));
+        this.setState({dragXNext: event.clientX}, function(){
+          if(this.state.dragXStart < this.state.dragXNext){
+            this.setState({direction: 'right'}, this.decrementIndex(currentIndex, length));
           } else if(this.state.dragXStart > this.state.dragXNext){
-          this.setState({direction: 'left'}, this.incrementIndex(currentIndex, length));
-        }
-      });
+            this.setState({direction: 'left'}, this.incrementIndex(currentIndex, length));
+          }
+        });
       } else if (event.type === 'touchmove' && (this.state.dragXStart !== event.touches[0].clientX)){
-      this.setState({dragXNext: event.touches[0].clientX}, function(){
-        if(this.state.dragXStart < this.state.dragXNext){
-          this.setState({direction: 'right'}, this.decrementIndex(currentIndex, length));
-        } else if (this.state.dragXStart > this.state.dragXNext) {
-          this.setState({direction: 'left'}, this.incrementIndex(currentIndex, length));
-        }
+        this.setState({dragXNext: event.touches[0].clientX}, function(){
+          if(this.state.dragXStart < this.state.dragXNext){
+            this.setState({direction: 'right'}, this.decrementIndex(currentIndex, length));
+          } else if (this.state.dragXStart > this.state.dragXNext) {
+            this.setState({direction: 'left'}, this.incrementIndex(currentIndex, length));
+          }
         });
       }
     }
@@ -236,13 +236,13 @@ class Showcase extends React.Component {
     if(this.props.showcaseItem !== false){
       event.dataTransfer.effectAllowed = 'none';
       const image = this.props.images[this.props.params.piece].slideshow[(this.props.params.number - 1)]
-      event.dataTransfer.setData("text/plain", event.target.id);
+        event.dataTransfer.setData("text/plain", event.target.id);
       var img = new Image(); 
       img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="; 
       event.dataTransfer.setDragImage(img, 100, 100);
     }
   }
-  
+
 }
 
 export default Showcase
