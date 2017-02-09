@@ -266,7 +266,9 @@ var Images = [
     "data:image/gif;base64,R0lGODlhBgAEAPQXAH1bP4tfOpZtQslmTM9vZp2Nf6uRdcKMdtSeaOKUYKmro62xu7nPzsWdn+C/i+S5qMvMvMDFyMvLzNrZyNfW1NTa49nh7OXr7wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAGAAQAAAUU4CJNlFVFkHM0F1MEyEAoBiAkTwgAOw=="
     ],
   "slideshow": [
-    "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/01+ZejianShen_Benedict_HiRes.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/02+ZejianShen_Pancakes_HiRes.jpg", "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/03+ZejianShen_OBTBrunch_HiRes.jpg"
+    "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/01+ZejianShen_Benedict_web.jpg",
+    "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/02+ZejianShen_Pancakes_web.jpg",
+    "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Photography/03+Old+Bus+Tavern/03+ZejianShen_OBTBrunch_web.jpg"
   ],   
   "dimensions": [
       ["5760px", "3840px"],["5624px", "3678px"],["5760px", "3840px"]
