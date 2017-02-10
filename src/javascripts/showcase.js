@@ -26,7 +26,6 @@ class Showcase extends React.Component {
   }
 
   render() {
-    console.log('hello');
     const { showcaseNumber, showcaseIndex, iframeHeight, iframeWidth, itemHeight, itemWidth } = this.props;
     const showcaseItem = this.props.images[showcaseNumber];
     const thumbs = showcaseItem.thumbs;
@@ -105,10 +104,11 @@ class Showcase extends React.Component {
   }
 
   componentDidUpdate() {
-    if(this.props.showcaseItem !== false){
+    console.log('image');
+    const showcaseImage = document.getElementsByClassName('showcase-image')[0];
+    if (showcaseImage) {
       document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
     }
-    return true;
   }
 
   componentWillUnmount() {

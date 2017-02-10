@@ -1,35 +1,12 @@
 import React, {Component, PropTypes} from 'react'
 import Showcase from 'javascripts/showcase'
 
-class ShowcaseContainer extends React.Component{
-
-  constructor(props) {
+class ShowcaseContainer extends React.Component {
+  constructor(props){
     super(props);
-    this.state = {
-      showcaseNumber: 0,
-      showcaseIndex: 0,
-      iframeWidth: "",
-      iframeHeight: "",
-      itemHeight: "",
-      itemWidth: ""
-    }
-    this.setShowcase = this.setShowcase.bind(this);
-    this.setIframe = this.setIframe.bind(this);
     this.setItem = this.setItem.bind(this);
   }
 
-  setShowcase() {
-    const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
-    const showcaseIndex =  (this.props.params.number) ? this.props.params.number - 1 : 0;
-    return {showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex};
-  }
-
-  setIframe(width) {
-    let iframeWidth = (width < 640) ? "100%" : "640px";
-    let iframeHeight = (width < 650) ? (width/640)* 340+"px" : "340px";
-    return {iframeWidth: iframeWidth, iframeHeight: iframeHeight};
-  }
- 
   setItem(width, piece, pieceIndex) {
     let itemHeight, itemWidth, numWidth, numHeight;
     const showcaseItem = this.props.images[piece];
@@ -49,18 +26,16 @@ class ShowcaseContainer extends React.Component{
     }
     return {itemHeight: itemHeight, itemWidth: itemWidth};
   }
- 
-  componentDidMount() {
-    const windowWidth = this.props.windowWidth;
-    const { showcaseNumber, showcaseIndex } = this.setShowcase();
-    const { iframeWidth, iframeHeight } = this.setIframe(windowWidth);
-    const { itemHeight, itemWidth } = this.setItem(windowWidth, showcaseNumber, showcaseIndex);
-    this.setState({showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex, iframeWidth: iframeWidth, iframeHeight: iframeHeight, itemHeight: itemHeight, itemWidth: itemWidth});
-  }
 
-  render () {
+  render() {
+    const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
+    const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
+    const iframeWidth = (this.props.windowWidth < 640) ? "100%" : "640px";
+    const iframeHeight = (this.props.windowWidth < 650) ? (this.props.windowWidth/640)* 340+"px" : "340px";
+    const {itemHeight,itemWidth} = this.setItem(this.props.windowWidth, showcaseNumber, showcaseIndex);
+
     return (
-        <Showcase {...this.props} {...this.state}/>)   
+        <Showcase {...this.props} showcaseNumber={showcaseNumber} showcaseIndex={showcaseIndex} iframeWidth={iframeWidth} iframeHeight={iframeHeight} itemHeight={itemHeight} itemWidth={itemWidth} />)   
   }
 }
 
