@@ -18,10 +18,12 @@ class Container extends React.Component {
       filter: 'All',
       showcaseItem: false,
       showcaseIndex: 0,
+      windowWidth: 0
     } 
     this.setFilter = this.setFilter.bind(this);
     this.setShowcaseItem = this.setShowcaseItem.bind(this);
     this.setShowcaseIndex = this.setShowcaseIndex.bind(this);
+    this.updateDimensions = this.updateDimensions.bind(this);
   }
 
   setFilter(newFilter) {
@@ -36,6 +38,27 @@ class Container extends React.Component {
     this.setState({showcaseIndex: index});
   }
 
+  updateDimensions() {
+    var w = window,
+    d = document,
+    documentElement = d.documentElement,
+    body = d.getElementsByTagName('body')[0],
+    width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    this.setState({windowWidth: width});
+  }
+
+  componentWillMount() {
+    this.updateDimensions();
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
+
   render () {
     const currentFilter = this.state.filter;
     const visibleImages = [];
@@ -46,13 +69,13 @@ class Container extends React.Component {
     });
 
     return (
-      <div className='container'>
+        <div className='container'>
         <Header params={this.props.params} setShowcaseItem={this.setShowcaseItem} setFilter={this.setFilter} filter={currentFilter} />
-      {(this.props.params.piece||(this.props.params.route === "about")) &&   <ShowcaseContainer {...this.props} {...this.state} setIndex={this.setShowcaseIndex} images={Images} />}
+        {(this.props.params.piece||(this.props.params.route === "about")) &&   <ShowcaseContainer {...this.props} {...this.state} setIndex={this.setShowcaseIndex} images={Images} />}
         <Gallery params={this.props.params} setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
-      </div>
-    )
+        </div>
+        )
   }
 }
 
