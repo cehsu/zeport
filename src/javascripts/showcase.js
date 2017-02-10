@@ -13,7 +13,6 @@ class Showcase extends React.Component {
       dragXNext: null,
       direction: null,
       xOffset: -200 - (100*(this.props.params.number - 1)),
-      showcaseIndex: ((this.props.params.number - 1) || 0),
       sliding: false,
       transition: '0.5s',
     };
@@ -27,35 +26,12 @@ class Showcase extends React.Component {
   }
 
   render() {
-    const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
+    console.log('hello');
+    const { showcaseNumber, showcaseIndex, iframeHeight, iframeWidth, itemHeight, itemWidth } = this.props;
     const showcaseItem = this.props.images[showcaseNumber];
     const thumbs = showcaseItem.thumbs;
-    const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
     const slideshow = showcaseItem.slideshow;
-    console.log(showcaseNumber, showcaseItem, showcaseIndex, "piece, item, index");
     const slideShowLength = slideshow.length;
-    const w = window,
-    d = document,
-    documentElement = d.documentElement,
-    body = d.getElementsByTagName('body')[0],
-    width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
-    let iframeWidth = (width < 640) ? "100%" : "640px";
-    let iframeHeight = (width < 650) ? (width/640)* 340+"px" : "340px";
-    let itemHeight, itemWidth, numWidth, numHeight;
-    if(showcaseItem.dimensions){
-      itemHeight = (width > 700) ? showcaseItem.dimensions[showcaseIndex][1] : "100%";
-      itemWidth = (width > 700) ? showcaseItem.dimensions[showcaseIndex][0] : "100%";
-      numWidth = itemWidth.replace(/[px]/gi, '');
-      numHeight = itemHeight.replace(/[px]/gi, '');
-      if ((numWidth > width) && ((numWidth - width ) > (numHeight - 600))){
-        itemWidth = (width * 0.9) + "px";
-        itemHeight = ((width * 0.9) / showcaseItem.dimensions[showcaseIndex][0] )*showcaseItem.dimensions[showcaseIndex][1] +"px";
-      } else if (numHeight > 660) {
-        itemHeight = "660px";
-        itemWidth = (660 / showcaseItem.dimensions[showcaseIndex][1] ) * showcaseItem.dimensions[showcaseIndex][0] + "px";
-        console.log("tall", itemWidth, itemHeight);
-      }
-    }
     const setIndex = this.setIndex;
     const setFocus = this.setFocus;
     return (

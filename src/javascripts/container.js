@@ -2,7 +2,8 @@ import React from 'react'
 import Header from 'javascripts/header'
 import Footer from 'javascripts/footer'
 import Gallery from 'javascripts/gallery'
-import Showcase from 'javascripts/showcase'
+//import Showcase from 'javascripts/showcase'
+import ShowcaseContainer from 'javascripts/showcaseContainer'
 import ButtonBar from 'javascripts/buttonBar'
 import Images from 'javascripts/images'
 import 'stylesheets/modules/container'
@@ -47,7 +48,7 @@ class Container extends React.Component {
     return (
       <div className='container'>
         <Header params={this.props.params} setShowcaseItem={this.setShowcaseItem} setFilter={this.setFilter} filter={currentFilter} />
-      {(this.props.params.piece||(this.props.params.route === "about")) &&   <Showcase {...this.props} {...this.state} setIndex={this.setShowcaseIndex} images={Images} />}
+      {(this.props.params.piece||(this.props.params.route === "about")) &&   <ShowcaseContainer {...this.props} {...this.state} setIndex={this.setShowcaseIndex} images={Images} />}
         <Gallery params={this.props.params} setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
         <Footer />
       </div>
