@@ -11,7 +11,9 @@
     "build": "webpack",
     "dev": "webpack --watch",
     "lint": "standard",
-    "test": "standard && webpack --bail"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -42,11 +44,14 @@
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-polyfill": "^6.22.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "jest": "^18.1.0",
     "standard": "^8.2.0"
   }
 }

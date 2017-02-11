@@ -9,8 +9,8 @@ class Header extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
-     small: (document.documentElement.clientWidth < 780) ? true : false,
-     shrink: (document.documentElement.clientWidth < 780) ? true : false
+     small: false,
+     shrink: false
    }
    this.toggleShrink = this.toggleShrink.bind(this);
  }
@@ -21,7 +21,7 @@ class Header extends React.Component {
       <div className={((this.props.params.route === 'work' && !this.props.params.piece) && (this.state.shrink||this.state.small)) ? 'work shrink header u-clearfix' : (this.state.shrink||this.state.small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
         <div className={'header-content u-clearfix'}>
           <div className={'button-container title-container'}>
-            <Link className={'button'} to='/'>Zejian Shen</Link>
+            <Link className={'button title'} to='/'>Zejian Shen</Link>
           </div>
           <ButtonBarComponent route={this.props.route} className={(this.state.small || this.state.shrink) ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={this.state.shrink} isHeader={true} />
           </div>
