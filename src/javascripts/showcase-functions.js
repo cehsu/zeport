@@ -1,21 +1,39 @@
 export function setItem(width, pieceIndex, dimensions) {
-  console.log(width, pieceIndex, dimensions);
-  console.log('testing');
+  //if item has dimensions, resize height and width
   let itemHeight, itemWidth, numWidth, numHeight;
+  const mobile = !(width > 700);
+  const showcaseWidth = (mobile) ? width : (width * 0.9);
+  const showcaseHeight = 600;
   if(dimensions){
-    itemHeight = (width > 700) ? dimensions[pieceIndex][1] : "100%";
-    itemWidth = (width > 700) ? dimensions[pieceIndex][0] : "100%";
-    numWidth = itemWidth.replace(/[px]/gi, '');
-    numHeight = itemHeight.replace(/[px]/gi, '');
-    if ((numWidth > width) && ((numWidth - width ) > (numHeight - 600))){
-      itemWidth = (width * 0.9) + "px";
-      itemHeight = ((width * 0.9) / dimensions[pieceIndex][0] )*dimensions[pieceIndex][1] +"px";
-    } else if (numHeight > 660) {
-      itemHeight = "660px";
-      itemWidth = (660 / dimensions[pieceIndex][1] ) * dimensions[pieceIndex][0] + "px";
-    }   
+    numHeight = dimensions[pieceIndex][1].replace(/[px]/gi, '');
+    numWidth = dimensions[pieceIndex][0].replace(/[px]/gi, '');
+    //resize wide items to showcase width
+    if ((numWidth - showcaseWidth ) > (numHeight - showcaseHeight)){
+      console.log('wide item is: ', dimensions, width);
+      itemWidth = showcaseWidth + "px";
+      itemHeight = (showcaseWidth/ numWidth)*numHeight +"px";
+    //resize tall items to showcase height
+    } else if (numHeight > showcaseHeight) {
+      console.log('tall item is: ', dimensions, width);
+      itemHeight = showcaseHeight + "px";
+      itemWidth = (600 / numHeight ) * numWidth + "px";
+    //resize short items to fit showcase width
+    } else if ((600 - numHeight) > (showcaseWidth - numWidth)) {
+      console.log('short item is: ', dimensions, width);
+      itemWidth = showcaseWidth;
+      itemHeight = (numWidth/showcaseWidth)*numHeight+"px";
+    //resize narrow items to fit showcase height
+    } else if ((600 - numHeight) < (showcaseWidth - numWidth)) {
+      console.log('narrow item is: ', dimensions, width);
+      itemHeight = '600px';
+      itemWidth = (numHeight/600)*numWidth+"px";
+    //format already appropriately dimensioned items
+    } else {
+      console.log('appropriate item is: ', dimensions, width);
+      console.log('numHeight is: ', numHeight);
+      itemHeight = numHeight+"px";
+      itemWidth = numWidth + "px";
+    }
   }   
-  console.log(itemHeight);
-  console.log(itemWidth);
   return {itemHeight: itemHeight, itemWidth: itemWidth};
 }

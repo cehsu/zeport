@@ -10,13 +10,10 @@ class ShowcaseContainer extends React.Component {
   render() {
     const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
     const dimensions = this.props.images[showcaseNumber].dimensions;
-    console.log(dimensions);
     const windowWidth = this.props.windowWidth;
-    console.log(windowWidth);
-    console.log(showcaseIndex);
     const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
-    const iframeWidth = (this.props.windowWidth < 640) ? "100%" : "640px";
-    const iframeHeight = (this.props.windowWidth < 650) ? (this.props.windowWidth/640)* 340+"px" : "340px";
+    const iframeWidth = (windowWidth < 640) ? "100%" : "640px";
+    const iframeHeight = (windowWidth < 650) ? (windowWidth/640)* 340+"px" : "340px";
     const {itemHeight,itemWidth} = setItem(windowWidth, showcaseIndex, dimensions);
 
     return (
