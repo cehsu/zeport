@@ -84,7 +84,7 @@ test('setItem provide item dimensions for wide images on mobile', () => {
   const finProps = setItem(width, pieceIndex, dimensions);
 
   expect(finProps).toEqual(
-    {"itemHeight": "600px", "itemWidth": "83.33333333333334px"}
+    {"itemHeight": "126px", "itemWidth": "100%"}
   );
 });
 
@@ -98,7 +98,7 @@ test('setItem provide item dimensions for tall images on mobile', () => {
   const finProps = setItem(width, pieceIndex, dimensions);
 
   expect(finProps).toEqual(
-    {"itemHeight": "11.25px", "itemWidth": "675px"}
+      {"itemHeight": "3150px", "itemWidth": "100%"}
   );
 });
 
