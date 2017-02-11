@@ -9,18 +9,14 @@ export function setItem(width, pieceIndex, dimensions) {
     numWidth = dimensions[pieceIndex][0].replace(/[px]/gi, '');
     //resize wide items and mobile items to showcase width
     if (mobile || ((numWidth - showcaseWidth ) > (numHeight - showcaseHeight))){
-      console.log('wide item is: ', dimensions, width);
       itemWidth = (mobile) ? "100%" : showcaseWidth + "px";
       itemHeight = (showcaseWidth/numWidth)*numHeight +"px";
     //resize tall items to showcase height
     } else if (numHeight > showcaseHeight) {
-      console.log('tall item is: ', dimensions, width);
       itemHeight = showcaseHeight + "px";
       itemWidth = (600 / numHeight ) * numWidth + "px";
     //format already appropriately dimensioned items
     } else {
-      console.log('appropriate item is: ', dimensions, width);
-      console.log('numHeight is: ', numHeight);
       itemHeight = numHeight+"px";
       itemWidth = numWidth + "px";
     }
