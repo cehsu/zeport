@@ -17,16 +17,6 @@ export function setItem(width, pieceIndex, dimensions) {
       console.log('tall item is: ', dimensions, width);
       itemHeight = showcaseHeight + "px";
       itemWidth = (600 / numHeight ) * numWidth + "px";
-    //resize short items to fit showcase width
-    } else if ((600 - numHeight) > (showcaseWidth - numWidth)) {
-      console.log('short item is: ', dimensions, width);
-      itemWidth = showcaseWidth;
-      itemHeight = (numWidth/showcaseWidth)*numHeight+"px";
-    //resize narrow items to fit showcase height
-    } else if ((600 - numHeight) < (showcaseWidth - numWidth)) {
-      console.log('narrow item is: ', dimensions, width);
-      itemHeight = '600px';
-      itemWidth = (numHeight/600)*numWidth+"px";
     //format already appropriately dimensioned items
     } else {
       console.log('appropriate item is: ', dimensions, width);

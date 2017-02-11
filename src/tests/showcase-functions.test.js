@@ -46,35 +46,7 @@ test('setItem provide item dimensions for tall images', () => {
   );
 });
 
-test('setItem provide item dimensions for narrow images', () => {
-  const width = 750,
-  pieceIndex = 0,
-  dimensions = [
-    ["100px", "500px"]
-  ];
-
-  const finProps = setItem(width, pieceIndex, dimensions);
-
-  expect(finProps).toEqual(
-    {"itemHeight": "600px", "itemWidth": "83.33333333333334px"}
-  );
-});
-
-test('setItem provide item dimensions for short images', () => {
-  const width = 750,
-  pieceIndex = 0,
-  dimensions = [
-    ['600px', '10px']
-  ];
-
-  const finProps = setItem(width, pieceIndex, dimensions);
-
-  expect(finProps).toEqual(
-    {"itemHeight": "11.25px", "itemWidth": "675px"}
-  );
-});
-
-test('setItem provide item dimensions for wide images on mobile', () => {
+test('setItem provide item dimensions for images on mobile', () => {
   const width = 700,
   pieceIndex = 0,
   dimensions = [
@@ -85,20 +57,6 @@ test('setItem provide item dimensions for wide images on mobile', () => {
 
   expect(finProps).toEqual(
     {"itemHeight": "126px", "itemWidth": "100%"}
-  );
-});
-
-test('setItem provide item dimensions for tall images on mobile', () => {
-  const width = 700,
-  pieceIndex = 0,
-  dimensions = [
-    ['100px', '500px']
-  ];
-
-  const finProps = setItem(width, pieceIndex, dimensions);
-
-  expect(finProps).toEqual(
-      {"itemHeight": "3150px", "itemWidth": "100%"}
   );
 });
 
