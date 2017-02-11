@@ -44,7 +44,6 @@ class Showcase extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('image');
     const showcaseImage = document.getElementsByClassName('showcase-image')[0];
     if (showcaseImage) {
       document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
@@ -93,7 +92,7 @@ class Showcase extends React.Component {
   }
 
   hideDrag(event) {
-    if(this.props.showcaseItem !== false){
+    if(this.props.params.piece){
       event.dataTransfer.effectAllowed = 'none';
       const image = this.props.images[this.props.showcaseNumber].slideshow[this.props.showcaseIndex]
         event.dataTransfer.setData("text/plain", event.target.id);

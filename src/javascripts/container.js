@@ -16,8 +16,6 @@ class Container extends React.Component {
     super(props);
     this.state = {
       filter: 'All',
-      showcaseItem: false,
-      showcaseIndex: 0,
       windowWidth: 0
     } 
     this.setFilter = this.setFilter.bind(this);
