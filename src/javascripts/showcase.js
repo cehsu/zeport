@@ -34,7 +34,7 @@ class Showcase extends React.Component {
     const setIndex = this.setIndex;
     const setFocus = this.setFocus;
     return (
-        <div className={'showcase-container'} >
+        <div >
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && 
           <ReactCSSTransitionGroup
             transitionName="example"
@@ -82,23 +82,6 @@ class Showcase extends React.Component {
                 </div>
                 <div onClick={()=>{this.incrementIndex(showcaseIndex, slideShowLength)}} className={'arrow right'}></div>
                 </div>}
-            <div className={(((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1)) ? 'item-details landscape' : 'item-details'}>
-            {showcaseItem.name && <div className={'item-title'}>{showcaseItem.name}</div>}
-            {showcaseItem.year && <div>{showcaseItem.year}</div>}
-            {showcaseItem.materials && <div>{showcaseItem.materials}</div>}
-            {showcaseItem.team && <div>{showcaseItem.team}</div>}
-            {showcaseItem.description && <div>{showcaseItem.description}</div>}
-            {showcaseItem.client && <div>{showcaseItem.client}</div>}
-            {showcaseItem.clients && <div>Select Clients: {showcaseItem.clients}</div>}
-            {showcaseItem.press && <div>Press: {showcaseItem.press.map(function(item, index, collection){
-                                                                                                          if(index < (collection.length - 1)){
-                                                                                                            return <span><a href={item[1]}>{item[0]}</a>, </span>
-                                                                                                          } else {
-                                                                                                            return <span><a href={item[1]}>{item[0]}</a></span>
-                                                                                                          }
-                                                                                                        })}</div>}
-            </div>
-
               </div>
               )
   }
