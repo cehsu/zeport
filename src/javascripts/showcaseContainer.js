@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import Showcase from 'javascripts/showcase'
 import ShowcaseSlider from 'javascripts/showcaseSlider'
 import ShowcaseDetails from 'javascripts/showcaseDetails'
-import {setItem} from './showcase-functions'
+import {setItem} from 'javascripts/showcase-functions'
 
 class ShowcaseContainer extends React.Component {
 	constructor(props){
@@ -31,7 +31,7 @@ class ShowcaseContainer extends React.Component {
 		return (
 				<div className={'showcase-container'}>
 				  <Showcase {...this.props} {...this.state} setIndex={setIndex} incrementIndex={incrementIndex} decrementIndex={decrementIndex} showcaseNumber={showcaseNumber} showcaseIndex={showcaseIndex} iframeWidth={iframeWidth} iframeHeight={iframeHeight} itemHeight={itemHeight} itemWidth={itemWidth} />
-				  <ShowcaseSlider {...this.props} {...this.state} setIndex={setIndex} incrementIndex={incrementIndex} decremenetIndex={decrementIndex} showcaseNumber={showcaseNumber}showcaseIndex={showcaseIndex}/>
+				  <ShowcaseSlider {...this.props} {...this.state} setIndex={setIndex} incrementIndex={incrementIndex} decremenetIndex={decrementIndex} showcaseNumber={showcaseNumber} showcaseIndex={showcaseIndex}/>
           <ShowcaseDetails showcaseItem={showcaseItem} />
 				</div>)   
 	}
@@ -41,7 +41,7 @@ class ShowcaseContainer extends React.Component {
 			this.setState({sliding: true});
 			if((newIndex - oldIndex) > 3){
 				const tx = this.state.xOffset + ((oldIndex + (length - newIndex))*100);
-				this.setState({xOffset: tx, showcaseIndex: newIndex});
+				this.setState({xOffset: tx});
 				if (this.state.xOffset > -300){
 					setTimeout(
 							function(){
@@ -54,7 +54,7 @@ class ShowcaseContainer extends React.Component {
 				}
 			} else if ((oldIndex - newIndex) > 3) {
 				const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
-				this.setState({xOffset: tx, showcaseIndex: newIndex});
+				this.setState({xOffset: tx});
 				if (this.state.xOffset < -200){
 					setTimeout(
 							function(){
@@ -67,11 +67,10 @@ class ShowcaseContainer extends React.Component {
 				}
 			} else {
 				const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
-				this.setState({xOffset: tx, showcaseIndex: newIndex, sliding: false});
+				this.setState({xOffset: tx, sliding: false});
 			}
 		}
 		setTimeout(function(){
-			this.setState({showcaseIndex: newIndex});
 			this.props.router.push('work/'+this.props.params.piece+'/'+(newIndex+1));
 		}.bind(this),600);
 	}
