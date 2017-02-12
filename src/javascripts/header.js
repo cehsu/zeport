@@ -15,11 +15,8 @@ class Header extends React.Component {
  }
   
  render() {
-   console.log(this.props.windowWidth);
    const mobile = (this.props.windowWidth < 780);
-   console.log(mobile);
    const small = (mobile||this.state.shrink);
-   console.log('small', small);
    return (
       <div className={'header-content'}>
       <ButtonBarComponent route={this.props.route} {...this.props} shrink={small} isHeader={false} />
