@@ -20,7 +20,7 @@ class Header extends React.Component {
    const style = (mobile) ? {padding: '0'} : this.getStyle();
    return (
       <div className={'header-content'}>
-      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && small) ? 'work shrink header u-clearfix' : (small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
+      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && small) ? 'work shrink header u-clearfix' : (small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={style} >
         <div>
           <div className={'button-container title-container'}>
             <Link className={'button title'} to='/'>Zejian Shen</Link>
