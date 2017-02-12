@@ -26,7 +26,7 @@ var Images = [
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEM2IwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/01+kokitanaka_br.jpg", 
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/01+kokitanaka_br.jpg", 
   "slideshow": [
     "https://www.youtube.com/embed/poR-U4s5RVM"
   ]
@@ -59,7 +59,7 @@ var Images = [
   "year": 2015,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABABQaHQAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/14+Set+You+Free_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/14+Set+You+Free_br.jpg",
   "slideshow": [
     "https://player.vimeo.com/video/132578501"
   ]
@@ -73,7 +73,7 @@ var Images = [
   "year": 2015,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABACRleQAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/13+ZihuaAd_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/13+ZihuaAd_br.jpg",
   "slideshow": [
     "https://player.vimeo.com/video/200939071"
   ]},  
@@ -86,7 +86,7 @@ var Images = [
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJZlQAAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/08+ETPop_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/08+ETPop_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/D921Tfm2JeM"
   ]},
@@ -99,7 +99,7 @@ var Images = [
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEckIwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/07+dpr_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/07+dpr_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/hQvnLGHvOZw"
   ]
@@ -113,7 +113,7 @@ var Images = [
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEc4MwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/12+LJH_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/12+LJH_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/NXUbGyoukjI",  
   ]},
@@ -126,7 +126,7 @@ var Images = [
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAMBHVQAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/11+NickDong_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/11+NickDong_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/kyRI0P1eBOA"
   ]
@@ -140,7 +140,7 @@ var Images = [
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAHRWSQAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/09+happydragon_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/09+happydragon_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/8dZ4vNedP7M"
   ]},{   
@@ -152,7 +152,7 @@ var Images = [
     "client": "Asian Art Museum of SF",
     "shape": 2,
     "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAD0qKAAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/10+knots_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/10+knots_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/UtbbTLFLtak"
     ]
@@ -166,7 +166,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEA4JAAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/06+drawingrama_br.jpg", 
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/06+drawingrama_br.jpg", 
   "slideshow": [
     "https://www.youtube.com/embed/lCWzvrg4teM"
 
@@ -179,7 +179,7 @@ var Images = [
     "client": "Asian Art Museum of SF",
     "description": "Teaser trailer for the fall 2016 exhibition at the Asian Art Museum.",
     "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABADYsIQAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/05+ramateaser_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/05+ramateaser_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/k4dyl9M1gek"
     ]
@@ -193,7 +193,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAIxpXAAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/04+ramatop5_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/04+ramatop5_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/5MavY78gBmY"
   ]},{   
@@ -205,7 +205,7 @@ var Images = [
     "client": "Asian Art Museum of SF",
     "shape": 2,
     "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAI87NgAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/03+bellringing_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/03+bellringing_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/FMTl9ffpwOY"
     ]
@@ -219,7 +219,7 @@ var Images = [
   "client": "Asian Art Museum of SF",
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJUsIwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/02+mochi_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/02+mochi_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/zUxOUQgQG8Q",
   ]},{   
@@ -987,7 +987,7 @@ var Images = [
   ]
 },
 {   
-  "name": "Ma Sai, Director/Videomaker",
+  "name": "Ma Sai, Director/Filmmaker",
   "type": "Design",
   "materials": "Digital",
   "year": 2014,
