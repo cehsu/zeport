@@ -28,17 +28,10 @@ class Showcase extends React.Component {
     return (
       <div>
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Video")) || (slideshow[0].indexOf('gif')>-1)) && 
-          <ReactCSSTransitionGroup
-            transitionName="example"
-            transitionAppear={true}
-            transitionAppearTimeout={500}
-            transitionEnter={false}
-            transitionLeave={false}>
             <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
               {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
-            </ProgressiveImage>
-          </ReactCSSTransitionGroup>}
-          {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Video"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height={iframeHeight} width={iframeWidth} frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
+            </ProgressiveImage>}
+          {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Video"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height={iframeHeight} width={iframeWidth} frameBorder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
       </div>
       )
   }
