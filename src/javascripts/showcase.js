@@ -27,7 +27,7 @@ class Showcase extends React.Component {
     const {xOffset, sliding, transition, setIndex, incrementIndex, decrementIndex} = this.props;
     return (
       <div>
-        {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Film")) || (slideshow[0].indexOf('gif')>-1)) && 
+        {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Video")) || (slideshow[0].indexOf('gif')>-1)) && 
           <ReactCSSTransitionGroup
             transitionName="example"
             transitionAppear={true}
@@ -38,7 +38,7 @@ class Showcase extends React.Component {
               {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
             </ProgressiveImage>
           </ReactCSSTransitionGroup>}
-          {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Film"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height={iframeHeight} width={iframeWidth} frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
+          {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Video"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height={iframeHeight} width={iframeWidth} frameborder='0' webkitallowfullscreen mozillaallowfullscreen allowFullScreen></iframe>}
       </div>
       )
   }
