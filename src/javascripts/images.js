@@ -20,13 +20,13 @@ var Images = [
 {   
   "name": "Koki Tanaka: Potters and Poets",
   "team": "Director/DP: Zejian Shen, Editor: Cuyler Ballenger",
-  "type": "Film",
+  "type": "Video",
   "description": "Interview with Artist Koki Tanaka on his show in the Tateuchi Gallery.",
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEM2IwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/01+kokitanaka_br.jpg", 
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/01+kokitanaka_br.jpg", 
   "slideshow": [
     "https://www.youtube.com/embed/poR-U4s5RVM"
   ]
@@ -53,13 +53,13 @@ var Images = [
 {   
   "name": "Set You Free",
   "team": "Zejian Shen; Production Team: Le Zhou, Haidong Li, Bruce Wang, Anqi Cui, Jiayin Li",
-  "type": "Film",
+  "type": "Video",
   "description": "Music video for Jeno Liu’s new single. This video is a product that is the combination of light painting with the Pixelstick, 10 giant acrylic paintings, AfterEffects, and the sheer will power of our team.",
   "client": "Zihua Creative",
   "year": 2015,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABABQaHQAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/14+Set+You+Free_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/14+Set+You+Free_br.jpg",
   "slideshow": [
     "https://player.vimeo.com/video/132578501"
   ]
@@ -67,39 +67,39 @@ var Images = [
 {   
   "name": "Zihua Creative Year of the Ram",
   "team": "Director/ Production Design: Zejian Shen; Music: Paul Harding",
-  "type": "Film",
+  "type": "Video",
   "description": "Ad campaign for Zihua Creative, a Chinese online learning platform for creative professionals. All of the paper cultures were designed and made by me.",
   "client": "Zihua Creative",
   "year": 2015,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABACRleQAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/13+ZihuaAd_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/13+ZihuaAd_br.jpg",
   "slideshow": [
     "https://player.vimeo.com/video/200939071"
   ]},  
 {   
   "name": "Emperors’ Treasures Pop Up Madness", 
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "description": "Walkthrough video of the Asian Art Museum’s 2016 summer blockbuster - Emperors’ Treasures. My first time using a gimbal, it was painful.", 
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJZlQAAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/08+ETPop_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/08+ETPop_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/D921Tfm2JeM"
   ]},
 {   
   "name": "How to make Dongpo Rou",
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "description": "Part of the Priceless Pork Belly campaign to help promote the Emperors’ Treasures exhibition.",
   "client": "For the Antiques Roadshow anthology, edited by Alison Dubois.",
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEckIwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/07+dpr_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/07+dpr_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/hQvnLGHvOZw"
   ]
@@ -107,26 +107,26 @@ var Images = [
 {   
   "name": "Collected Letters and Installation by Liu Jianhua",
   "team": "Director/DP: Zejian Shen, Editor: Cuyler Ballenger",
-  "type": "Film",
+  "type": "Video",
   "description": "Interview with artist Liu Jianhua who’s installation - Collected Letters - just went up in the Asian Art Museum’s loggia.", 
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEc4MwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/12+LJH_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/12+LJH_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/NXUbGyoukjI",  
   ]},
 {   
   "name": "天圓地方 Patterns of Heaven & Earth",
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "description": "Interview with artist Nick Dong for his installation in the Asian Art Museum.",
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAMBHVQAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/11+NickDong_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/11+NickDong_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/kyRI0P1eBOA"
   ]
@@ -134,25 +134,25 @@ var Images = [
 {   
   "name": "Dragon Fortune by Hung Yi",
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "description": "Installation of Dragon Fortune, by Taiwanese artist Hung Yi.",
   "client": "Asian Art Museum of SF",
   "year": 2016,
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAHRWSQAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/09+happydragon_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/09+happydragon_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/8dZ4vNedP7M"
   ]},{   
     "name": "How to make a donut knot",
     "team": "Director/DP/Editor",
-    "type": "Film",
+    "type": "Video",
     "year": 2016,
     "description": "Windy Chien demonstrates how to make a donut knot.",
     "client": "Asian Art Museum of SF",
     "shape": 2,
     "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAD0qKAAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/10+knots_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/10+knots_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/UtbbTLFLtak"
     ]
@@ -160,26 +160,26 @@ var Images = [
 {   
   "name": "Drawing Rama",
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "year": 2016,
   "description": "Teaser video for Drawing Rama - a campaign to promote The Rama Epic: Hero, Heroine, Ally, Foe exhibition at the Asian Art Museum.",
   "client": "Asian Art Museum of SF",
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAEA4JAAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/06+drawingrama_br.jpg", 
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/06+drawingrama_br.jpg", 
   "slideshow": [
     "https://www.youtube.com/embed/lCWzvrg4teM"
 
   ]},{   
     "name": "The Rama Epic: Hero, Heroine, Ally, Foe Trailer",
     "team": "Director/DP/Editor: Zejian Shen",
-    "type": "Film",
+    "type": "Video",
     "year": 2016,
     "shape": 2,
     "client": "Asian Art Museum of SF",
     "description": "Teaser trailer for the fall 2016 exhibition at the Asian Art Museum.",
     "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABADYsIQAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/05+ramateaser_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/05+ramateaser_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/k4dyl9M1gek"
     ]
@@ -187,25 +187,25 @@ var Images = [
 {   
   "name": "The Rama Epic: Hero, Heroine, Ally, Foe Curator’s Top 5",
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "year": 2016,
   "description": "Curator’s top 5 objects from the Rama exhibit.",
   "client": "Asian Art Museum of SF",
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAIxpXAAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/04+ramatop5_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/04+ramatop5_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/5MavY78gBmY"
   ]},{   
     "name": "Bell-ringing Ceremony",
     "team": "Director/DP/Editor",
-    "type": "Film",
+    "type": "Video",
     "year": 2016,
     "description": "Ring in the new year with a 400 year old Japanese bell.",
     "client": "Asian Art Museum of SF",
     "shape": 2,
     "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAI87NgAAACwAAAAAAQABAAACAkQBAA==",
-    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/03+bellringing_br.jpg",
+    "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/03+bellringing_br.jpg",
     "slideshow": [
       "https://www.youtube.com/embed/FMTl9ffpwOY"
     ]
@@ -213,13 +213,13 @@ var Images = [
 {   
   "name": "Omochitsuki!",
   "team": "Director/DP/Editor: Zejian Shen",
-  "type": "Film",
+  "type": "Video",
   "year": 2016,
   "description": "Little promo for the mocha-pounding ceremony at the Asian Art Museum.",
   "client": "Asian Art Museum of SF",
   "shape": 2,
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAJUsIwAAACwAAAAAAQABAAACAkQBAA==",
-  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Film/Brick/02+mochi_br.jpg",
+  "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Video/Brick/02+mochi_br.jpg",
   "slideshow": [
     "https://www.youtube.com/embed/zUxOUQgQG8Q",
   ]},{   
@@ -987,7 +987,7 @@ var Images = [
   ]
 },
 {   
-  "name": "Ma Sai, Director/Filmmaker",
+  "name": "Ma Sai, Director/Videomaker",
   "type": "Design",
   "materials": "Digital",
   "year": 2014,
