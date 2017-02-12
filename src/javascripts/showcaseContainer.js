@@ -8,7 +8,7 @@ class ShowcaseContainer extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			xOffset: -200 - (100*(this.props.params.number - 1)),
+      xOffset: (this.props.windowWidth < 500) ? -(this.props.windowWidth) : -200 - (100*(this.props.params.number - 1)),
 			sliding: false,
 			transition: '0.5s',
 		};
