@@ -54,6 +54,7 @@
     "enzyme": "^2.7.1",
     "jest": "^18.1.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2",
     "standard": "^8.2.0"
   }
 }

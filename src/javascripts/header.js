@@ -9,21 +9,26 @@ class Header extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
-     small: false,
      shrink: false
    }
    this.toggleShrink = this.toggleShrink.bind(this);
  }
   
  render() {
+   console.log(this.props.windowWidth);
+   const mobile = (this.props.windowWidth < 780);
+   console.log(mobile);
+   const small = (mobile||this.state.shrink);
+   console.log('small', small);
    return (
       <div className={'header-content'}>
-      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && (this.state.shrink||this.state.small)) ? 'work shrink header u-clearfix' : (this.state.shrink||this.state.small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
-        <div className={'header-content u-clearfix'}>
+      <ButtonBarComponent route={this.props.route} {...this.props} shrink={small} isHeader={false} />
+      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && small) ? 'work shrink header u-clearfix' : (small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={this.getStyle()} >
+        <div>
           <div className={'button-container title-container'}>
             <Link className={'button title'} to='/'>Zejian Shen</Link>
           </div>
-          <ButtonBarComponent route={this.props.route} className={(this.state.small || this.state.shrink) ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={this.state.shrink} isHeader={true} />
+          <ButtonBarComponent route={this.props.route} className={(small) ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={small} isHeader={true} />
           </div>
       <div className={'socialButtons'}>
         <div className={'social'} >
@@ -86,7 +91,6 @@ class Header extends React.Component {
             </div>
       	</div>
       </div>
-      <ButtonBarComponent route={this.props.route} {...this.props} shrink={this.state.shrink} isHeader={false} />
       </div>
     )
  }
@@ -101,12 +105,11 @@ class Header extends React.Component {
 
  getStyle() {
    return {
-     padding: ((window.document.body.scrollTop < 200) && (window.document.body.scrollTop > 150)) ? 200 - window.document.body.scrollTop + 'px 0 10px':(this.state.shrink) ? '0' : '50px 0 10px' 
+     padding: (this.state.shrink || (this.props.windowWidth < 780)) ? '0' : ((window.document.body.scrollTop < 200) && (window.document.body.scrollTop > 150)) ? 200 - window.document.body.scrollTop + 'px 0 10px': '50px 0 10px' 
    };
  }
   
  toggleShrink() {
-    if (!this.state.small){
       const shouldShrink = window.document.body.scrollTop >= 200;
       if(shouldShrink) {
         this.setState({shrink: true});
@@ -114,7 +117,6 @@ class Header extends React.Component {
         this.setState({shrink: false});
       }
     }
-  }
 }
 
 export default Header
