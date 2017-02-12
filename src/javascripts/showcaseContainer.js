@@ -31,7 +31,7 @@ class ShowcaseContainer extends React.Component {
 		return (
 				<div className={'showcase-container'}>
 				  <Showcase {...this.props} {...this.state} setIndex={setIndex} incrementIndex={incrementIndex} decrementIndex={decrementIndex} showcaseNumber={showcaseNumber} showcaseIndex={showcaseIndex} iframeWidth={iframeWidth} iframeHeight={iframeHeight} itemHeight={itemHeight} itemWidth={itemWidth} />
-				  <ShowcaseSlider {...this.props} {...this.state} setIndex={setIndex} incrementIndex={incrementIndex} decremenetIndex={decrementIndex} showcaseNumber={showcaseNumber} showcaseIndex={showcaseIndex}/>
+				  <ShowcaseSlider {...this.props} {...this.state} setIndex={setIndex} incrementIndex={incrementIndex} decrementIndex={decrementIndex} showcaseNumber={showcaseNumber} showcaseIndex={showcaseIndex}/>
           <ShowcaseDetails showcaseItem={showcaseItem} />
 				</div>)   
 	}
