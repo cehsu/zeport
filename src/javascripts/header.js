@@ -17,6 +17,7 @@ class Header extends React.Component {
  render() {
    const mobile = (this.props.windowWidth < 780);
    const small = (mobile||this.state.shrink);
+   const style = (mobile) ? {padding: '0'} : this.getStyle();
    return (
       <div className={'header-content'}>
       <ButtonBarComponent route={this.props.route} {...this.props} shrink={small} isHeader={false} />
