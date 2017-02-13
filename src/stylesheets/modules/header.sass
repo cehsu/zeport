@@ -59,47 +59,55 @@
   a
     height: 100%
     display: inline-block
-    .media
-      height: 50%
-      width: auto
-    .mail
-      height: 50%
-      width: auto
+.media
+  height: 50%
+  width: auto
+.mail
+  height: 50%
+  width: auto
 
-@media (max-width: 100px)
-	.button-bar
-		margin: 0
-
-	.button
-		height: 40px
-		line-height: 40px
-	&.filter
-		height: 35px
-		line-height: 40px
-
-	.button-container
-		height: 50px
-
-	.header-content
-		line-height: 55px
-
-	.title-content
-		height: 40x
-		line-height: 40px
-
-	.social
-    display: inline-block
-    padding: 10px 5px 0 0
-    a
-      display: inline-block
-
-	.shrink
-		height: 45px
-
-	.work
-		height: 105px
-
-	.socialButtons
-		line-height: 20px 
-
-
+@media (max-width: 1000px)
+  .button
+    font-size: 25px
+    &.filter
+      font-size: 24px
+  .button-bar
+    margin: 0
+  .media
+    height: 45% 
+  .mail
+    height: 45% 
+  
+@media (max-width: 800px)
+  .button
+    font-size: 20px
+    &.filter
+      font-size: 19px
+  .media
+    height: 40% 
+  .mail
+    height: 40% 
+   
+@media (max-width: 700px)
+  .button
+    font-size: 15px
+    &.filter
+      font-size: 14px
+  .media
+    height: 35% 
+  .mail
+    height: 35%
+  .social
+    padding: 4px 
+  
+@media (max-width: 500px)
+  .button
+    font-size: 13px
+    &.filter
+      font-size: 12px
+  .media
+    height: 30% 
+  .mail
+    height: 30%
+  .social
+    padding: 3px
