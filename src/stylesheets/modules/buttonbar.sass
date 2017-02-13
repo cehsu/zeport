@@ -22,7 +22,7 @@
   margin: 0 
   position: fixed
   top: 0 
-  width: 100vw
+  width: 100%
 
 .button-container
   width: 75%
@@ -52,22 +52,6 @@
 .work .button
   color: rgba(0,0,0,1)
 
-.socialButtons
-  position: absolute
-  top: 0
-  right: 0
-  padding: inherit
-  margin: 0 0 2px
-  width: 200px
-  line-height: 60px
-  vertical-align: middle
-
-.shrink .socialButtons
-  top: 0
-
-.social
-  display: inline-block
-
 .button
   z-index: 1
   position: relative
@@ -78,7 +62,7 @@
   height: 60px
   line-height: 60px
   text-align: center
-  font-size: 3vw
+  font-size: 30px
   transition: 0s
   margin: 0 2% 2%
   padding: 0 1%
@@ -103,7 +87,7 @@
     transition: transform 0.5s
   &.filter
     margin: 0 1%
-    font-size: 2.5vw
+    font-size: 20px
     width: initial
     text-transform: lowercase
 
@@ -121,6 +105,29 @@
   &::after, &::before
     -webkit-transform: scale(1)
 
-@media (max-width: 780px)
+@media (max-width: 900px)
+  .button
+    font-size: 25px
+    &.filter
+      font-size: 20px
   .button-bar
     margin: 0
+
+@media (max-width: 750px)
+  .button
+    font-size: 20px
+    &.filter
+      font-size: 15px
+ 
+@media (max-width: 560px)
+  .button
+    font-size: 15px
+    &.filter
+      font-size: 13px
+ 
+@media (max-width: 400px)
+  .button
+    font-size: 13px
+    &.filter
+      font-size: 11px
+ 
