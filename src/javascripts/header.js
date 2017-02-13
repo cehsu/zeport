@@ -27,24 +27,12 @@ class Header extends React.Component {
             <Link className={'button title'} to='/'>Zejian Shen</Link>
           </div>
           <ButtonBarComponent route={this.props.route} className={(small) ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={small} isHeader={true} />
-          </div>
-      <div className={'socialButtons'}>
-        <div className={'social'} >
-          <a href="https://vimeo.com/user424595"> 
-            <SocialIcon icon={"vimeo"} />
-          </a>
         </div>
-        <div className={'social'} > 
-					<a href="https://www.instagram.com/kingsansan/">
-					  <SocialIcon icon={"instagram"} />			
-          </a>
+        <div className={'socialButtons'}>
+          <SocialIcon icon={"vimeo"} />
+          <SocialIcon icon={"instagram"} />
+          <SocialIcon icon={"email"} />
         </div>
-        <div className={'social mail'} >
-					<a href="mailto:zesansan@gmail.com">	
-				 	  <SocialIcon icon={"email"} />
-          </a>
-        </div>
-      	</div>
       </div>
       <ButtonBarComponent route={this.props.route} {...this.props} shrink={small} isHeader={false} />
       </div>
