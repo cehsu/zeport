@@ -49,18 +49,24 @@
   padding: inherit
   margin: 0 15px 2px
   width: 25%
+  height: 50px
   text-align: right
-  line-height: 40px
-  vertical-align: middle
+
+.social
+  display: inline-block
+  padding: 5px
+  height: 100%
   a
+    height: 100%
     display: inline-block
-    padding: 5px
+    .media
+      height: 50%
+      width: auto
+    .mail
+      height: 50%
+      width: auto
 
-  .social
-    display: inline-block
-    padding: 5px
-
-@media (max-width: 900px)
+@media (max-width: 100px)
 	.button-bar
 		margin: 0
 
@@ -81,8 +87,11 @@
 		height: 40x
 		line-height: 40px
 
-	.socialButtons
-		line-height: 40px
+	.social
+    display: inline-block
+    padding: 10px 5px 0 0
+    a
+      display: inline-block
 
 	.shrink
 		height: 45px
