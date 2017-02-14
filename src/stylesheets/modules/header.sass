@@ -7,6 +7,12 @@
 	height: 50px
 	z-index: 3
 	background: rgba(255,255,255,.85)
+	transform: translateZ(0)
+	-moz-transform: translatez(0)
+	-ms-transform: translatez(0)
+	-o-transform: translatez(0)
+	-webkit-transform: translateZ(0)
+	-webkit-font-smoothing: antialiased
 
 .header-content
 	vertical-align: middle
@@ -16,14 +22,14 @@
 
 .title:hover
 	color: aquamarine
-  background: none
+	background: none
 
 .titleTouch
-  &:active
-    color: aquamarine
-    background: none
-  &:hover
-    background: none
+	&:active
+		color: aquamarine
+		background: none
+	&:hover
+		background: none
 
 
 .title-container
@@ -49,83 +55,83 @@
 	display: inline-block
 
 .socialButtons
-  position: absolute
-  top: 0
-  right: 0
-  padding: inherit
-  margin: 0 15px 2px
-  width: 25%
-  height: 50px
-  text-align: right
+	position: absolute
+	top: 0
+	right: 0
+	padding: inherit
+	margin: 0 15px 2px
+	width: 25%
+	height: 50px
+	text-align: right
 
 .social
-  display: inline-block
-  padding: 5px
-  height: 100%
-  a
-    height: 100%
-    display: inline-block
+	display: inline-block
+	padding: 5px
+	height: 100%
+	a
+		height: 100%
+		display: inline-block
 .media
-  height: 50%
-  width: auto
+	height: 50%
+	width: auto
 .mail
-  height: 50%
-  width: auto
+	height: 50%
+	width: auto
 
 @media (max-width: 1000px)
-  .button
-    font-size: 25px
-    &.filter
-      font-size: 24px
-  .button-bar
-    margin: 0
-  .media
-    height: 45% 
-  .mail
-    height: 45% 
-  
+	.button
+		font-size: 25px
+		&.filter
+			font-size: 24px
+	.button-bar
+		margin: 0
+	.media
+		height: 45% 
+	.mail
+		height: 45% 
+
 @media (max-width: 800px)
-  .button
-    font-size: 20px
-    &.filter
-      font-size: 19px
-  .media
-    height: 40% 
-  .mail
-    height: 40% 
-   
+	.button
+		font-size: 20px
+		&.filter
+			font-size: 19px
+	.media
+		height: 40% 
+	.mail
+		height: 40% 
+
 @media (max-width: 700px)
-  .button
-    font-size: 15px
-    &.filter
-      font-size: 14px
-  .media
-    height: 35% 
-  .mail
-    height: 35%
-  .social
-    padding: 4px 
-  
+	.button
+		font-size: 15px
+		&.filter
+			font-size: 14px
+	.media
+		height: 35% 
+	.mail
+		height: 35%
+	.social
+		padding: 4px 
+
 @media (max-width: 500px)
-  .button
-    font-size: 13px
-    &.filter
-      font-size: 12px
-  .media
-    height: 30% 
-  .mail
-    height: 30%
-  .social
-    padding: 3px
-    
+	.button
+		font-size: 13px
+		&.filter
+			font-size: 12px
+	.media
+		height: 30% 
+	.mail
+		height: 30%
+	.social
+		padding: 3px
+
 @media (max-width: 400px)
-  .button
-    font-size: 10px
-    &.filter
-      font-size: 8px
-  .media
-    height: 25% 
-  .mail
-    height: 25%
-  .social
-    padding: 2px   
+	.button
+		font-size: 10px
+		&.filter
+			font-size: 8px
+	.media
+		height: 25% 
+	.mail
+		height: 25%
+	.social
+		padding: 2px   
