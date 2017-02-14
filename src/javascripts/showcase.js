@@ -57,17 +57,11 @@ class Showcase extends React.Component {
     const currentIndex = this.props.showcaseIndex;
     const length = this.props.images[this.props.showcaseNumber].slideshow.length;
     if(e.type === "touchstart"){
-      console.log('start', e.touches[0].clientX);
       this.setState({dragStart: e.touches[0].clientX});
-      console.log('state', this.state.dragStart);
     } else if (e.type === "touchmove"){
       var direction = (this.state.dragStart > this.state.dragEnd) ? "left" : "right";
-console.log('move', e.touches[0].clientX);
-console.log('direction', direction);
       this.setState({dragEnd: e.touches[0].clientX, direction: direction});
-console.log('state', this.state.dragEnd);
     } else if (e.type === "touchend"){
-      console.log('touchend', this.dragState > this.dragEnd, this.dragStart, this.dragEnd);
       if(Math.abs(this.state.dragStart - this.state.dragEnd) > 150){
       var updateIndex = (this.state.direction === "left") ? this.props.decrementIndex(currentIndex, length) : this.props.incrementIndex(currentIndex, length);
       }
