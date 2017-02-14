@@ -17,14 +17,15 @@ class Header extends React.Component {
   
  render() {
    const mobile = (this.props.windowWidth < 780);
+   const titleStyle = ('ontouchstart' in window)? 'titleTouch' : 'title'; 
    const small = (mobile||this.state.shrink);
-   const style = (mobile) ? {padding: '0'} : this.getStyle();
+   const headerStyle = (mobile) ? {padding: '0'} : this.getStyle();
    return (
       <div className={'header-content'}>
-      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && small) ? 'work shrink header u-clearfix' : (small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={style} >
+      <div className={((this.props.params.route === 'work' && !this.props.params.piece) && small) ? 'work shrink header u-clearfix' : (small) ? 'shrink header u-clearfix' : 'header u-clearfix'} style={headerStyle} >
         <div>
           <div className={'button-container title-container'}>
-            <Link className={'button title'} to='/'>Zejian Shen</Link>
+            <Link className={'button '+titleStyle} to='/'>Zejian Shen</Link>
           </div>
           <ButtonBarComponent route={this.props.route} className={(small) ? 'buttonBar u-clearfix' : 'hidden'}  {...this.props} shrink={small} isHeader={true} />
         </div>

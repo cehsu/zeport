@@ -16,7 +16,15 @@
 
 .title:hover
 	color: aquamarine
-	background: none
+  background: none
+
+.titleTouch
+  &:active
+    color: aquamarine
+    background: none
+  &:hover
+    background: none
+
 
 .title-container
 	text-align: left
@@ -28,8 +36,6 @@
 	position: relative
 	vertical-align: middle
 	z-index: 1
-	&:hover
-		color: blue
 
 .hidden
 	visibility: hidden
