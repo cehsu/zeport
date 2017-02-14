@@ -16,7 +16,7 @@ class Header extends React.Component {
  }
   
  render() {
-   const mobile = (this.props.windowWidth < 780);
+   const mobile = (this.props.windowWidth < 1000);
    const titleStyle = ('ontouchstart' in window)? 'titleTouch' : 'title'; 
    const small = (mobile||this.state.shrink);
    const headerStyle = (mobile) ? {padding: '0'} : this.getStyle();
