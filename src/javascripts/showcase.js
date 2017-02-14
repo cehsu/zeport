@@ -9,8 +9,9 @@ class Showcase extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dragXStart: null,
-      dragXNext: null,
+      drag: null,
+      dragStart: null,
+      dragEnd: null,
       direction: null
     };
     this.hideDrag = this.hideDrag.bind(this);
@@ -25,11 +26,12 @@ class Showcase extends React.Component {
     const slideshow = showcaseItem.slideshow;
     const slideShowLength = slideshow.length;
     const {xOffset, sliding, transition, setIndex, incrementIndex, decrementIndex} = this.props;
+    const dragOn = (slideShowLength > 1) ? this.drag : undefined;
     return (
       <div>
         {(((showcaseItem.type !== "Animation")&&(showcaseItem.type !== "Video")) || (slideshow[0].indexOf('gif')>-1)) && 
             <ProgressiveImage src={slideshow[showcaseIndex]} placeholder={showcaseItem.sthumbs[showcaseIndex]}>
-              {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchMove={this.drag} onTouchEnd={this.setDrag} onDrag={this.drag} onDragEnd={this.setDrag} src={image} />}
+              {(image) => <img style={{height: itemHeight, width: itemWidth}} className={'showcase-image'} onTouchStart={dragOn} onTouchMove={dragOn} onTouchEnd={dragOn} src={image} />}
             </ProgressiveImage>}
           {(((showcaseItem.type === "Animation")||(showcaseItem.type === "Video"))&& (slideshow[0].indexOf('gif')===-1)) && <iframe src={slideshow[0]} height={iframeHeight} width={iframeWidth} frameBorder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
       </div>
@@ -51,36 +53,25 @@ class Showcase extends React.Component {
     this.setState({direction: null, dragXStart: null, dragXNext: null});
   }
 
-  drag(event) {
+  drag(e) {
     const currentIndex = this.props.showcaseIndex;
     const length = this.props.images[this.props.showcaseNumber].slideshow.length;
-    if(event.type === 'drag'){
-    } else if (event.type === 'touch'){
-    }
-    if(this.state.dragXStart === null){
-      if(event.type === 'drag'){
-        this.setState({dragXStart: event.clientX});
-      } else if (event.type === 'touchmove'){
-        this.setState({dragXStart: event.touches[0].pageX});
+    if(e.type === "touchstart"){
+      console.log('start', e.touches[0].clientX);
+      this.setState({dragStart: e.touches[0].clientX});
+      console.log('state', this.state.dragStart);
+    } else if (e.type === "touchmove"){
+      var direction = (this.state.dragStart > this.state.dragEnd) ? "left" : "right";
+console.log('move', e.touches[0].clientX);
+console.log('direction', direction);
+      this.setState({dragEnd: e.touches[0].clientX, direction: direction});
+console.log('state', this.state.dragEnd);
+    } else if (e.type === "touchend"){
+      console.log('touchend', this.dragState > this.dragEnd, this.dragStart, this.dragEnd);
+      if(Math.abs(this.state.dragStart - this.state.dragEnd) > 150){
+      var updateIndex = (this.state.direction === "left") ? this.props.decrementIndex(currentIndex, length) : this.props.incrementIndex(currentIndex, length);
       }
-    } else if((this.state.dragXNext === null) && (this.state.dragXStart!==null)) {
-      if (event.type === 'drag' && (this.state.dragXStart !== event.clientX)){
-        this.setState({dragXNext: event.clientX}, function(){
-          if(this.state.dragXStart < this.state.dragXNext){
-            this.setState({direction: 'right'}, this.props.decrementIndex(currentIndex, length));
-          } else if(this.state.dragXStart > this.state.dragXNext){
-            this.setState({direction: 'left'}, this.props.incrementIndex(currentIndex, length));
-          }
-        });
-      } else if (event.type === 'touchmove' && (this.state.dragXStart !== event.touches[0].clientX)){
-        this.setState({dragXNext: event.touches[0].clientX}, function(){
-          if(this.state.dragXStart < this.state.dragXNext){
-            this.setState({direction: 'right'}, this.props.decrementIndex(currentIndex, length));
-          } else if (this.state.dragXStart > this.state.dragXNext) {
-            this.setState({direction: 'left'}, this.props.incrementIndex(currentIndex, length));
-          }
-        });
-      }
+     this.setState({direction: direction, dragStart: null, dragEnd: null});
     }
   }
 
