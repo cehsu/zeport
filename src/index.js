@@ -19,7 +19,7 @@ class App extends React.Component {
             if(nextState.params.piece) {
               var interval = ((h -60)/ 10);
               var smooth = setInterval(function(){
-                if(h>61) {
+                if(h>10) {
                   h-=interval
                     window.scroll(0, h);
                 } else {
@@ -30,7 +30,7 @@ class App extends React.Component {
             if(nextState.params.route === "about") {
               var interval = ((h-5)/10);
               var smooth = setInterval(function(){
-                if(h>6) {
+                if(h>10) {
                   h-=interval;
                   window.scroll(0, h);
                 } else {
@@ -40,9 +40,9 @@ class App extends React.Component {
             }
           } else {
             if(nextState.params.piece) {
-              var interval = ((h - 330)/10);
+              var interval = ((h - 200)/10);
               var smooth = setInterval(function(){
-                if(h > 331) {
+                if(h > 200) {
                   h-=interval;
                   window.scroll(0, h);
                 } else {
@@ -51,9 +51,9 @@ class App extends React.Component {
               }, 25);
             }
             if(nextState.params.route === "about") {
-              var interval = ((h-250)/10);
+              var interval = ((h-200)/10);
               var smooth = setInterval(function(){
-                if(h >251) {
+                if(h > 200) {
                   h-=interval;
                   window.scroll(0,h);
                 } else {

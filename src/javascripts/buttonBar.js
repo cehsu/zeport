@@ -19,7 +19,7 @@ class ButtonBar extends React.Component {
           <Link to='/about' onClick={()=>{this.props.setShowcaseItem(30); this.props.setFilter('All');}} className={(this.props.params.route === "about") ? 'active-route button underline' : 'button underline'}>About</Link>
           <a href="http://zesansan.bigcartel.com/"><div className={'button underline'}>Shop</div></a>
           </div>
-          <div key={0} className={((this.props.params.route === 'work')&&!(this.props.isHeader)) ? 'work button-subbar' : 'button-subbar'}>
+          <div key={0} className={(((this.props.params.route === 'work')&&(!this.props.params.piece))&&!(this.props.isHeader)) ? 'work button-subbar' : 'button-subbar'}>
           <ReactCSSTransitionGroup style={{width: '100%'}} transitionName='example' transitionEnterTimeout={100} transitionLeaveTimeout={100}>
           {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={1} onClick={()=>this.props.setFilter('All')} className={(this.props.filter === "All") ? 'active-route button underline filter' : 'button underline filter'}>All</div>}
            {(this.props.params.route === 'work' && !this.props.params.piece) && <div key={2} onClick={()=>this.props.setFilter('Illustration')} className={(this.props.filter === "Illustration") ? 'active-route button underline filter' : 'button underline filter'}>Illustration</div>}
