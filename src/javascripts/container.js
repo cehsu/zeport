@@ -41,7 +41,8 @@ class Container extends React.Component {
     d = document,
     documentElement = d.documentElement,
     body = d.getElementsByTagName('body')[0],
-    width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    s = screen,
+    width = w.innerWidth || documentElement.clientWidth || body.clientWidth || s.width;
     this.setState({windowWidth: width});
   }
 
