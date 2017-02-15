@@ -36216,7 +36216,7 @@
 	              _react2.default.createElement(
 	                'strong',
 	                null,
-	                '"Client: "'
+	                'Client: '
 	              ),
 	              detail[1]
 	            ) : detail[0] === "clients" ? _react2.default.createElement(
