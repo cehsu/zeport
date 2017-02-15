@@ -971,7 +971,7 @@ var Images = [
   ]
 },
 {   
-  "name": "Ma Sai, Director/Filmmaker",
+  "name": "Ma Sai, Director / Filmmaker",
   "type": "Design",
   "materials": "Digital",
   "year": 2014,
