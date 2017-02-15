@@ -18,7 +18,7 @@ class ShowcaseDetails extends React.Component {
       return (
           <div className={ (landscape) ? 'item-details landscape' : 'item-details'}> 
             {allDetails.map(function(detail, index){
-              return <div className={detail[0]} key={index}>{(detail[0] === "client") ? <span><strong>"Client: "</strong>{detail[1]}</span> : (detail[0] === "clients") ? <span><strong>Select Clients: </strong>{detail[1]}</span> : detail[1]}</div>
+              return <div className={detail[0]} key={index}>{(detail[0] === "client") ? <span><strong>Client: </strong>{detail[1]}</span> : (detail[0] === "clients") ? <span><strong>Select Clients: </strong>{detail[1]}</span> : detail[1]}</div>
               })
             }
             {press && <div className={"press"}><strong>Press: </strong>{showcaseItem.press.map(function(item, index, collection){
