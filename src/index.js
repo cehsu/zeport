@@ -15,7 +15,7 @@ class App extends React.Component {
             || document.documentElement.clientWidth
             || document.body.clientWidth;
           var h = window.scrollY;
-          if(w < 700){
+          if((w < 700) && (h > 60)){
             if(nextState.params.piece) {
               var interval = ((h -60)/ 10);
               var smooth = setInterval(function(){
@@ -38,7 +38,7 @@ class App extends React.Component {
                 }
               }, 25);
             }
-          } else {
+          } else if (width > 700) {
             if(nextState.params.piece) {
               var interval = ((h - 200)/10);
               var smooth = setInterval(function(){
