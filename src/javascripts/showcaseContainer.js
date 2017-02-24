@@ -17,12 +17,12 @@ class ShowcaseContainer extends React.Component {
 	}
 
 	render() {
-                const xOffset = -200 - (100*(this.props.params.number - 1));
 		const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
 		const showcaseItem = this.props.images[showcaseNumber];
 		const dimensions = showcaseItem.dimensions;
 		const windowWidth = this.props.windowWidth;
 		const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
+                const xOffset = (windowWidth < 700) ? -400 - 100*(showcaseIndex) : -200 - (100*(showcaseIndex));
 		const iframeWidth = (windowWidth < 640) ? "100%" : "640px";
 		const iframeHeight = (windowWidth < 650) ? (windowWidth/640)* 340+"px" : "340px";
 		const {itemHeight,itemWidth} = setItem(windowWidth, showcaseIndex, dimensions);
