@@ -38,7 +38,7 @@ class App extends React.Component {
                 }
               }, 25);
             }
-          } else if (width > 700) {
+          } else if (w > 700) {
             if(nextState.params.piece) {
               var interval = ((h - 200)/10);
               var smooth = setInterval(function(){
