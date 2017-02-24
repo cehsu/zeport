@@ -35935,7 +35935,7 @@
 		_createClass(ShowcaseContainer, [{
 			key: 'render',
 			value: function render() {
-				var xOffset = this.props.windowWidth < 500 ? -this.props.windowWidth : -200 - 100 * (this.props.params.number - 1);
+				var xOffset = -200 - 100 * (this.props.params.number - 1);
 				var showcaseNumber = this.props.params.piece ? +this.props.params.piece + 1 : 0;
 				var showcaseItem = this.props.images[showcaseNumber];
 				var dimensions = showcaseItem.dimensions;

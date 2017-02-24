@@ -17,7 +17,7 @@ class ShowcaseContainer extends React.Component {
 	}
 
 	render() {
-                const xOffset = (this.props.windowWidth < 500) ? -(this.props.windowWidth) : -200 - (100*(this.props.params.number - 1));
+                const xOffset = -200 - (100*(this.props.params.number - 1));
 		const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
 		const showcaseItem = this.props.images[showcaseNumber];
 		const dimensions = showcaseItem.dimensions;
