@@ -63,7 +63,7 @@ class Showcase extends React.Component {
       this.setState({dragEnd: e.touches[0].clientX, direction: direction});
     } else if (e.type === "touchend"){
       if(Math.abs(this.state.dragStart - this.state.dragEnd) > 150){
-      var updateIndex = (this.state.direction === "left") ? this.props.decrementIndex(currentIndex, length) : this.props.incrementIndex(currentIndex, length);
+      var updateIndex = (this.state.direction === "left") ? this.props.incrementIndex(currentIndex, length) : this.props.decrementIndex(currentIndex, length);
       }
      this.setState({direction: direction, dragStart: null, dragEnd: null});
     }
