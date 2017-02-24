@@ -35843,7 +35843,7 @@
 	        this.setState({ dragEnd: e.touches[0].clientX, direction: direction });
 	      } else if (e.type === "touchend") {
 	        if (Math.abs(this.state.dragStart - this.state.dragEnd) > 150) {
-	          var updateIndex = this.state.direction === "left" ? this.props.decrementIndex(currentIndex, length) : this.props.incrementIndex(currentIndex, length);
+	          var updateIndex = this.state.direction === "left" ? this.props.incrementIndex(currentIndex, length) : this.props.decrementIndex(currentIndex, length);
 	        }
 	        this.setState({ direction: direction, dragStart: null, dragEnd: null });
 	      }
@@ -35923,7 +35923,6 @@
 			var _this = _possibleConstructorReturn(this, (ShowcaseContainer.__proto__ || Object.getPrototypeOf(ShowcaseContainer)).call(this, props));
 
 			_this.state = {
-				xOffset: _this.props.windowWidth < 500 ? -_this.props.windowWidth : -200 - 100 * (_this.props.params.number - 1),
 				sliding: false,
 				transition: '0.5s'
 			};
@@ -35936,6 +35935,7 @@
 		_createClass(ShowcaseContainer, [{
 			key: 'render',
 			value: function render() {
+				var xOffset = this.props.windowWidth < 500 ? -this.props.windowWidth : -200 - 100 * (this.props.params.number - 1);
 				var showcaseNumber = this.props.params.piece ? +this.props.params.piece + 1 : 0;
 				var showcaseItem = this.props.images[showcaseNumber];
 				var dimensions = showcaseItem.dimensions;
@@ -35957,7 +35957,7 @@
 					'div',
 					{ className: 'showcase-container' },
 					_react2.default.createElement(_showcase2.default, _extends({}, this.props, this.state, { setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex, iframeWidth: iframeWidth, iframeHeight: iframeHeight, itemHeight: itemHeight, itemWidth: itemWidth })),
-					_react2.default.createElement(_showcaseSlider2.default, _extends({}, this.props, this.state, { setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex })),
+					_react2.default.createElement(_showcaseSlider2.default, _extends({}, this.props, this.state, { xOffset: xOffset, setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex })),
 					_react2.default.createElement(_showcaseDetails2.default, { showcaseItem: showcaseItem })
 				);
 			}
