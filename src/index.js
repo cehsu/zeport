@@ -15,12 +15,14 @@ class App extends React.Component {
             || document.documentElement.clientWidth
             || document.body.clientWidth;
           var h = window.scrollY;
-          if((w < 700) && (h > 60)){
+console.log(h);
+          if((w < 700) && (h > 70)){
             if(nextState.params.piece) {
-              var interval = ((h -60)/ 10);
+              var interval = ((h - 70)/ 10);
               var smooth = setInterval(function(){
-                if(h>10) {
-                  h-=interval
+                if(h>70) {
+                  h-=interval;
+console.log(h);
                     window.scroll(0, h);
                 } else {
                   clearInterval(smooth);
@@ -28,9 +30,9 @@ class App extends React.Component {
               }, 25);
             }
             if(nextState.params.route === "about") {
-              var interval = ((h-5)/10);
+              var interval = ((h-50)/10);
               var smooth = setInterval(function(){
-                if(h>10) {
+                if(h>70) {
                   h-=interval;
                   window.scroll(0, h);
                 } else {
