@@ -17,7 +17,6 @@ class Gallery extends React.Component {
   }
 
   render() {
-    console.log(this.props.windowWidth);
     const tiles = this.props.images.map(function(image, index){
       return (
           <Link onClick={() => this.props.setOffset((this.props.windowWidth < 700) ? -400 : -200)} to={ {pathname: '/work/'+index+'/1'} } key={index} className={`${index} grid-item-${image.shape} brick`}>
