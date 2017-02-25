@@ -20,9 +20,8 @@ console.log(h);
             if(nextState.params.piece) {
               var interval = ((h - 70)/ 10);
               var smooth = setInterval(function(){
-                if(h>70) {
+                if(h>71) {
                   h-=interval;
-console.log(h);
                     window.scroll(0, h);
                 } else {
                   clearInterval(smooth);
@@ -32,7 +31,7 @@ console.log(h);
             if(nextState.params.route === "about") {
               var interval = ((h-50)/10);
               var smooth = setInterval(function(){
-                if(h>70) {
+                if(h>71) {
                   h-=interval;
                   window.scroll(0, h);
                 } else {
