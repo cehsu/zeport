@@ -4,6 +4,7 @@ export function setItem(width, pieceIndex, dimensions) {
   const mobile = !(width > 700);
   const showcaseWidth = (width * 0.9);
   const showcaseHeight = 600;
+  const proportion = showcaseHeight/showcaseWidth;
   if(dimensions){
     numHeight = dimensions[pieceIndex][1].replace(/[px]/gi, '');
     numWidth = dimensions[pieceIndex][0].replace(/[px]/gi, '');
@@ -12,7 +13,7 @@ export function setItem(width, pieceIndex, dimensions) {
       itemWidth = "100%";
       itemHeight = "auto";
     } else {
-      if ((numWidth - showcaseWidth) > (numHeight - showcaseHeight)){
+      if (numWidth - showcaseWidth){
          numHeight = (showcaseWidth/numWidth)*numHeight;
          numWidth = showcaseWidth;
     //resize tall items to showcase height
