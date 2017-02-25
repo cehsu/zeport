@@ -10,7 +10,7 @@ class ShowcaseDetails extends React.Component {
     render() {
       const { showcaseItem } = this.props;
       const slideshow = showcaseItem.slideshow;
-      const landscape = (((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Film'))&&(slideshow[0].indexOf('gif')===-1));
+      const landscape = (((showcaseItem.type === 'Animation') || (showcaseItem.type === 'Video'))&&(slideshow[0].indexOf('gif')===-1));
       const {name, year, materials, team, description, client, clients, press} = showcaseItem;
       const allProperties = [];
       allProperties.push(["name", name], ["year", year], ["materials", materials], ["team", team], ["client", client], ["description", description],["clients", clients]);
