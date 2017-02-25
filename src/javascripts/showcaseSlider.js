@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import 'stylesheets/modules/showcase'
 import 'stylesheets/utilities/clearfix'
 
-class Showcase extends React.Component {
+class ShowcaseSlider extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -53,4 +53,4 @@ class Showcase extends React.Component {
 
 }
 
-export default Showcase
+export default ShowcaseSlider

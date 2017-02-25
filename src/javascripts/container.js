@@ -16,24 +16,20 @@ class Container extends React.Component {
     super(props);
     this.state = {
       filter: 'All',
-      windowWidth: 0
+      windowWidth: 0,
+      xOffset: (this.windowWidth > 700) ? -200 : -400
     } 
     this.setFilter = this.setFilter.bind(this);
-    this.setShowcaseItem = this.setShowcaseItem.bind(this);
-    this.setShowcaseIndex = this.setShowcaseIndex.bind(this);
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.setOffset = this.setOffset.bind(this);
+}
+
+  setOffset(newOffset) {
+    this.setState({xOffset: newOffset});
   }
 
   setFilter(newFilter) {
     this.setState({filter: newFilter});
-  }
-
-  setShowcaseItem(index) {
-    this.setState({showcaseItem: index, showcaseIndex: 0});
-  }
-
-  setShowcaseIndex(index) {
-    this.setState({showcaseIndex: index});
   }
 
   updateDimensions() {
@@ -69,9 +65,9 @@ class Container extends React.Component {
 
     return (
         <div className='container'>
-        <Header windowWidth={this.state.windowWidth} params={this.props.params} setShowcaseItem={this.setShowcaseItem} setFilter={this.setFilter} filter={currentFilter} />
-        {(this.props.params.piece||(this.props.params.route === "about")) &&   <ShowcaseContainer {...this.props} {...this.state} setIndex={this.setShowcaseIndex} images={Images} />}
-        <Gallery params={this.props.params} setFilter={this.setFilter} setShowcaseItem={this.setShowcaseItem} filter={currentFilter} images={visibleImages} />
+        <Header windowWidth={this.state.windowWidth} params={this.props.params} setFilter={this.setFilter} filter={currentFilter} />
+        {(this.props.params.piece||(this.props.params.route === "about")) &&   <ShowcaseContainer {...this.props} {...this.state} setOffset={this.setOffset} images={Images} />}
+        <Gallery params={this.props.params} setOffset={this.setOffset} setFilter={this.setFilter} filter={currentFilter} images={visibleImages} windowWidth={this.state.windowWidth}/>
         <Footer />
         </div>
         )

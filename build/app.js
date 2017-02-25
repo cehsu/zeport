@@ -26589,29 +26589,24 @@
 
 	    _this.state = {
 	      filter: 'All',
-	      windowWidth: 0
+	      windowWidth: 0,
+	      xOffset: _this.windowWidth > 700 ? -200 : -400
 	    };
 	    _this.setFilter = _this.setFilter.bind(_this);
-	    _this.setShowcaseItem = _this.setShowcaseItem.bind(_this);
-	    _this.setShowcaseIndex = _this.setShowcaseIndex.bind(_this);
 	    _this.updateDimensions = _this.updateDimensions.bind(_this);
+	    _this.setOffset = _this.setOffset.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(Container, [{
+	    key: 'setOffset',
+	    value: function setOffset(newOffset) {
+	      this.setState({ xOffset: newOffset });
+	    }
+	  }, {
 	    key: 'setFilter',
 	    value: function setFilter(newFilter) {
 	      this.setState({ filter: newFilter });
-	    }
-	  }, {
-	    key: 'setShowcaseItem',
-	    value: function setShowcaseItem(index) {
-	      this.setState({ showcaseItem: index, showcaseIndex: 0 });
-	    }
-	  }, {
-	    key: 'setShowcaseIndex',
-	    value: function setShowcaseIndex(index) {
-	      this.setState({ showcaseIndex: index });
 	    }
 	  }, {
 	    key: 'updateDimensions',
@@ -26653,9 +26648,9 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'container' },
-	        _react2.default.createElement(_header2.default, { windowWidth: this.state.windowWidth, params: this.props.params, setShowcaseItem: this.setShowcaseItem, setFilter: this.setFilter, filter: currentFilter }),
-	        (this.props.params.piece || this.props.params.route === "about") && _react2.default.createElement(_showcaseContainer2.default, _extends({}, this.props, this.state, { setIndex: this.setShowcaseIndex, images: _images2.default })),
-	        _react2.default.createElement(_gallery2.default, { params: this.props.params, setFilter: this.setFilter, setShowcaseItem: this.setShowcaseItem, filter: currentFilter, images: visibleImages }),
+	        _react2.default.createElement(_header2.default, { windowWidth: this.state.windowWidth, params: this.props.params, setFilter: this.setFilter, filter: currentFilter }),
+	        (this.props.params.piece || this.props.params.route === "about") && _react2.default.createElement(_showcaseContainer2.default, _extends({}, this.props, this.state, { setOffset: this.setOffset, images: _images2.default })),
+	        _react2.default.createElement(_gallery2.default, { params: this.props.params, setOffset: this.setOffset, setFilter: this.setFilter, filter: currentFilter, images: visibleImages, windowWidth: this.state.windowWidth }),
 	        _react2.default.createElement(_footer2.default, null)
 	      );
 	    }
@@ -29241,12 +29236,15 @@
 	  _createClass(Gallery, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log(this.props.windowWidth);
 	      var tiles = this.props.images.map(function (image, index) {
 	        var _this2 = this;
 
 	        return _react2.default.createElement(
 	          _reactRouter.Link,
-	          { to: { pathname: '/work/' + index + '/1' }, key: index, className: index + ' grid-item-' + image.shape + ' brick' },
+	          { onClick: function onClick() {
+	              return _this2.props.setOffset(_this2.props.windowWidth < 700 ? -400 : -200);
+	            }, to: { pathname: '/work/' + index + '/1' }, key: index, className: index + ' grid-item-' + image.shape + ' brick' },
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'details' },
@@ -29269,7 +29267,7 @@
 	            _reactProgressiveImage2.default,
 	            { src: image.brick, placeholder: image.bthumb },
 	            function (image) {
-	              return _react2.default.createElement('img', { onClick: _this2.props.setShowcaseItem.bind(_this2, index), className: 'image', src: image });
+	              return _react2.default.createElement('img', { className: 'image', src: image });
 	            }
 	          )
 	        );
@@ -35936,11 +35934,13 @@
 			key: 'render',
 			value: function render() {
 				var showcaseNumber = this.props.params.piece ? +this.props.params.piece + 1 : 0;
+				var _props = this.props,
+				    xOffset = _props.xOffset,
+				    windowWidth = _props.windowWidth;
+
 				var showcaseItem = this.props.images[showcaseNumber];
 				var dimensions = showcaseItem.dimensions;
-				var windowWidth = this.props.windowWidth;
 				var showcaseIndex = this.props.params.number ? this.props.params.number - 1 : 0;
-				var xOffset = windowWidth < 700 ? -400 - 100 * showcaseIndex : -200 - 100 * showcaseIndex;
 				var iframeWidth = windowWidth < 640 ? "100%" : "640px";
 				var iframeHeight = windowWidth < 650 ? windowWidth / 640 * 340 + "px" : "340px";
 
@@ -35964,33 +35964,35 @@
 		}, {
 			key: 'setIndex',
 			value: function setIndex(newIndex, oldIndex, length) {
+				var mobile = this.props.windowWidth < 700;
+				var swingleft = mobile ? -500 : -300;
 				if (!this.state.sliding) {
 					this.setState({ sliding: true });
-					if (newIndex - oldIndex > 3) {
-						var tx = this.state.xOffset + (oldIndex + (length - newIndex)) * 100;
-						this.setState({ xOffset: tx });
-						if (this.state.xOffset > -300) {
+					if (newIndex - oldIndex > 2) {
+						var tx = this.props.xOffset + (oldIndex + (length - newIndex)) * 100;
+						this.props.setOffset(tx);
+						if (this.props.xOffset > swingleft) {
 							setTimeout(function () {
-								this.setState({ transition: '0s', xOffset: this.state.xOffset - length * 100 });
+								this.props.setOffset(this.props.xOffset - length * 100);this.setState({ transition: '0s' });
 							}.bind(this), 550);
 							setTimeout(function () {
 								this.setState({ transition: '0.5s', sliding: false });
 							}.bind(this), 590);
 						}
-					} else if (oldIndex - newIndex > 3) {
-						var _tx = this.state.xOffset - (newIndex + (length - oldIndex)) * 100;
-						this.setState({ xOffset: _tx });
-						if (this.state.xOffset < -200) {
+					} else if (oldIndex - newIndex > 2) {
+						var _tx = this.props.xOffset - (newIndex + (length - oldIndex)) * 100;
+						this.props.setOffset(_tx);
+						if (this.props.xOffset < -200) {
 							setTimeout(function () {
-								this.setState({ transition: '0s', xOffset: this.state.xOffset + length * 100 });
+								this.props.setOffset(this.props.xOffset + length * 100);this.setState({ transition: '0s' });
 							}.bind(this), 550);
 							setTimeout(function () {
 								this.setState({ transition: '0.5s', sliding: false });
 							}.bind(this), 590);
 						}
 					} else {
-						var _tx2 = this.state.xOffset + (oldIndex - newIndex) * 100;
-						this.setState({ xOffset: _tx2, sliding: false });
+						var _tx2 = this.props.xOffset + (oldIndex - newIndex) * 100;
+						this.props.setOffset(_tx2);this.setState({ sliding: false });
 					}
 				}
 				setTimeout(function () {
@@ -36048,16 +36050,16 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Showcase = function (_React$Component) {
-	  _inherits(Showcase, _React$Component);
+	var ShowcaseSlider = function (_React$Component) {
+	  _inherits(ShowcaseSlider, _React$Component);
 
-	  function Showcase(props) {
-	    _classCallCheck(this, Showcase);
+	  function ShowcaseSlider(props) {
+	    _classCallCheck(this, ShowcaseSlider);
 
-	    return _possibleConstructorReturn(this, (Showcase.__proto__ || Object.getPrototypeOf(Showcase)).call(this, props));
+	    return _possibleConstructorReturn(this, (ShowcaseSlider.__proto__ || Object.getPrototypeOf(ShowcaseSlider)).call(this, props));
 	  }
 
-	  _createClass(Showcase, [{
+	  _createClass(ShowcaseSlider, [{
 	    key: 'render',
 	    value: function render() {
 	      var _props = this.props,
@@ -36140,10 +36142,10 @@
 	    }
 	  }]);
 
-	  return Showcase;
+	  return ShowcaseSlider;
 	}(_react2.default.Component);
 
-	exports.default = Showcase;
+	exports.default = ShowcaseSlider;
 
 /***/ },
 /* 298 */

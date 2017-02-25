@@ -17,9 +17,10 @@ class Gallery extends React.Component {
   }
 
   render() {
+    console.log(this.props.windowWidth);
     const tiles = this.props.images.map(function(image, index){
       return (
-          <Link to={ {pathname: '/work/'+index+'/1'} } key={index} className={`${index} grid-item-${image.shape} brick`}>
+          <Link onClick={() => this.props.setOffset((this.props.windowWidth < 700) ? -400 : -200)} to={ {pathname: '/work/'+index+'/1'} } key={index} className={`${index} grid-item-${image.shape} brick`}>
          <div className={'details'}>
           <div className={'details-container'}>
           <div className={'title-detail'}>{image.name}</div>
@@ -27,7 +28,7 @@ class Gallery extends React.Component {
           </div>
           </div>
           <ProgressiveImage src={image.brick} placeholder={image.bthumb}>
-          {(image) => <img onClick={this.props.setShowcaseItem.bind(this, index)} className={'image'} src={image} />}
+          {(image) => <img  className={'image'} src={image} />}
         </ProgressiveImage>  
           </Link>
           )

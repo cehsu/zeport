@@ -9,7 +9,7 @@ class ShowcaseContainer extends React.Component {
 		super(props);
 		this.state = {
 			sliding: false,
-			transition: '0.5s'
+			transition: '0.5s',
 		};
 		this.setIndex = this.setIndex.bind(this);
 		this.incrementIndex = this.incrementIndex.bind(this);
@@ -18,11 +18,10 @@ class ShowcaseContainer extends React.Component {
 
 	render() {
 		const showcaseNumber = (this.props.params.piece) ? (+this.props.params.piece + 1) : 0;
+		const {xOffset, windowWidth} = this.props;
 		const showcaseItem = this.props.images[showcaseNumber];
 		const dimensions = showcaseItem.dimensions;
-		const windowWidth = this.props.windowWidth;
 		const showcaseIndex = (this.props.params.number) ? this.props.params.number - 1 : 0;
-                const xOffset = (windowWidth < 700) ? -400 - 100*(showcaseIndex) : -200 - (100*(showcaseIndex));
 		const iframeWidth = (windowWidth < 640) ? "100%" : "640px";
 		const iframeHeight = (windowWidth < 650) ? (windowWidth/640)* 340+"px" : "340px";
 		const {itemHeight,itemWidth} = setItem(windowWidth, showcaseIndex, dimensions);
@@ -37,28 +36,30 @@ class ShowcaseContainer extends React.Component {
 	}
 
 	setIndex(newIndex, oldIndex, length) {
+          const mobile = (this.props.windowWidth < 700);
+          const swingleft = (mobile) ? -500 : -300;
 		if (!this.state.sliding){
 			this.setState({sliding: true});
-			if((newIndex - oldIndex) > 3){
-				const tx = this.state.xOffset + ((oldIndex + (length - newIndex))*100);
-				this.setState({xOffset: tx});
-				if (this.state.xOffset > -300){
+			if((newIndex - oldIndex) > 2){
+				const tx = this.props.xOffset + ((oldIndex + (length - newIndex))*100);
+				this.props.setOffset(tx);
+				if (this.props.xOffset > swingleft){
 					setTimeout(
 							function(){
-								this.setState({transition: '0s', xOffset: this.state.xOffset - (length * 100)});
+								this.props.setOffset(this.props.xOffset - (length * 100)); this.setState({transition: '0s'});
 							}.bind(this), 550);
 					setTimeout(
 							function(){
 								this.setState({transition: '0.5s', sliding: false});
 							}.bind(this), 590);
 				}
-			} else if ((oldIndex - newIndex) > 3) {
-				const tx = this.state.xOffset - ((newIndex + (length - oldIndex))*100);
-				this.setState({xOffset: tx});
-				if (this.state.xOffset < -200){
+			} else if ((oldIndex - newIndex) > 2) {
+const tx = this.props.xOffset - ((newIndex + (length - oldIndex))*100);
+				this.props.setOffset(tx);
+				if (this.props.xOffset < -200){
 					setTimeout(
 							function(){
-								this.setState({transition: '0s', xOffset: this.state.xOffset + (length * 100)});
+								this.props.setOffset(this.props.xOffset + (length * 100)); this.setState({transition: '0s'});
 							}.bind(this), 550);
 					setTimeout(
 							function(){
@@ -66,8 +67,8 @@ class ShowcaseContainer extends React.Component {
 							}.bind(this), 590);
 				}
 			} else {
-				const tx = this.state.xOffset + ((oldIndex  - newIndex)*100);
-				this.setState({xOffset: tx, sliding: false});
+				const tx = this.props.xOffset + ((oldIndex  - newIndex)*100);
+				this.props.setOffset(tx); this.setState({sliding: false});
 			}
 		}
 		setTimeout(function(){
