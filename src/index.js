@@ -15,7 +15,6 @@ class App extends React.Component {
             || document.documentElement.clientWidth
             || document.body.clientWidth;
           var h = window.scrollY;
-console.log(h);
           if((w < 700) && (h > 70)){
             if(nextState.params.piece) {
               var interval = ((h - 70)/ 10);
