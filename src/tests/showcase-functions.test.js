@@ -14,7 +14,7 @@ test('setItem provide item dimensions for standard images', () => {
   const finProps = setItem(width, pieceIndex, dimensions);
 
   expect(finProps).toEqual(
-    {itemHeight: "496px", itemWidth: "384px"}
+    {itemHeight: "600px", itemWidth: "464.5161290322581px"}
   );
 });
 
