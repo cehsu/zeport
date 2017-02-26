@@ -162,8 +162,7 @@ svg:hover {
   vertical-align: middle;
   line-height: 60px;
   font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  height: 140px; }
+  font-weight: bold; }
 
 .title:hover {
   color: aquamarine;
@@ -195,7 +194,6 @@ svg:hover {
   padding: 0 0 15px; }
 
 .work {
-  height: 140px;
   display: inline-block; }
 
 .socialButtons {
