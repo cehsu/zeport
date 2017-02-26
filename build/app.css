@@ -201,7 +201,7 @@ svg:hover {
   top: 0;
   right: 0;
   padding: inherit;
-  margin: 0 15px 2px;
+  margin: 0 2% 2%;
   width: 25%;
   height: 50px;
   text-align: right; }
@@ -221,6 +221,9 @@ svg:hover {
 .mail {
   height: 50%;
   width: auto; }
+
+.work.shrink.header {
+  height: 165px; }
 
 @media (max-width: 1000px) {
   .button {
@@ -278,7 +281,9 @@ svg:hover {
   .mail {
     height: 25%; }
   .social {
-    padding: 2px; } }
+    padding: 2px; }
+  .work.shrink.header {
+    height: 120px; } }
 .gallery-container {
   z-index: 1;
   overflow: hidden; }
@@ -440,7 +445,7 @@ table {
   width: 500px;
   box-sizing: border-box;
   margin: auto;
-  text-align: justify; }
+  text-align: left; }
 
 .name {
   font-weight: bold; }
