@@ -16,7 +16,7 @@ class ButtonBar extends React.Component {
         <div className={isHidden ? 'hidden button-bar': this.props.isHeader ? 'header-bar' : 'button-bar'}>
           <div className={'button-container'}>
           <Link to='/work' className={(this.props.params.route === "work") ? 'active-route button underline' : 'button underline'}>Work</Link>
-          <Link to='/about' onClick={()=>{this.props.setShowcaseItem(30); this.props.setFilter('All');}} className={(this.props.params.route === "about") ? 'active-route button underline' : 'button underline'}>About</Link>
+          <Link to='/about' onClick={()=>{this.props.setFilter('All');}} className={(this.props.params.route === "about") ? 'active-route button underline' : 'button underline'}>About</Link>
           <a href="http://zesansan.bigcartel.com/"><div className={'button underline'}>Shop</div></a>
           </div>
           <div key={0} className={(((this.props.params.route === 'work')&&(!this.props.params.piece))&&!(this.props.isHeader)) ? 'work button-subbar' : 'button-subbar'}>

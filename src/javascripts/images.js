@@ -687,7 +687,7 @@ var Images = [
   "bthumb": "data:image/gif;base64,R0lGODlhAQABAIABAOvh0wAAACwAAAAAAQABAAACAkQBAA==",
   "brick": "https://s3-us-west-1.amazonaws.com/zeport/zesansan.com+/Animation/Unbox+Yourself/Brick/01+Unbox_br.jpg",
   "slideshow": [
-    "https:/player.vimeo.com/video/109559530"
+    "https://player.vimeo.com/video/109559530"
   ]
 }, {   
   "name": "Exercise Often",
