@@ -26,7 +26,7 @@ svg:hover {
 
 .button-bar {
   z-index: 0;
-  margin: 200px 0 0;
+  margin: 200px 0 2%;
   text-align: center; }
 
 .header-bar {
@@ -242,7 +242,7 @@ svg:hover {
     .button.filter {
       font-size: 24px; }
   .button-bar {
-    margin: 0; }
+    margin: 0 0 2%; }
   .media {
     height: 45%; }
   .mail {
