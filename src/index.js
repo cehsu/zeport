@@ -5,11 +5,20 @@ import { Router, Route, hashHistory } from 'react-router';
 import ReactDOM from 'react-dom'
 import Container from 'javascripts/container'
 
+var ReactGA = require('react-ga');
+ReactGA.initialize('UA-92982177-1');
+
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
+
 class App extends React.Component {
   render() {
     return (
         <Router  history={ hashHistory }>
         <Route 
+	onUpdate={logPageView}
         onChange={(prevState, nextState) => {
           var w = window.innerWidth
             || document.documentElement.clientWidth
