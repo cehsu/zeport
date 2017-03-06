@@ -9,8 +9,8 @@ import  ReactGA from 'react-ga'
 ReactGA.initialize('UA-93029761-1');
 
 function logPageView() {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
+  ReactGA.set({ page: window.location.hash });
+  ReactGA.pageview(window.location.hash);
 }
 
 class App extends React.Component {

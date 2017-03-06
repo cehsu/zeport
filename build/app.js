@@ -86,8 +86,8 @@
 	_reactGa2.default.initialize('UA-93029761-1');
 
 	function logPageView() {
-	  _reactGa2.default.set({ page: window.location.pathname });
-	  _reactGa2.default.pageview(window.location.pathname);
+	  _reactGa2.default.set({ page: window.location.hash });
+	  _reactGa2.default.pageview(window.location.hash);
 	}
 
 	var App = function (_React$Component) {
