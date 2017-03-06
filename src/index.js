@@ -1,12 +1,12 @@
 import 'stylesheets/base'
 
 import React from 'react'
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router'
 import ReactDOM from 'react-dom'
 import Container from 'javascripts/container'
+import  ReactGA from 'react-ga'
 
-var ReactGA = require('react-ga');
-ReactGA.initialize('UA-92982177-1');
+ReactGA.initialize('UA-93029761-1');
 
 function logPageView() {
   ReactGA.set({ page: window.location.pathname });

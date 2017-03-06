@@ -71,6 +71,10 @@
 
 	var _container2 = _interopRequireDefault(_container);
 
+	var _reactGa = __webpack_require__(303);
+
+	var _reactGa2 = _interopRequireDefault(_reactGa);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79,12 +83,11 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ReactGA = __webpack_require__(303);
-	ReactGA.initialize('UA-92982177-1');
+	_reactGa2.default.initialize('UA-93029761-1');
 
 	function logPageView() {
-	  ReactGA.set({ page: window.location.pathname });
-	  ReactGA.pageview(window.location.pathname);
+	  _reactGa2.default.set({ page: window.location.pathname });
+	  _reactGa2.default.pageview(window.location.pathname);
 	}
 
 	var App = function (_React$Component) {
