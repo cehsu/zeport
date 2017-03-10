@@ -36284,8 +36284,9 @@
 	  var numWidth = void 0;
 	  var numHeight = void 0;
 	  var mobile = !(width > 700);
+	  var hd = width > 1000;
 	  var showcaseWidth = width * 0.9;
-	  var showcaseHeight = 600;
+	  var showcaseHeight = hd ? 750 : 600;
 	  if (dimensions) {
 	    numHeight = dimensions[pieceIndex][1].replace(/[px]/gi, '');
 	    numWidth = dimensions[pieceIndex][0].replace(/[px]/gi, '');
@@ -36300,7 +36301,7 @@
 	        //  resize tall items to showcase height
 	      }
 	      if (numHeight > showcaseHeight) {
-	        numWidth *= 600 / numHeight;
+	        numWidth *= hd ? 750 / numHeight : 600 / numHeight;
 	        numHeight = showcaseHeight;
 	        //  format already appropriately dimensioned items
 	      }
