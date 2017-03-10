@@ -53,8 +53,6 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	__webpack_require__(2);
 
 	var _react = __webpack_require__(6);
@@ -77,96 +75,83 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 	_reactGa2.default.initialize('UA-93029761-1');
 
 	function logPageView() {
 	  _reactGa2.default.set({ page: window.location.hash });
 	  _reactGa2.default.pageview(window.location.hash);
-	}
+	};
 
-	var App = function (_React$Component) {
-	  _inherits(App, _React$Component);
-
-	  function App() {
-	    _classCallCheck(this, App);
-
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	  }
-
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        _reactRouter.Router,
-	        { history: _reactRouter.hashHistory },
-	        _react2.default.createElement(_reactRouter.Route, {
-	          onUpdate: logPageView,
-	          onChange: function onChange(prevState, nextState) {
-	            var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	            var h = window.scrollY;
-	            if (w < 700 && h > 70) {
-	              if (nextState.params.piece) {
-	                var interval = (h - 70) / 10;
-	                var smooth = setInterval(function () {
-	                  if (h > 71) {
-	                    h -= interval;
-	                    window.scroll(0, h);
-	                  } else {
-	                    clearInterval(smooth);
-	                  }
-	                }, 25);
-	              }
-	              if (nextState.params.route === "about") {
-	                var interval = (h - 50) / 10;
-	                var smooth = setInterval(function () {
-	                  if (h > 71) {
-	                    h -= interval;
-	                    window.scroll(0, h);
-	                  } else {
-	                    clearInterval(smooth);
-	                  }
-	                }, 25);
-	              }
-	            } else if (w > 700) {
-	              if (nextState.params.piece) {
-	                var interval = (h - 200) / 10;
-	                var smooth = setInterval(function () {
-	                  if (h > 200) {
-	                    h -= interval;
-	                    window.scroll(0, h);
-	                  } else {
-	                    clearInterval(smooth);
-	                  }
-	                }, 25);
-	              }
-	              if (nextState.params.route === "about") {
-	                var interval = (h - 200) / 10;
-	                var smooth = setInterval(function () {
-	                  if (h > 200) {
-	                    h -= interval;
-	                    window.scroll(0, h);
-	                  } else {
-	                    clearInterval(smooth);
-	                  }
-	                }, 25);
-	              }
-	            }
-	          },
-	          path: '/(:route(/:piece(/:number)))',
-	          component: _container2.default
-	        })
-	      );
-	    }
-	  }]);
-
-	  return App;
-	}(_react2.default.Component);
+	var App = function App() {
+	  return _react2.default.createElement(
+	    _reactRouter.Router,
+	    { history: _reactRouter.hashHistory },
+	    _react2.default.createElement(_reactRouter.Route, {
+	      onUpdate: logPageView,
+	      onChange: function onChange(prevState, nextState) {
+	        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	        var h = window.scrollY;
+	        if (w < 700 && h > 70) {
+	          if (nextState.params.piece) {
+	            (function () {
+	              var interval = (h - 70) / 10;
+	              var smooth = setInterval(function () {
+	                if (h > 71) {
+	                  h -= interval;
+	                  window.scroll(0, h);
+	                } else {
+	                  clearInterval(smooth);
+	                }
+	              }, 25);
+	            })();
+	          }
+	          if (nextState.params.route === 'about') {
+	            (function () {
+	              var interval = (h - 50) / 10;
+	              var smooth = setInterval(function () {
+	                if (h > 71) {
+	                  h -= interval;
+	                  window.scroll(0, h);
+	                } else {
+	                  clearInterval(smooth);
+	                }
+	              }, 25);
+	            })();
+	          }
+	        } else if (w > 700) {
+	          if (nextState.params.piece) {
+	            (function () {
+	              var interval = (h - 200) / 10;
+	              var smooth = setInterval(function () {
+	                if (h > 200) {
+	                  h -= interval;
+	                  window.scroll(0, h);
+	                } else {
+	                  clearInterval(smooth);
+	                }
+	              }, 25);
+	            })();
+	          }
+	          if (nextState.params.route === 'about') {
+	            (function () {
+	              var interval = (h - 200) / 10;
+	              var smooth = setInterval(function () {
+	                if (h > 200) {
+	                  h -= interval;
+	                  window.scroll(0, h);
+	                } else {
+	                  clearInterval(smooth);
+	                }
+	              }, 25);
+	            })();
+	          }
+	        }
+	      },
+	      path: '/(:route(/:piece(/:number)))',
+	      component: _container2.default
+	    })
+	  );
+	};
 
 	_reactDom2.default.render(_react2.default.createElement(App, null), document.querySelector('#main'));
 
@@ -26563,7 +26548,7 @@
 
 	var _gallery2 = _interopRequireDefault(_gallery);
 
-	var _showcaseContainer = __webpack_require__(296);
+	var _showcaseContainer = __webpack_require__(293);
 
 	var _showcaseContainer2 = _interopRequireDefault(_showcaseContainer);
 
@@ -26588,8 +26573,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	//import Showcase from 'javascripts/showcase'
-
 
 	var Container = function (_React$Component) {
 	  _inherits(Container, _React$Component);
@@ -26611,6 +26594,21 @@
 	  }
 
 	  _createClass(Container, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      this.updateDimensions();
+	    }
+	  }, {
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      window.addEventListener('resize', this.updateDimensions);
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      window.removeEventListener('resize', this.updateDimensions);
+	    }
+	  }, {
 	    key: 'setOffset',
 	    value: function setOffset(newOffset) {
 	      this.setState({ xOffset: newOffset });
@@ -26623,28 +26621,13 @@
 	  }, {
 	    key: 'updateDimensions',
 	    value: function updateDimensions() {
-	      var w = window,
-	          d = document,
-	          documentElement = d.documentElement,
-	          body = d.getElementsByTagName('body')[0],
-	          s = screen,
-	          width = w.innerWidth || documentElement.clientWidth || body.clientWidth || s.width;
+	      var w = window;
+	      var d = document;
+	      var documentElement = d.documentElement;
+	      var body = d.getElementsByTagName('body')[0];
+	      var s = screen;
+	      var width = w.innerWidth || documentElement.clientWidth || body.clientWidth || s.width;
 	      this.setState({ windowWidth: width });
-	    }
-	  }, {
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      this.updateDimensions();
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      window.addEventListener("resize", this.updateDimensions);
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      window.removeEventListener("resize", this.updateDimensions);
 	    }
 	  }, {
 	    key: 'render',
@@ -26652,7 +26635,7 @@
 	      var currentFilter = this.state.filter;
 	      var visibleImages = [];
 	      _images2.default.forEach(function (image, index) {
-	        if (currentFilter === 'All' && image.type !== "About" || image.type === currentFilter) {
+	        if (currentFilter === 'All' && image.type !== 'About' || image.type === currentFilter) {
 	          visibleImages[index - 1] = image;
 	        }
 	      });
@@ -26661,7 +26644,7 @@
 	        'div',
 	        { className: 'container' },
 	        _react2.default.createElement(_header2.default, { windowWidth: this.state.windowWidth, params: this.props.params, setFilter: this.setFilter, filter: currentFilter }),
-	        (this.props.params.piece || this.props.params.route === "about") && _react2.default.createElement(_showcaseContainer2.default, _extends({}, this.props, this.state, { setOffset: this.setOffset, images: _images2.default })),
+	        (this.props.params.piece || this.props.params.route === 'about') && _react2.default.createElement(_showcaseContainer2.default, _extends({}, this.props, this.state, { setOffset: this.setOffset, images: _images2.default })),
 	        _react2.default.createElement(_gallery2.default, { params: this.props.params, setOffset: this.setOffset, setFilter: this.setFilter, filter: currentFilter, images: visibleImages, windowWidth: this.state.windowWidth }),
 	        _react2.default.createElement(_footer2.default, null)
 	      );
@@ -26670,6 +26653,10 @@
 
 	  return Container;
 	}(_react2.default.Component);
+
+	Container.propTypes = {
+	  params: _react2.default.PropTypes.object
+	};
 
 	exports.default = Container;
 
@@ -26731,44 +26718,6 @@
 	  }
 
 	  _createClass(Header, [{
-	    key: 'render',
-	    value: function render() {
-	      var mobile = this.props.windowWidth < 1000;
-	      var titleStyle = 'ontouchstart' in window ? 'titleTouch' : 'title';
-	      var small = mobile || this.state.shrink;
-	      var headerStyle = mobile ? { padding: '0' } : this.getStyle();
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'header-content' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: this.props.params.route === 'work' && !this.props.params.piece && small ? 'work shrink header u-clearfix' : small ? 'shrink header u-clearfix' : 'header u-clearfix', style: headerStyle },
-	          _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'button-container title-container' },
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { className: 'button ' + titleStyle, to: '/' },
-	                'Zejian Shen'
-	              )
-	            ),
-	            _react2.default.createElement(_buttonBar2.default, _extends({ route: this.props.route, className: small ? 'buttonBar u-clearfix' : 'hidden' }, this.props, { shrink: small, isHeader: true }))
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'socialButtons' },
-	            _react2.default.createElement(_socialIcon2.default, { icon: "vimeo" }),
-	            _react2.default.createElement(_socialIcon2.default, { icon: "instagram" }),
-	            _react2.default.createElement(_socialIcon2.default, { icon: "email" })
-	          )
-	        ),
-	        _react2.default.createElement(_buttonBar2.default, _extends({ route: this.props.route }, this.props, { shrink: small, isHeader: false }))
-	      );
-	    }
-	  }, {
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      window.addEventListener('scroll', this.toggleShrink);
@@ -26795,10 +26744,53 @@
 	        this.setState({ shrink: false });
 	      }
 	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var mobile = this.props.windowWidth < 1000;
+	      var small = mobile || this.state.shrink;
+	      var headerStyle = mobile ? { padding: '0' } : this.getStyle();
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'header-content' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: this.props.params.route === 'work' && !this.props.params.piece && small ? 'work shrink header u-clearfix' : small ? 'shrink header u-clearfix' : 'header u-clearfix', style: headerStyle },
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'button-container title-container' },
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { className: 'button {$titleStyle}', to: '/' },
+	                'Zejian Shen'
+	              )
+	            ),
+	            _react2.default.createElement(_buttonBar2.default, _extends({ route: this.props.route, className: small ? 'buttonBar u-clearfix' : 'hidden' }, this.props, { shrink: small, isHeader: true }))
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'socialButtons' },
+	            _react2.default.createElement(_socialIcon2.default, { icon: 'vimeo' }),
+	            _react2.default.createElement(_socialIcon2.default, { icon: 'instagram' }),
+	            _react2.default.createElement(_socialIcon2.default, { icon: 'email' })
+	          )
+	        ),
+	        _react2.default.createElement(_buttonBar2.default, _extends({ route: this.props.route }, this.props, { shrink: small, isHeader: false }))
+	      );
+	    }
 	  }]);
 
 	  return Header;
 	}(_react2.default.Component);
+
+	Header.propTypes = {
+	  params: _react2.default.PropTypes.object,
+	  route: _react2.default.PropTypes.string,
+	  windowWidth: _react2.default.PropTypes.number.isRequired
+	};
 
 	exports.default = Header;
 
@@ -26836,8 +26828,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ButtonBar = function (_React$Component) {
-	  _inherits(ButtonBar, _React$Component);
+	var ButtonBar = function (_Component) {
+	  _inherits(ButtonBar, _Component);
 
 	  function ButtonBar(props) {
 	    _classCallCheck(this, ButtonBar);
@@ -26859,14 +26851,14 @@
 	          { className: 'button-container' },
 	          _react2.default.createElement(
 	            _reactRouter.Link,
-	            { to: '/work', className: this.props.params.route === "work" ? 'active-route button underline' : 'button underline' },
+	            { to: '/work', className: this.props.params.route === 'work' ? 'active-route button underline' : 'button underline' },
 	            'Work'
 	          ),
 	          _react2.default.createElement(
 	            _reactRouter.Link,
 	            { to: '/about', onClick: function onClick() {
 	                _this2.props.setFilter('All');
-	              }, className: this.props.params.route === "about" ? 'active-route button underline' : 'button underline' },
+	              }, className: this.props.params.route === 'about' ? 'active-route button underline' : 'button underline' },
 	            'About'
 	          ),
 	          _react2.default.createElement(
@@ -26889,49 +26881,49 @@
 	              'div',
 	              { key: 1, onClick: function onClick() {
 	                  return _this2.props.setFilter('All');
-	                }, className: this.props.filter === "All" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'All' ? 'active-route button underline filter' : 'button underline filter' },
 	              'All'
 	            ),
 	            this.props.params.route === 'work' && !this.props.params.piece && _react2.default.createElement(
 	              'div',
 	              { key: 2, onClick: function onClick() {
 	                  return _this2.props.setFilter('Illustration');
-	                }, className: this.props.filter === "Illustration" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'Illustration' ? 'active-route button underline filter' : 'button underline filter' },
 	              'Illustration'
 	            ),
 	            this.props.params.route === 'work' && !this.props.params.piece && _react2.default.createElement(
 	              'div',
 	              { key: 3, onClick: function onClick() {
 	                  return _this2.props.setFilter('Comic');
-	                }, className: this.props.filter === "Comic" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'Comic' ? 'active-route button underline filter' : 'button underline filter' },
 	              'Comic'
 	            ),
 	            this.props.params.route === 'work' && !this.props.params.piece && _react2.default.createElement(
 	              'div',
 	              { key: 4, onClick: function onClick() {
 	                  return _this2.props.setFilter('Animation');
-	                }, className: this.props.filter === "Animation" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'Animation' ? 'active-route button underline filter' : 'button underline filter' },
 	              'Animation'
 	            ),
 	            this.props.params.route === 'work' && !this.props.params.piece && _react2.default.createElement(
 	              'div',
 	              { key: 5, onClick: function onClick() {
 	                  return _this2.props.setFilter('Design');
-	                }, className: this.props.filter === "Design" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'Design' ? 'active-route button underline filter' : 'button underline filter' },
 	              'Design'
 	            ),
 	            this.props.params.route === 'work' && !this.props.params.piece && _react2.default.createElement(
 	              'div',
 	              { key: 6, onClick: function onClick() {
 	                  return _this2.props.setFilter('Video');
-	                }, className: this.props.filter === "Video" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'Video' ? 'active-route button underline filter' : 'button underline filter' },
 	              'Video'
 	            ),
 	            this.props.params.route === 'work' && !this.props.params.piece && _react2.default.createElement(
 	              'div',
 	              { key: 7, onClick: function onClick() {
 	                  return _this2.props.setFilter('Photography');
-	                }, className: this.props.filter === "Photography" ? 'active-route button underline filter' : 'button underline filter' },
+	                }, className: this.props.filter === 'Photography' ? 'active-route button underline filter' : 'button underline filter' },
 	              'Photo'
 	            )
 	          )
@@ -26941,9 +26933,16 @@
 	  }]);
 
 	  return ButtonBar;
-	}(_react2.default.Component);
+	}(_react.Component);
 
-	;
+	ButtonBar.propTypes = {
+	  filter: _react2.default.PropTypes.string.isRequired,
+	  isHeader: _react2.default.PropTypes.bool.isRequired,
+	  params: _react2.default.PropTypes.object,
+	  setFilter: _react2.default.PropTypes.func.isRequired,
+	  shrink: _react2.default.PropTypes.bool.isRequired
+	};
+
 	exports.default = ButtonBar;
 
 /***/ },
@@ -29090,30 +29089,30 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var icons = {
-	  'vimeo': {
-	    'class': 'media',
-	    "href": "https://vimeo.com/user424595",
-	    "viewBox": "15 15 35 35",
-	    "d": 'M47,25c-0.1,2.9-2.2,6.9-6.1,12c-4.1,5.3-7.5,8-10.4,8c-1.7,0-3.2-1.6-4.4-4.8 c-0.8-3-1.6-5.9-2.4-8.9c-0.9-3.2-1.9-4.8-2.9-4.8c-0.2,0-1,0.5-2.4,1.4L17,26c1.5-1.3,2.9-2.6,4.4-3.9c2-1.7,3.5-2.6,4.4-2.7 c2.3-0.2,3.8,1.4,4.3,4.8c0.6,3.7,1,6,1.2,6.9c0.7,3.1,1.4,4.6,2.2,4.6c0.6,0,1.6-1,2.8-3c1.3-2,1.9-3.5,2-4.5 c0.2-1.7-0.5-2.6-2-2.6c-0.7,0-1.5,0.2-2.2,0.5c1.5-4.8,4.3-7.2,8.4-7C45.7,19.1,47.2,21.1,47,25z'
+	  vimeo: {
+	    class: 'media',
+	    href: 'https://vimeo.com/user424595',
+	    viewBox: '15 15 35 35',
+	    d: 'M47,25c-0.1,2.9-2.2,6.9-6.1,12c-4.1,5.3-7.5,8-10.4,8c-1.7,0-3.2-1.6-4.4-4.8 c-0.8-3-1.6-5.9-2.4-8.9c-0.9-3.2-1.9-4.8-2.9-4.8c-0.2,0-1,0.5-2.4,1.4L17,26c1.5-1.3,2.9-2.6,4.4-3.9c2-1.7,3.5-2.6,4.4-2.7 c2.3-0.2,3.8,1.4,4.3,4.8c0.6,3.7,1,6,1.2,6.9c0.7,3.1,1.4,4.6,2.2,4.6c0.6,0,1.6-1,2.8-3c1.3-2,1.9-3.5,2-4.5 c0.2-1.7-0.5-2.6-2-2.6c-0.7,0-1.5,0.2-2.2,0.5c1.5-4.8,4.3-7.2,8.4-7C45.7,19.1,47.2,21.1,47,25z'
 	  },
-	  'instagram': {
-	    'class': 'media',
-	    "href": "https://www.instagram.com/kingsansan/",
-	    "viewBox": "15 15 35 35",
-	    "d": 'M43.5,29.7h-2.6c0.2,0.7,0.3,1.5,0.3,2.3 c0,5.1-4.1,9.2-9.2,9.2c-5.1,0-9.2-4.1-9.2-9.2c0-0.8,0.1-1.6,0.3-2.3h-2.6v12.7c0,0.6,0.5,1.2,1.2,1.2h20.8c0.6,0,1.2-0.5,1.2-1.2 V29.7z M43.5,21.6c0-0.6-0.5-1.2-1.2-1.2h-3.5c-0.6,0-1.2,0.5-1.2,1.2v3.5c0,0.6,0.5,1.2,1.2,1.2h3.5c0.6,0,1.2-0.5,1.2-1.2V21.6z  M32,26.2c-3.2,0-5.8,2.6-5.8,5.8c0,3.2,2.6,5.8,5.8,5.8s5.8-2.6,5.8-5.8C37.8,28.8,35.2,26.2,32,26.2 M43.5,47H20.5 c-1.9,0-3.5-1.6-3.5-3.5V20.5c0-1.9,1.5-3.5,3.5-3.5h23.1c1.9,0,3.5,1.5,3.5,3.5v23.1C47,45.4,45.5,47,43.5,47'
+	  instagram: {
+	    class: 'media',
+	    href: 'https://www.instagram.com/kingsansan/',
+	    viewBox: '15 15 35 35',
+	    d: 'M43.5,29.7h-2.6c0.2,0.7,0.3,1.5,0.3,2.3 c0,5.1-4.1,9.2-9.2,9.2c-5.1,0-9.2-4.1-9.2-9.2c0-0.8,0.1-1.6,0.3-2.3h-2.6v12.7c0,0.6,0.5,1.2,1.2,1.2h20.8c0.6,0,1.2-0.5,1.2-1.2 V29.7z M43.5,21.6c0-0.6-0.5-1.2-1.2-1.2h-3.5c-0.6,0-1.2,0.5-1.2,1.2v3.5c0,0.6,0.5,1.2,1.2,1.2h3.5c0.6,0,1.2-0.5,1.2-1.2V21.6z  M32,26.2c-3.2,0-5.8,2.6-5.8,5.8c0,3.2,2.6,5.8,5.8,5.8s5.8-2.6,5.8-5.8C37.8,28.8,35.2,26.2,32,26.2 M43.5,47H20.5 c-1.9,0-3.5-1.6-3.5-3.5V20.5c0-1.9,1.5-3.5,3.5-3.5h23.1c1.9,0,3.5,1.5,3.5,3.5v23.1C47,45.4,45.5,47,43.5,47'
 	  },
-	  'email': {
-	    'class': 'mail',
-	    "href": "mailto:zesansan@gmail.com",
-	    "viewBox": "15 18 40 30",
-	    "d": 'M17,22v20h30V22H17z M41.1,25L32,32.1L22.9,25H41.1z M20,39V26.6l12,9.3l12-9.3V39H20z'
+	  email: {
+	    class: 'mail',
+	    href: 'mailto:zesansan@gmail.com',
+	    viewBox: '15 18 40 30',
+	    d: 'M17,22v20h30V22H17z M41.1,25L32,32.1L22.9,25H41.1z M20,39V26.6l12,9.3l12-9.3V39H20z'
 	  }
 	};
 
-	exports.default = function (props) {
+	var socialIcons = function socialIcons(props) {
 	  return _react2.default.createElement(
 	    'div',
-	    { className: "social" },
+	    { className: 'social' },
 	    _react2.default.createElement(
 	      'a',
 	      { href: icons[props.icon].href },
@@ -29125,6 +29124,12 @@
 	    )
 	  );
 	};
+
+	socialIcons.propTypes = {
+	  icon: _react2.default.PropTypes.string.isRequired
+	};
+
+	exports.default = socialIcons;
 
 /***/ },
 /* 259 */
@@ -29160,9 +29165,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Footer = function Footer(_ref) {
-	  var props = _ref.props;
-
+	var Footer = function Footer() {
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'footer' },
@@ -29216,10 +29219,6 @@
 
 	var _packery2 = _interopRequireDefault(_packery);
 
-	var _showcase = __webpack_require__(293);
-
-	var _showcase2 = _interopRequireDefault(_showcase);
-
 	__webpack_require__(261);
 
 	__webpack_require__(256);
@@ -29246,11 +29245,27 @@
 	  }
 
 	  _createClass(Gallery, [{
+	    key: 'shouldComponentUpdate',
+	    value: function shouldComponentUpdate(nextProps) {
+	      var thisImages = Object.getOwnPropertyNames(this.props.images);
+	      var nextImages = Object.getOwnPropertyNames(nextProps.images);
+	      if (thisImages.length !== nextImages.length) {
+	        return true;
+	      }
+	      for (var i = 0; i < thisImages.length; i += 1) {
+	        var imageName = thisImages[i];
+	        if (this.props.images[imageName] !== nextProps.images[imageName]) {
+	          return true;
+	        }
+	      }
+	      return false;
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var tiles = this.props.images.map(function (image, index) {
-	        var _this2 = this;
+	      var _this2 = this;
 
+	      var tiles = this.props.images.map(function (image, index) {
 	        return _react2.default.createElement(
 	          _reactRouter.Link,
 	          { onClick: function onClick() {
@@ -29282,7 +29297,7 @@
 	            }
 	          )
 	        );
-	      }.bind(this));
+	      });
 
 	      return _react2.default.createElement(
 	        'div',
@@ -29300,26 +29315,16 @@
 	        )
 	      );
 	    }
-	  }, {
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(nextProps, nextState) {
-	      var thisImages = Object.getOwnPropertyNames(this.props.images);
-	      var nextImages = Object.getOwnPropertyNames(nextProps.images);
-	      if (thisImages.length !== nextImages.length) {
-	        return true;
-	      }
-	      for (var i = 0; i < thisImages.length; i++) {
-	        var imageName = thisImages[i];
-	        if (this.props.images[imageName] !== nextProps.images[imageName]) {
-	          return true;
-	        }
-	      }
-	      return false;
-	    }
 	  }]);
 
 	  return Gallery;
 	}(_react2.default.Component);
+
+	Gallery.propTypes = {
+	  images: _react2.default.PropTypes.array.isRequired,
+	  setOffset: _react2.default.PropTypes.func.isRequired,
+	  windowWidth: _react2.default.PropTypes.number.isRequired
+	};
 
 	exports.default = Gallery;
 
@@ -35736,163 +35741,6 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(6);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactProgressiveImage = __webpack_require__(269);
-
-	var _reactProgressiveImage2 = _interopRequireDefault(_reactProgressiveImage);
-
-	var _reactAddonsCssTransitionGroup = __webpack_require__(241);
-
-	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
-
-	var _reactRouter = __webpack_require__(37);
-
-	__webpack_require__(294);
-
-	__webpack_require__(256);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // ES6
-
-
-	var Showcase = function (_React$Component) {
-	  _inherits(Showcase, _React$Component);
-
-	  function Showcase(props) {
-	    _classCallCheck(this, Showcase);
-
-	    var _this = _possibleConstructorReturn(this, (Showcase.__proto__ || Object.getPrototypeOf(Showcase)).call(this, props));
-
-	    _this.state = {
-	      drag: null,
-	      dragStart: null,
-	      dragEnd: null,
-	      direction: null
-	    };
-	    _this.hideDrag = _this.hideDrag.bind(_this);
-	    _this.drag = _this.drag.bind(_this);
-	    _this.setDrag = _this.setDrag.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(Showcase, [{
-	    key: 'render',
-	    value: function render() {
-	      var _props = this.props,
-	          showcaseNumber = _props.showcaseNumber,
-	          showcaseIndex = _props.showcaseIndex,
-	          iframeHeight = _props.iframeHeight,
-	          iframeWidth = _props.iframeWidth,
-	          itemHeight = _props.itemHeight,
-	          itemWidth = _props.itemWidth;
-
-	      var showcaseItem = this.props.images[showcaseNumber];
-	      var thumbs = showcaseItem.thumbs;
-	      var slideshow = showcaseItem.slideshow;
-	      var slideShowLength = slideshow.length;
-	      var _props2 = this.props,
-	          xOffset = _props2.xOffset,
-	          sliding = _props2.sliding,
-	          transition = _props2.transition,
-	          setIndex = _props2.setIndex,
-	          incrementIndex = _props2.incrementIndex,
-	          decrementIndex = _props2.decrementIndex;
-
-	      var dragOn = slideShowLength > 1 ? this.drag : undefined;
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        (showcaseItem.type !== "Animation" && showcaseItem.type !== "Video" || slideshow[0].indexOf('gif') > -1) && _react2.default.createElement(
-	          _reactProgressiveImage2.default,
-	          { src: slideshow[showcaseIndex], placeholder: showcaseItem.sthumbs[showcaseIndex] },
-	          function (image) {
-	            return _react2.default.createElement('img', { style: { height: itemHeight, width: itemWidth }, className: 'showcase-image', onTouchStart: dragOn, onTouchMove: dragOn, onTouchEnd: dragOn, src: image });
-	          }
-	        ),
-	        (showcaseItem.type === "Animation" || showcaseItem.type === "Video") && slideshow[0].indexOf('gif') === -1 && _react2.default.createElement('iframe', { src: slideshow[0], height: iframeHeight, width: iframeWidth, frameBorder: '0', webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true })
-	      );
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate() {
-	      var showcaseImage = document.getElementsByClassName('showcase-image')[0];
-	      if (showcaseImage) {
-	        document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
-	      }
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
-	    }
-	  }, {
-	    key: 'setDrag',
-	    value: function setDrag() {
-	      this.setState({ direction: null, dragXStart: null, dragXNext: null });
-	    }
-	  }, {
-	    key: 'drag',
-	    value: function drag(e) {
-	      var currentIndex = this.props.showcaseIndex;
-	      var length = this.props.images[this.props.showcaseNumber].slideshow.length;
-	      if (e.type === "touchstart") {
-	        this.setState({ dragStart: e.touches[0].clientX });
-	      } else if (e.type === "touchmove") {
-	        var direction = this.state.dragStart > this.state.dragEnd ? "left" : "right";
-	        this.setState({ dragEnd: e.touches[0].clientX, direction: direction });
-	      } else if (e.type === "touchend") {
-	        if (Math.abs(this.state.dragStart - this.state.dragEnd) > 150) {
-	          var updateIndex = this.state.direction === "left" ? this.props.incrementIndex(currentIndex, length) : this.props.decrementIndex(currentIndex, length);
-	        }
-	        this.setState({ direction: direction, dragStart: null, dragEnd: null });
-	      }
-	    }
-	  }, {
-	    key: 'hideDrag',
-	    value: function hideDrag(event) {
-	      if (this.props.params.piece) {
-	        event.dataTransfer.effectAllowed = 'none';
-	        var image = this.props.images[this.props.showcaseNumber].slideshow[this.props.showcaseIndex];
-	        event.dataTransfer.setData("text/plain", event.target.id);
-	        var img = new Image();
-	        img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
-	        event.dataTransfer.setDragImage(img, 100, 100);
-	      }
-	    }
-	  }]);
-
-	  return Showcase;
-	}(_react2.default.Component);
-
-	exports.default = Showcase;
-
-/***/ },
-/* 294 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 295 */,
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -35901,7 +35749,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _showcase = __webpack_require__(293);
+	var _showcase = __webpack_require__(294);
 
 	var _showcase2 = _interopRequireDefault(_showcase);
 
@@ -35924,115 +35772,126 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ShowcaseContainer = function (_React$Component) {
-		_inherits(ShowcaseContainer, _React$Component);
+	  _inherits(ShowcaseContainer, _React$Component);
 
-		function ShowcaseContainer(props) {
-			_classCallCheck(this, ShowcaseContainer);
+	  function ShowcaseContainer(props) {
+	    _classCallCheck(this, ShowcaseContainer);
 
-			var _this = _possibleConstructorReturn(this, (ShowcaseContainer.__proto__ || Object.getPrototypeOf(ShowcaseContainer)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (ShowcaseContainer.__proto__ || Object.getPrototypeOf(ShowcaseContainer)).call(this, props));
 
-			_this.state = {
-				sliding: false,
-				transition: '0.5s'
-			};
-			_this.setIndex = _this.setIndex.bind(_this);
-			_this.incrementIndex = _this.incrementIndex.bind(_this);
-			_this.decrementIndex = _this.decrementIndex.bind(_this);
-			return _this;
-		}
+	    _this.state = {
+	      sliding: false,
+	      transition: '0.5s'
+	    };
+	    _this.setIndex = _this.setIndex.bind(_this);
+	    _this.incrementIndex = _this.incrementIndex.bind(_this);
+	    _this.decrementIndex = _this.decrementIndex.bind(_this);
+	    return _this;
+	  }
 
-		_createClass(ShowcaseContainer, [{
-			key: 'render',
-			value: function render() {
-				var showcaseNumber = this.props.params.piece ? +this.props.params.piece + 1 : 0;
-				var _props = this.props,
-				    xOffset = _props.xOffset,
-				    windowWidth = _props.windowWidth;
+	  _createClass(ShowcaseContainer, [{
+	    key: 'setIndex',
+	    value: function setIndex(newIndex, oldIndex, length) {
+	      var _this2 = this;
 
-				var showcaseItem = this.props.images[showcaseNumber];
-				var dimensions = showcaseItem.dimensions;
-				var showcaseIndex = this.props.params.number ? this.props.params.number - 1 : 0;
-				var iframeWidth = windowWidth < 640 ? "100%" : windowWidth * 0.9 + "px";
-				var iframeHeight = windowWidth < 650 ? windowWidth / 640 * 340 + "px" : windowWidth * 0.9 * (340 / 640) + "px";
+	      var mobile = this.props.windowWidth < 700;
+	      var swingleft = mobile ? -500 : -300;
+	      if (!this.state.sliding) {
+	        this.setState({ sliding: true });
+	        if (newIndex - oldIndex > 2) {
+	          var tx = this.props.xOffset + (oldIndex + (length - newIndex)) * 100;
+	          this.props.setOffset(tx);
+	          if (this.props.xOffset > swingleft) {
+	            setTimeout(function () {
+	              _this2.props.setOffset(_this2.props.xOffset - length * 100);_this2.setState({ transition: '0s' });
+	            }, 550);
+	            setTimeout(function () {
+	              _this2.setState({ transition: '0.5s', sliding: false });
+	            }, 590);
+	          }
+	        } else if (oldIndex - newIndex > 2) {
+	          var _tx = this.props.xOffset - (newIndex + (length - oldIndex)) * 100;
+	          this.props.setOffset(_tx);
+	          if (this.props.xOffset < -200) {
+	            setTimeout(function () {
+	              _this2.props.setOffset(_this2.props.xOffset + length * 100);_this2.setState({ transition: '0s' });
+	            }, 550);
+	            setTimeout(function () {
+	              _this2.setState({ transition: '0.5s', sliding: false });
+	            }, 590);
+	          }
+	        } else {
+	          var _tx2 = this.props.xOffset + (oldIndex - newIndex) * 100;
+	          this.props.setOffset(_tx2);this.setState({ sliding: false });
+	        }
+	      }
+	      setTimeout(function () {
+	        _this2.props.router.push('work/' + _this2.props.params.piece + '/' + (newIndex + 1));
+	      }, 600);
+	    }
+	  }, {
+	    key: 'incrementIndex',
+	    value: function incrementIndex(currentIndex, length) {
+	      var newIndex = currentIndex === length - 1 ? 0 : currentIndex + 1;
+	      var oldIndex = currentIndex;
+	      this.setIndex(newIndex, oldIndex, length);
+	    }
+	  }, {
+	    key: 'decrementIndex',
+	    value: function decrementIndex(currentIndex, length) {
+	      var newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
+	      var oldIndex = currentIndex;
+	      this.setIndex(newIndex, oldIndex, length);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var showcaseNumber = this.props.params.piece ? +this.props.params.piece + 1 : 0;
+	      var _props = this.props,
+	          xOffset = _props.xOffset,
+	          windowWidth = _props.windowWidth;
 
-				var _setItem = (0, _showcaseFunctions.setItem)(windowWidth, showcaseIndex, dimensions),
-				    itemHeight = _setItem.itemHeight,
-				    itemWidth = _setItem.itemWidth;
+	      var showcaseItem = this.props.images[showcaseNumber];
+	      var dimensions = showcaseItem.dimensions;
+	      var showcaseIndex = this.props.params.number ? this.props.params.number - 1 : 0;
+	      var iframeWidth = windowWidth < 640 ? '100%' : windowWidth * 0.9 + 'px';
+	      var iframeHeight = windowWidth < 650 ? windowWidth / 640 * 340 + 'px' : windowWidth * 0.9 * (340 / 640) + 'px';
 
-				var setIndex = this.setIndex,
-				    incrementIndex = this.incrementIndex,
-				    decrementIndex = this.decrementIndex;
+	      var _setItem = (0, _showcaseFunctions.setItem)(windowWidth, showcaseIndex, dimensions),
+	          itemHeight = _setItem.itemHeight,
+	          itemWidth = _setItem.itemWidth;
+
+	      var setIndex = this.setIndex,
+	          incrementIndex = this.incrementIndex,
+	          decrementIndex = this.decrementIndex;
 
 
-				return _react2.default.createElement(
-					'div',
-					{ className: 'showcase-container' },
-					_react2.default.createElement(_showcase2.default, _extends({}, this.props, this.state, { setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex, iframeWidth: iframeWidth, iframeHeight: iframeHeight, itemHeight: itemHeight, itemWidth: itemWidth })),
-					_react2.default.createElement(_showcaseSlider2.default, _extends({}, this.props, this.state, { xOffset: xOffset, setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex })),
-					_react2.default.createElement(_showcaseDetails2.default, { showcaseItem: showcaseItem })
-				);
-			}
-		}, {
-			key: 'setIndex',
-			value: function setIndex(newIndex, oldIndex, length) {
-				var mobile = this.props.windowWidth < 700;
-				var swingleft = mobile ? -500 : -300;
-				if (!this.state.sliding) {
-					this.setState({ sliding: true });
-					if (newIndex - oldIndex > 2) {
-						var tx = this.props.xOffset + (oldIndex + (length - newIndex)) * 100;
-						this.props.setOffset(tx);
-						if (this.props.xOffset > swingleft) {
-							setTimeout(function () {
-								this.props.setOffset(this.props.xOffset - length * 100);this.setState({ transition: '0s' });
-							}.bind(this), 550);
-							setTimeout(function () {
-								this.setState({ transition: '0.5s', sliding: false });
-							}.bind(this), 590);
-						}
-					} else if (oldIndex - newIndex > 2) {
-						var _tx = this.props.xOffset - (newIndex + (length - oldIndex)) * 100;
-						this.props.setOffset(_tx);
-						if (this.props.xOffset < -200) {
-							setTimeout(function () {
-								this.props.setOffset(this.props.xOffset + length * 100);this.setState({ transition: '0s' });
-							}.bind(this), 550);
-							setTimeout(function () {
-								this.setState({ transition: '0.5s', sliding: false });
-							}.bind(this), 590);
-						}
-					} else {
-						var _tx2 = this.props.xOffset + (oldIndex - newIndex) * 100;
-						this.props.setOffset(_tx2);this.setState({ sliding: false });
-					}
-				}
-				setTimeout(function () {
-					this.props.router.push('work/' + this.props.params.piece + '/' + (newIndex + 1));
-				}.bind(this), 600);
-			}
-		}, {
-			key: 'incrementIndex',
-			value: function incrementIndex(currentIndex, length) {
-				var newIndex = currentIndex === length - 1 ? 0 : currentIndex + 1;
-				var oldIndex = currentIndex;
-				this.setIndex(newIndex, oldIndex, length);
-			}
-		}, {
-			key: 'decrementIndex',
-			value: function decrementIndex(currentIndex, length) {
-				var newIndex = currentIndex === 0 ? length - 1 : currentIndex - 1;
-				var oldIndex = currentIndex;
-				this.setIndex(newIndex, oldIndex, length);
-			}
-		}]);
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'showcase-container' },
+	        _react2.default.createElement(_showcase2.default, _extends({}, this.props, this.state, { setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex, iframeWidth: iframeWidth, iframeHeight: iframeHeight, itemHeight: itemHeight, itemWidth: itemWidth })),
+	        _react2.default.createElement(_showcaseSlider2.default, _extends({}, this.props, this.state, { xOffset: xOffset, setIndex: setIndex, incrementIndex: incrementIndex, decrementIndex: decrementIndex, showcaseNumber: showcaseNumber, showcaseIndex: showcaseIndex })),
+	        _react2.default.createElement(_showcaseDetails2.default, { showcaseItem: showcaseItem })
+	      );
+	    }
+	  }]);
 
-		return ShowcaseContainer;
+	  return ShowcaseContainer;
 	}(_react2.default.Component);
+
+	ShowcaseContainer.propTypes = {
+	  windowWidth: _react2.default.PropTypes.number.isRequired,
+	  xOffset: _react2.default.PropTypes.number.isRequired,
+	  setOffset: _react2.default.PropTypes.func.isRequired,
+	  router: _react2.default.PropTypes.object.isRequired,
+	  params: _react2.default.PropTypes.object.isRequired,
+	  images: _react2.default.PropTypes.array.isRequired
+	};
 
 	exports.default = ShowcaseContainer;
 
 /***/ },
-/* 297 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36047,9 +35906,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRouter = __webpack_require__(37);
+	var _reactProgressiveImage = __webpack_require__(269);
 
-	__webpack_require__(294);
+	var _reactProgressiveImage2 = _interopRequireDefault(_reactProgressiveImage);
+
+	__webpack_require__(295);
 
 	__webpack_require__(256);
 
@@ -36061,100 +35922,240 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var ShowcaseSlider = function (_React$Component) {
-	  _inherits(ShowcaseSlider, _React$Component);
+	var Showcase = function (_Component) {
+	  _inherits(Showcase, _Component);
 
-	  function ShowcaseSlider(props) {
-	    _classCallCheck(this, ShowcaseSlider);
+	  function Showcase(props) {
+	    _classCallCheck(this, Showcase);
 
-	    return _possibleConstructorReturn(this, (ShowcaseSlider.__proto__ || Object.getPrototypeOf(ShowcaseSlider)).call(this, props));
+	    var _this = _possibleConstructorReturn(this, (Showcase.__proto__ || Object.getPrototypeOf(Showcase)).call(this, props));
+
+	    _this.state = {
+	      drag: null,
+	      dragStart: null,
+	      dragEnd: null,
+	      direction: null
+	    };
+	    _this.hideDrag = _this.hideDrag.bind(_this);
+	    _this.drag = _this.drag.bind(_this);
+	    _this.setDrag = _this.setDrag.bind(_this);
+	    return _this;
 	  }
 
-	  _createClass(ShowcaseSlider, [{
+	  _createClass(Showcase, [{
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      var showcaseImage = document.getElementsByClassName('showcase-image')[0];
+	      if (showcaseImage) {
+	        document.getElementsByClassName('showcase-image')[0].addEventListener('dragstart', this.hideDrag);
+	      }
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      document.getElementsByClassName('showcase-image')[0].removeEventListener('dragstart', this.hideDrag);
+	    }
+	  }, {
+	    key: 'setDrag',
+	    value: function setDrag() {
+	      this.setState({ direction: null, dragXStart: null, dragXNext: null });
+	    }
+	  }, {
+	    key: 'drag',
+	    value: function drag(e) {
+	      var currentIndex = this.props.showcaseIndex;
+	      var length = this.props.images[this.props.showcaseNumber].slideshow.length;
+	      if (e.type === 'touchstart') {
+	        this.setState({ dragStart: e.touches[0].clientX });
+	      } else if (e.type === 'touchmove') {
+	        var direction = this.state.dragStart > this.state.dragEnd ? 'left' : 'right';
+	        this.setState({ dragEnd: e.touches[0].clientX, direction: direction });
+	      } else if (e.type === 'touchend') {
+	        if (Math.abs(this.state.dragStart - this.state.dragEnd) > 150) {
+	          if (this.state.direction === 'left') {
+	            this.props.incrementIndex(currentIndex, length);
+	          } else {
+	            this.props.decrementIndex(currentIndex, length);
+	          }
+	        }
+	        this.setState({ direction: this.state.direction, dragStart: null, dragEnd: null });
+	      }
+	    }
+	  }, {
+	    key: 'hideDrag',
+	    value: function hideDrag(event) {
+	      if (this.props.params.piece) {
+	        event.dataTransfer.effectAllowed = 'none';
+	        event.dataTransfer.setData('text/plain', event.target.id);
+	        var img = new Image();
+	        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+	        event.dataTransfer.setDragImage(img, 100, 100);
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var _props = this.props,
-	          xOffset = _props.xOffset,
-	          transition = _props.transition,
 	          showcaseNumber = _props.showcaseNumber,
 	          showcaseIndex = _props.showcaseIndex,
-	          setIndex = _props.setIndex,
-	          incrementIndex = _props.incrementIndex,
-	          decrementIndex = _props.decrementIndex;
+	          iframeHeight = _props.iframeHeight,
+	          iframeWidth = _props.iframeWidth,
+	          itemHeight = _props.itemHeight,
+	          itemWidth = _props.itemWidth;
 
 	      var showcaseItem = this.props.images[showcaseNumber];
-	      var thumbs = showcaseItem.thumbs;
 	      var slideshow = showcaseItem.slideshow;
 	      var slideShowLength = slideshow.length;
+	      var dragOn = slideShowLength > 1 ? this.drag : undefined;
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        slideShowLength < 5 && slideShowLength > 1 && _react2.default.createElement(
-	          'div',
-	          { className: 'flex-container' },
-	          thumbs.map(function (item, index) {
-	            return _react2.default.createElement(
-	              _reactRouter.Link,
-	              { key: index, to: { pathname: '/work/' + (showcaseNumber - 1) + '/' + (index + 1) } },
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setFocus(index);
-	                }, className: index === showcaseIndex ? 'focus' : 'non-focus', src: item })
-	            );
-	          })
+	        (showcaseItem.type !== 'Animation' && showcaseItem.type !== 'Video' || slideshow[0].indexOf('gif') > -1) && _react2.default.createElement(
+	          _reactProgressiveImage2.default,
+	          { src: slideshow[showcaseIndex], placeholder: showcaseItem.sthumbs[showcaseIndex] },
+	          function (image) {
+	            return _react2.default.createElement('img', { style: { height: itemHeight, width: itemWidth }, className: 'showcase-image', onTouchStart: dragOn, onTouchMove: dragOn, onTouchEnd: dragOn, src: image });
+	          }
 	        ),
-	        slideShowLength > 4 && _react2.default.createElement(
-	          'div',
-	          { className: 'slider-container' },
-	          _react2.default.createElement('div', { onClick: function onClick() {
-	              decrementIndex(showcaseIndex, slideShowLength);
-	            }, className: 'arrow left' }),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'track-container' },
-	            _react2.default.createElement(
-	              'div',
-	              { style: { transform: 'translate(' + xOffset + 'px)', transition: transition }, className: 'track' },
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(slideShowLength - 4, showcaseIndex, slideShowLength);
-	                }, className: 'slider-item non-focus', src: thumbs[slideShowLength - 4] }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(slideShowLength - 3, showcaseIndex, slideShowLength);
-	                }, className: 'slider-item non-focus', src: thumbs[slideShowLength - 3] }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(slideShowLength - 2, showcaseIndex, slideShowLength);
-	                }, className: slideShowLength - 2 === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[slideShowLength - 2] }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(slideShowLength - 1, showcaseIndex, slideShowLength);
-	                }, className: slideShowLength - 1 === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[slideShowLength - 1] }),
-	              thumbs.map(function (item, sliderIndex) {
-	                return _react2.default.createElement('img', { key: sliderIndex, onClick: function onClick() {
-	                    return setIndex(sliderIndex, showcaseIndex, slideShowLength);
-	                  }, className: sliderIndex === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: item });
-	              }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(0, showcaseIndex, slideShowLength);
-	                }, className: 0 === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[0] }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(1, showcaseIndex, slideShowLength);
-	                }, className: 1 === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[1] }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(2, showcaseIndex, slideShowLength);
-	                }, className: 'slider-item non-focus', src: thumbs[2] }),
-	              _react2.default.createElement('img', { onClick: function onClick() {
-	                  return setIndex(3, showcaseIndex, slideShowLength);
-	                }, className: 'slider-item non-focus', src: thumbs[3] })
-	            )
-	          ),
-	          _react2.default.createElement('div', { onClick: function onClick() {
-	              incrementIndex(showcaseIndex, slideShowLength);
-	            }, className: 'arrow right' })
-	        )
+	        (showcaseItem.type === 'Animation' || showcaseItem.type === 'Video') && slideshow[0].indexOf('gif') === -1 && _react2.default.createElement('iframe', { src: slideshow[0], height: iframeHeight, width: iframeWidth, frameBorder: '0', webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true })
 	      );
 	    }
 	  }]);
 
-	  return ShowcaseSlider;
-	}(_react2.default.Component);
+	  return Showcase;
+	}(_react.Component);
+
+	Showcase.propTypes = {
+	  iframeHeight: _react2.default.PropTypes.string.isRequired,
+	  iframeWidth: _react2.default.PropTypes.string.isRequired,
+	  itemHeight: _react2.default.PropTypes.string.isRequired,
+	  itemWidth: _react2.default.PropTypes.string.isRequired,
+	  incrementIndex: _react2.default.PropTypes.func.isRequired,
+	  decrementIndex: _react2.default.PropTypes.func.isRequired,
+	  showcaseIndex: _react2.default.PropTypes.number.isRequired,
+	  showcaseNumber: _react2.default.PropTypes.number.isRequired,
+	  images: _react2.default.PropTypes.array.isRequired,
+	  params: _react2.default.PropTypes.object
+	};
+
+	exports.default = Showcase;
+
+/***/ },
+/* 295 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 296 */,
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(6);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(37);
+
+	__webpack_require__(295);
+
+	__webpack_require__(256);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ShowcaseSlider = function ShowcaseSlider(props) {
+	  var xOffset = props.xOffset,
+	      transition = props.transition,
+	      showcaseNumber = props.showcaseNumber,
+	      showcaseIndex = props.showcaseIndex,
+	      setIndex = props.setIndex,
+	      incrementIndex = props.incrementIndex,
+	      decrementIndex = props.decrementIndex;
+
+	  var showcaseItem = props.images[showcaseNumber];
+	  var thumbs = showcaseItem.thumbs;
+	  var slideshow = showcaseItem.slideshow;
+	  var slideShowLength = slideshow.length;
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    slideShowLength < 5 && slideShowLength > 1 && _react2.default.createElement(
+	      'div',
+	      { className: 'flex-container' },
+	      thumbs.map(function (item, index) {
+	        return _react2.default.createElement(
+	          _reactRouter.Link,
+	          { key: index, to: { pathname: '/work/' + (showcaseNumber - 1) + '/' + (index + 1) } },
+	          _react2.default.createElement('img', { className: index === showcaseIndex ? 'focus' : 'non-focus', src: item })
+	        );
+	      })
+	    ),
+	    slideShowLength > 4 && _react2.default.createElement(
+	      'div',
+	      { className: 'slider-container' },
+	      _react2.default.createElement('div', { onClick: function onClick() {
+	          return decrementIndex(showcaseIndex, slideShowLength);
+	        }, className: 'arrow left' }),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'track-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { style: { transform: 'translate(' + xOffset + 'px)', transition: transition }, className: 'track' },
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(slideShowLength - 4, showcaseIndex, slideShowLength);
+	            }, className: 'slider-item non-focus', src: thumbs[slideShowLength - 4] }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(slideShowLength - 3, showcaseIndex, slideShowLength);
+	            }, className: 'slider-item non-focus', src: thumbs[slideShowLength - 3] }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(slideShowLength - 2, showcaseIndex, slideShowLength);
+	            }, className: slideShowLength - 2 === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[slideShowLength - 2] }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(slideShowLength - 1, showcaseIndex, slideShowLength);
+	            }, className: slideShowLength - 1 === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[slideShowLength - 1] }),
+	          thumbs.map(function (item, sliderIndex) {
+	            return _react2.default.createElement('img', { key: sliderIndex, onClick: function onClick() {
+	                return setIndex(sliderIndex, showcaseIndex, slideShowLength);
+	              }, className: sliderIndex === showcaseIndex ? 'slider-item focus' : 'slider-item non-focus', src: item });
+	          }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(0, showcaseIndex, slideShowLength);
+	            }, className: showcaseIndex === 0 ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[0] }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(1, showcaseIndex, slideShowLength);
+	            }, className: showcaseIndex === 1 ? 'slider-item focus' : 'slider-item non-focus', src: thumbs[1] }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(2, showcaseIndex, slideShowLength);
+	            }, className: 'slider-item non-focus', src: thumbs[2] }),
+	          _react2.default.createElement('img', { onClick: function onClick() {
+	              return setIndex(3, showcaseIndex, slideShowLength);
+	            }, className: 'slider-item non-focus', src: thumbs[3] })
+	        )
+	      ),
+	      _react2.default.createElement('div', { onClick: function onClick() {
+	          return incrementIndex(showcaseIndex, slideShowLength);
+	        }, className: 'arrow right' })
+	    )
+	  );
+	};
+
+	ShowcaseSlider.propTypes = {
+	  xOffset: _react2.default.PropTypes.number.isRequired,
+	  transition: _react2.default.PropTypes.string.isRequired,
+	  showcaseNumber: _react2.default.PropTypes.number.isRequired,
+	  showcaseIndex: _react2.default.PropTypes.number.isRequired,
+	  setIndex: _react2.default.PropTypes.func.isRequired,
+	  incrementIndex: _react2.default.PropTypes.func.isRequired,
+	  decrementIndex: _react2.default.PropTypes.func.isRequired,
+	  images: _react2.default.PropTypes.array.isRequired
+	};
 
 	exports.default = ShowcaseSlider;
 
@@ -36168,121 +36169,101 @@
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(6);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	__webpack_require__(294);
+	__webpack_require__(295);
 
 	__webpack_require__(256);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	var ShowcaseDetails = function ShowcaseDetails(props) {
+	  var showcaseItem = props.showcaseItem;
 
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	  var slideshow = showcaseItem.slideshow;
+	  var landscape = (showcaseItem.type === 'Animation' || showcaseItem.type === 'Video') && slideshow[0].indexOf('gif') === -1;
+	  var name = showcaseItem.name,
+	      year = showcaseItem.year,
+	      materials = showcaseItem.materials,
+	      team = showcaseItem.team,
+	      description = showcaseItem.description,
+	      client = showcaseItem.client,
+	      clients = showcaseItem.clients,
+	      press = showcaseItem.press;
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var ShowcaseDetails = function (_React$Component) {
-	  _inherits(ShowcaseDetails, _React$Component);
-
-	  function ShowcaseDetails(props) {
-	    _classCallCheck(this, ShowcaseDetails);
-
-	    return _possibleConstructorReturn(this, (ShowcaseDetails.__proto__ || Object.getPrototypeOf(ShowcaseDetails)).call(this, props));
-	  }
-
-	  _createClass(ShowcaseDetails, [{
-	    key: 'render',
-	    value: function render() {
-	      var showcaseItem = this.props.showcaseItem;
-
-	      var slideshow = showcaseItem.slideshow;
-	      var landscape = (showcaseItem.type === 'Animation' || showcaseItem.type === 'Video') && slideshow[0].indexOf('gif') === -1;
-	      var name = showcaseItem.name,
-	          year = showcaseItem.year,
-	          materials = showcaseItem.materials,
-	          team = showcaseItem.team,
-	          description = showcaseItem.description,
-	          client = showcaseItem.client,
-	          clients = showcaseItem.clients,
-	          press = showcaseItem.press;
-
-	      var allProperties = [];
-	      allProperties.push(["name", name], ["year", year], ["materials", materials], ["team", team], ["client", client], ["description", description], ["clients", clients]);
-	      var allDetails = allProperties.filter(function (item, index) {
-	        return item[1];
-	      });
+	  var allProperties = [];
+	  allProperties.push(['name', name], ['year', year], ['materials', materials], ['team', team], ['client', client], ['description', description], ['clients', clients]);
+	  var allDetails = allProperties.filter(function (item) {
+	    return item[1];
+	  });
+	  return _react2.default.createElement(
+	    'div',
+	    { className: landscape ? 'item-details landscape' : 'item-details' },
+	    allDetails.map(function (detail, index) {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: landscape ? 'item-details landscape' : 'item-details' },
-	        allDetails.map(function (detail, index) {
-	          return _react2.default.createElement(
-	            'div',
-	            { className: detail[0], key: index },
-	            detail[0] === "client" ? _react2.default.createElement(
-	              'span',
-	              null,
-	              _react2.default.createElement(
-	                'strong',
-	                null,
-	                'Client: '
-	              ),
-	              detail[1]
-	            ) : detail[0] === "clients" ? _react2.default.createElement(
-	              'span',
-	              null,
-	              _react2.default.createElement(
-	                'strong',
-	                null,
-	                'Select Clients: '
-	              ),
-	              detail[1]
-	            ) : detail[1]
-	          );
-	        }),
-	        press && _react2.default.createElement(
-	          'div',
-	          { className: "press" },
+	        { className: detail[0], key: index },
+	        detail[0] === 'client' ? _react2.default.createElement(
+	          'span',
+	          null,
 	          _react2.default.createElement(
 	            'strong',
 	            null,
-	            'Press: '
+	            'Client: '
 	          ),
-	          showcaseItem.press.map(function (item, index, collection) {
-	            if (index < collection.length - 1) {
-	              return _react2.default.createElement(
-	                'span',
-	                { key: index },
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: item[1] },
-	                  item[0]
-	                ),
-	                ', '
-	              );
-	            } else {
-	              return _react2.default.createElement(
-	                'span',
-	                { key: index },
-	                _react2.default.createElement(
-	                  'a',
-	                  { href: item[1] },
-	                  item[0]
-	                )
-	              );
-	            }
-	          })
-	        )
+	          detail[1]
+	        ) : detail[0] === 'clients' ? _react2.default.createElement(
+	          'span',
+	          null,
+	          _react2.default.createElement(
+	            'strong',
+	            null,
+	            'Select Clients: '
+	          ),
+	          detail[1]
+	        ) : detail[1]
 	      );
-	    }
-	  }]);
+	    }),
+	    press && _react2.default.createElement(
+	      'div',
+	      { className: 'press' },
+	      _react2.default.createElement(
+	        'strong',
+	        null,
+	        'Press: '
+	      ),
+	      showcaseItem.press.map(function (item, index, collection) {
+	        if (index < collection.length - 1) {
+	          return _react2.default.createElement(
+	            'span',
+	            { key: index },
+	            _react2.default.createElement(
+	              'a',
+	              { href: item[1] },
+	              item[0]
+	            ),
+	            ', '
+	          );
+	        }
+	        return _react2.default.createElement(
+	          'span',
+	          { key: index },
+	          _react2.default.createElement(
+	            'a',
+	            { href: item[1] },
+	            item[0]
+	          )
+	        );
+	      })
+	    )
+	  );
+	};
 
-	  return ShowcaseDetails;
-	}(_react2.default.Component);
+	ShowcaseDetails.propTypes = {
+	  showcaseItem: _react2.default.PropTypes.object.isRequired
+	};
 
 	exports.default = ShowcaseDetails;
 
@@ -36297,34 +36278,34 @@
 	});
 	exports.setItem = setItem;
 	function setItem(width, pieceIndex, dimensions) {
-	  //if item has dimensions, resize height and width
-	  var itemHeight = void 0,
-	      itemWidth = void 0,
-	      numWidth = void 0,
-	      numHeight = void 0;
+	  //  if item has dimensions, resize height and width
+	  var itemHeight = void 0;
+	  var itemWidth = void 0;
+	  var numWidth = void 0;
+	  var numHeight = void 0;
 	  var mobile = !(width > 700);
 	  var showcaseWidth = width * 0.9;
 	  var showcaseHeight = 600;
-	  var proportion = showcaseHeight / showcaseWidth;
 	  if (dimensions) {
 	    numHeight = dimensions[pieceIndex][1].replace(/[px]/gi, '');
 	    numWidth = dimensions[pieceIndex][0].replace(/[px]/gi, '');
-	    //resize wide items and mobile items to showcase width
+	    //  resize wide items and mobile items to showcase width
 	    if (mobile) {
-	      itemWidth = "100%";
-	      itemHeight = "auto";
+	      itemWidth = '100%';
+	      itemHeight = 'auto';
 	    } else {
 	      if (numWidth - showcaseWidth) {
-	        numHeight = showcaseWidth / numWidth * numHeight;
+	        numHeight *= showcaseWidth / numWidth;
 	        numWidth = showcaseWidth;
-	        //resize tall items to showcase height
-	      }if (numHeight > showcaseHeight) {
-	        numWidth = 600 / numHeight * numWidth;
-	        numHeight = showcaseHeight;
-	        //format already appropriately dimensioned items
+	        //  resize tall items to showcase height
 	      }
-	      itemHeight = numHeight + "px";
-	      itemWidth = numWidth + "px";
+	      if (numHeight > showcaseHeight) {
+	        numWidth *= 600 / numHeight;
+	        numHeight = showcaseHeight;
+	        //  format already appropriately dimensioned items
+	      }
+	      itemHeight = numHeight + 'px';
+	      itemWidth = numWidth + 'px';
 	    }
 	  }
 	  return { itemHeight: itemHeight, itemWidth: itemWidth };

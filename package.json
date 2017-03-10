@@ -10,7 +10,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack --watch",
-    "lint": "standard",
+    "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
